@@ -16,11 +16,9 @@ jobs:
         include:
           - python-version: "3.12"
             tests: ""  # whole suite
-          # 3.9 is the python3 that ships with macOS. deck-build and deck-exhibits must run there.
-          # deck-review's suite joins this job once its test helper stops passing a bare int to
-          # python-pptx's auto_size (tests/review/test_review_checks.py, owner: deck-review).
+          # 3.9 is the python3 that ships with macOS: every skill must run there.
           - python-version: "3.9"
-            tests: "tests/test_*.py"
+            tests: ""  # whole suite
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
