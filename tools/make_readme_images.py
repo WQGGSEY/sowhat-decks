@@ -9,11 +9,15 @@ made from files in examples/, so it shows real output, nothing drawn by hand:
 - review-before-after.png  the same slide in the draft (with deck-review's boxes) and rebuilt
 - before-after-titles.png  the draft's titles next to the rebuilt deck's titles
 - demo.gif               draft -> review -> titles -> rebuilt slides -> review result
+- social-preview.png     GitHub social preview (1280x640): the name, one line, three slides
+
+    python3 tools/make_readme_images.py social-preview   # build only the named images
 """
 from __future__ import annotations
 
 import pathlib
 import re
+import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -176,12 +180,45 @@ def demo() -> None:
     print(f"wrote {path.relative_to(ROOT)} ({path.stat().st_size // 1024} KB)")
 
 
-def main() -> None:
+def social_preview() -> None:
+    """1280x640 for Settings > Social preview. No text within 40 px of the edges; no logos or prices."""
+    w, h, m = 1280, 640, 56
+    big = framed(slide(EX / "03-review-before-after" / "preview" / "slide-05.png", 618))
+    small = [framed(slide(EX / ex / "preview" / f"slide-{n:02d}.png", 300))
+             for ex, n in (("01-investor-update", 6), ("02-market-entry", 4))]
+    gap = 14
+    right_w = big.width
+    x0 = w - m - right_w
+    y0 = (h - (big.height + gap + small[0].height)) // 2
+    im = Image.new("RGB", (w, h), BG)
+    im.paste(big, (x0, y0))
+    for i, t in enumerate(small):
+        im.paste(t, (x0 + i * (right_w - t.width), y0 + big.height + gap))
+    d = ImageDraw.Draw(im)
+    name_font, line_font = font(64, serif=True), font(30)
+    text_w = x0 - m - 40
+    lines = wrap(d, "Answer-first, editable PowerPoint decks from your coding agent", line_font, text_w)
+    block_h = 78 + 22 + len(lines) * 42
+    ty = (h - block_h) // 2
+    d.text((m, ty), "SoWhat Decks", font=name_font, fill=INK)
+    d.rectangle([m, ty + 92, m + 64, ty + 96], fill=ACCENT)
+    for i, line in enumerate(lines):
+        d.text((m, ty + 116 + i * 42), line, font=line_font, fill=INK)
+    save_png(im, OUT / "social-preview.png", colors=160)
+
+
+IMAGES = {"hero": lambda: hero(), "review-before-after": lambda: before_after(),
+          "before-after-titles": lambda: titles(), "demo": lambda: demo(), "social-preview": lambda: social_preview()}
+
+
+def main(argv: list[str] | None = None) -> None:
+    names = (sys.argv[1:] if argv is None else argv) or list(IMAGES)
+    unknown = [n for n in names if n not in IMAGES]
+    if unknown:
+        raise SystemExit(f"unknown image(s): {', '.join(unknown)}; choose from {', '.join(IMAGES)}")
     OUT.mkdir(parents=True, exist_ok=True)
-    hero()
-    before_after()
-    titles()
-    demo()
+    for name in names:
+        IMAGES[name]()
 
 
 if __name__ == "__main__":
