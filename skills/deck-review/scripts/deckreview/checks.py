@@ -230,10 +230,13 @@ def check_titles(deck, slide, cfg):
         verdict = T.classify(title)
         if not verdict["claim"]:
             appendix = idx in cfg.get("_appendix", ())
+            # Always low: the claim/label rule is a heuristic, and the agent confirms
+            # it with the rubric's title-only read before acting on it.
             out.append(_issue(
-                "title_not_claim", "low" if appendix else "medium",
-                f"Title \"{title}\" reads like a topic label ({verdict['reason']})"
-                + ("; a label is acceptable in the appendix, a claim is better." if appendix
+                "title_not_claim", "low",
+                f"Title \"{title}\" may be a topic label ({verdict['reason']}). This is a "
+                "heuristic guess; confirm it with the title-only read in the rubric"
+                + ("; in the appendix a label is acceptable, a claim is better." if appendix
                    else "."),
                 "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, "
                 "and why it matters.", slide=idx, shape=shape, bbox=bbox,

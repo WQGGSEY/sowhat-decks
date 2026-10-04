@@ -205,3 +205,14 @@ def test_section_header_with_a_subtitle_is_a_divider(make_deck):
         B.add_text(s, "Body.", 0.6, 1.7, 12.1, 0.8)
 
     assert not _issues(make_deck(build), "title_not_claim")
+
+
+def test_label_title_is_a_low_heuristic_hint_never_medium_or_high(make_deck):
+    def build(prs):
+        B.add_cover(prs, "Board update")
+        s = B.add_titled_slide(prs, "Market Overview")
+        B.add_text(s, "Body.", 0.6, 1.7, 12.1, 0.8)
+
+    found = _issues(make_deck(build), "title_not_claim")
+    assert [i["severity"] for i in found] == ["low"]
+    assert "heuristic" in found[0]["message"] and "title-only" in found[0]["message"]

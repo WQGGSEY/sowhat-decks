@@ -22,7 +22,7 @@ HEADLINES = {
     "off_slide": ("Shapes run off the slide", "Move them inside the margins."),
     "title_missing": ("Content slides without a title",
                       "Add a one-sentence action title to each."),
-    "title_not_claim": ("Titles are topic labels, not claims",
+    "title_not_claim": ("Titles that may be topic labels (heuristic; confirm by reading)",
                         "Rewrite each as one sentence that states what the slide proves "
                         "(see Rewritten titles)."),
     "title_too_long": ("Titles longer than two lines",
@@ -135,7 +135,8 @@ def build_markdown(deck, issues, scores, *, fixes=None, after=None, render=None,
     # Title read-through
     L.append("## Title read-through")
     L.append("")
-    L.append("Read only the titles, top to bottom. Do they tell the whole story?")
+    L.append("Read only the titles, top to bottom. Do they tell the whole story? The "
+             "claim/label verdicts are rule-based guesses; *(agent)* your reading decides.")
     L.append("")
     L.append("| Slide | Title | Verdict |")
     L.append("|---|---|---|")
@@ -154,7 +155,7 @@ def build_markdown(deck, issues, scores, *, fixes=None, after=None, render=None,
             verdict = "section divider" + ("" if T.classify(t)["claim"] else " (label)")
         else:
             c = T.classify(t)
-            verdict = "claim" if c["claim"] else f"**label** ({c['reason']})"
+            verdict = "claim" if c["claim"] else f"**label?** ({c['reason']})"
             long_ = any(i["check"] == "title_too_long" and i["slide"] == s["index"]
                         for i in issues)
             if long_:

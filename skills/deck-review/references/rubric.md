@@ -33,7 +33,9 @@ after `review.py run` (script mode) or on its own (no-code mode).
 
 ## 2. Pass 1: title-only read-through
 
-Read only the titles, in order, as one paragraph (review.md prints it). Answer:
+Read only the titles, in order, as one paragraph (review.md prints it). The
+script's `title_not_claim` hints and the "claim/label" column are rule-based
+guesses: your reading decides, in both directions. Answer:
 
 | # | Question | Pass when |
 |---|---|---|

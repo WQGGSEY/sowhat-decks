@@ -6,7 +6,7 @@ Thresholds live in `DEFAULTS` in `scripts/deckreview/checks.py`.
 | Check | Finds | Severity | Auto-fix |
 |---|---|---|---|
 | `title_missing` | Content slide without a title | medium | no |
-| `title_not_claim` | Title reads like a topic label (no verb, common label word, question, ends with ":") | medium; low in the appendix | no (agent rewrites) |
+| `title_not_claim` | Title reads like a topic label (no verb, common label word, question, how/why heading, ends with ":"). Verbs that double as nouns count after a subject ("Most customers sit in ...") or with a verb cue after them ("accounts for 60%") | low, always: it is a heuristic hint, never a blocker. Confirm with the title-only read (rubric pass 1) | no (agent rewrites) |
 | `title_too_long` | Title over 2 lines at its size, over 20 words, or over 120 characters (60 for Korean/Japanese) | medium | no |
 | `title_font_small` | Title under 24 pt | low | no |
 | `font_below_floor` | Body under 12 pt; source/note lines, tables, footers and labels under 10 pt; chart text under 10 pt (low) | medium | yes: raises runs to the floor (not chart text) |
