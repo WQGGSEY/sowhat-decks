@@ -1,0 +1,5 @@
+# SAMPLE DATA - fictional, for testing only.
+quarter,new_smb_accounts_per_month,onboarding_specialists,new_accounts_per_specialist_per_month,setup_completed_within_30d_pct,median_days_to_setup
+Q1,85,2,42.5,68,9
+Q2,100,2,50,61,12
+Q3,120,2,60,55,17

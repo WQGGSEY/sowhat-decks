@@ -1,0 +1,456 @@
+{
+  "overflow_count": 0,
+  "overflows": [],
+  "warnings": [],
+  "texts": [
+    {
+      "slide": 1,
+      "role": "cover-title",
+      "size": 40,
+      "lines": 2,
+      "overflow": false,
+      "text": "Which Southeast Asian market first?"
+    },
+    {
+      "slide": 1,
+      "role": "body",
+      "size": 20,
+      "lines": 3,
+      "overflow": false,
+      "text": "Market-entry recommendation · hypothetical company, real Wor"
+    },
+    {
+      "slide": 1,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 2,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 2,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Launch in Indonesia first, and let a six-week paid test conf"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 1,
+      "overflow": false,
+      "text": "Indonesia is the largest reachable market: 206M internet use"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "1"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 1,
+      "overflow": false,
+      "text": "Adjusted for income, Indonesia's online market is at least t"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "2"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 2,
+      "overflow": false,
+      "text": "Vietnam is the best backup: the fastest-growing economy, but"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "3"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 2,
+      "overflow": false,
+      "text": "Whether we can win is unproven in every market, so a six-wee"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "4"
+    },
+    {
+      "slide": 3,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 3,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Reach"
+    },
+    {
+      "slide": 3,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Indonesia has 206M internet users, 2.4 times Vietnam's and o"
+    },
+    {
+      "slide": 3,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: bar — internet users by country, 2024, mill"
+    },
+    {
+      "slide": 4,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 4,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Reach"
+    },
+    {
+      "slide": 4,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Indonesia also added the most users since 2019 (+76M) and st"
+    },
+    {
+      "slide": 4,
+      "role": "body",
+      "size": 16,
+      "lines": 7,
+      "overflow": false,
+      "text": "Planned exhibit: stacked bar — population online vs offline "
+    },
+    {
+      "slide": 5,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 5,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Ability to pay"
+    },
+    {
+      "slide": 5,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Income per person in Indonesia matches Vietnam's and trails "
+    },
+    {
+      "slide": 5,
+      "role": "body",
+      "size": 16,
+      "lines": 5,
+      "overflow": false,
+      "text": "Planned exhibit: bar — GDP per capita, PPP, 2024, current in"
+    },
+    {
+      "slide": 6,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 6,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Ability to pay"
+    },
+    {
+      "slide": 6,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Adjusted for income, Indonesia's online market is at least t"
+    },
+    {
+      "slide": 6,
+      "role": "body",
+      "size": 16,
+      "lines": 6,
+      "overflow": false,
+      "text": "Planned exhibit: bar — internet users × GDP per capita (PPP)"
+    },
+    {
+      "slide": 7,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 7,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Alternatives"
+    },
+    {
+      "slide": 7,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Vietnam is the best backup: the fastest-growing economy, but"
+    },
+    {
+      "slide": 7,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: highlight table — GDP growth 2025, average "
+    },
+    {
+      "slide": 8,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 8,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Alternatives"
+    },
+    {
+      "slide": 8,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Thailand is small and slow-growing, and the Philippines has "
+    },
+    {
+      "slide": 8,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: two columns — Thailand (fewest internet use"
+    },
+    {
+      "slide": 9,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 9,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Ability to win"
+    },
+    {
+      "slide": 9,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "We cannot yet say if we can win: app spending, competition a"
+    },
+    {
+      "slide": 9,
+      "role": "body",
+      "size": 16,
+      "lines": 11,
+      "overflow": false,
+      "text": "Planned exhibit: table — question × what we know × what is m"
+    },
+    {
+      "slide": 10,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 10,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Ability to win"
+    },
+    {
+      "slide": 10,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "A six-week paid test in Indonesia and Vietnam answers those "
+    },
+    {
+      "slide": 10,
+      "role": "body",
+      "size": 16,
+      "lines": 7,
+      "overflow": false,
+      "text": "Planned exhibit: process — localize store page and onboardin"
+    },
+    {
+      "slide": 11,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 11,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Approve the paid test now, and launch in Indonesia if acquis"
+    },
+    {
+      "slide": 11,
+      "role": "body",
+      "size": 16,
+      "lines": 7,
+      "overflow": false,
+      "text": "Planned exhibit: four actions with owner and timing / Layout"
+    },
+    {
+      "slide": 12,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 12,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Appendix"
+    },
+    {
+      "slide": 12,
+      "role": "title",
+      "size": 28,
+      "lines": 1,
+      "overflow": false,
+      "text": "Indicator table for the four markets, latest World Bank data"
+    },
+    {
+      "slide": 12,
+      "role": "body",
+      "size": 16,
+      "lines": 11,
+      "overflow": false,
+      "text": "Planned exhibit: table — population, internet use %, interne"
+    },
+    {
+      "slide": 13,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 13,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Appendix"
+    },
+    {
+      "slide": 13,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "The Philippines' internet-use rate fell 10.6 points in 2024,"
+    },
+    {
+      "slide": 13,
+      "role": "body",
+      "size": 16,
+      "lines": 6,
+      "overflow": false,
+      "text": "Planned exhibit: line — internet use % by country, 2015-2024"
+    }
+  ],
+  "checks": []
+}

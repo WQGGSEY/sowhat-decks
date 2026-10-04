@@ -1,0 +1,456 @@
+{
+  "overflow_count": 0,
+  "overflows": [],
+  "warnings": [],
+  "texts": [
+    {
+      "slide": 1,
+      "role": "cover-title",
+      "size": 40,
+      "lines": 1,
+      "overflow": false,
+      "text": "Duolingo FY2025 investor update"
+    },
+    {
+      "slide": 1,
+      "role": "body",
+      "size": 20,
+      "lines": 3,
+      "overflow": false,
+      "text": "Results and 2026 plan, from public filings · Illustrative ex"
+    },
+    {
+      "slide": 1,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 2,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 2,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Duolingo is trading 2026 bookings growth for user growth, so"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 2,
+      "overflow": false,
+      "text": "2025 delivered scale and profit: revenue rose 39% to $1.04B "
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "1"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 2,
+      "overflow": false,
+      "text": "User growth slowed: DAU growth fell from 51% to 30% and paid"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "2"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 2,
+      "overflow": false,
+      "text": "The 2026 plan gives up about 5 points of bookings growth and"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "3"
+    },
+    {
+      "slide": 2,
+      "role": "body",
+      "size": 18,
+      "lines": 1,
+      "overflow": false,
+      "text": "$360M of free cash flow and $1.04B in cash can fund that bet"
+    },
+    {
+      "slide": 2,
+      "role": "number",
+      "size": 20,
+      "lines": 1,
+      "overflow": false,
+      "text": "4"
+    },
+    {
+      "slide": 3,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 3,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "2025 results"
+    },
+    {
+      "slide": 3,
+      "role": "title",
+      "size": 28,
+      "lines": 1,
+      "overflow": false,
+      "text": "Revenue grew 39% to $1.04B in 2025, the first year above $1B"
+    },
+    {
+      "slide": 3,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: bar — revenue FY2023-FY2025, $M, FY2025 hig"
+    },
+    {
+      "slide": 4,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 4,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "2025 results"
+    },
+    {
+      "slide": 4,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Operating margin rose from 8.4% to 13.1%, and adjusted EBITD"
+    },
+    {
+      "slide": 4,
+      "role": "body",
+      "size": 16,
+      "lines": 7,
+      "overflow": false,
+      "text": "Planned exhibit: bar — operating margin FY2023-FY2025, % (ad"
+    },
+    {
+      "slide": 5,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 5,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "2025 results"
+    },
+    {
+      "slide": 5,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "A one-time $257M tax benefit makes up most of 2025's $414M n"
+    },
+    {
+      "slide": 5,
+      "role": "body",
+      "size": 16,
+      "lines": 6,
+      "overflow": false,
+      "text": "Planned exhibit: stacked bar — FY2025 net income split: one-"
+    },
+    {
+      "slide": 6,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 6,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "User engine"
+    },
+    {
+      "slide": 6,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "User growth slowed in 2025: DAUs grew 30% after 51%, and MAU"
+    },
+    {
+      "slide": 6,
+      "role": "body",
+      "size": 16,
+      "lines": 6,
+      "overflow": false,
+      "text": "Planned exhibit: highlight table — YoY growth of DAUs, MAUs,"
+    },
+    {
+      "slide": 7,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 7,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "User engine"
+    },
+    {
+      "slide": 7,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Engagement still deepened: 40% of monthly users now open the"
+    },
+    {
+      "slide": 7,
+      "role": "body",
+      "size": 16,
+      "lines": 6,
+      "overflow": false,
+      "text": "Planned exhibit: bar — DAU/MAU ratio, Q4 2024 vs Q4 2025, % "
+    },
+    {
+      "slide": 8,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 8,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "User engine"
+    },
+    {
+      "slide": 8,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Paid subscribers grew 28% to 12.2M, slower than the 43% of a"
+    },
+    {
+      "slide": 8,
+      "role": "body",
+      "size": 16,
+      "lines": 5,
+      "overflow": false,
+      "text": "Planned exhibit: bar — paid subscribers Q4 2024 vs Q4 2025, "
+    },
+    {
+      "slide": 9,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 9,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "2026 plan"
+    },
+    {
+      "slide": 9,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "2026 guidance cuts bookings growth to 10-12% by giving up ov"
+    },
+    {
+      "slide": 9,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: bar — total bookings growth FY2024, FY2025,"
+    },
+    {
+      "slide": 10,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 10,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "2026 plan"
+    },
+    {
+      "slide": 10,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Margins step down in 2026: gross margin to about 69% on AI c"
+    },
+    {
+      "slide": 10,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: line — gross margin FY2023-FY2025 and 2026 "
+    },
+    {
+      "slide": 11,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 11,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Cash"
+    },
+    {
+      "slide": 11,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "$360M of free cash flow and $1.04B in cash can fund the user"
+    },
+    {
+      "slide": 11,
+      "role": "body",
+      "size": 16,
+      "lines": 8,
+      "overflow": false,
+      "text": "Planned exhibit: bar — operating cash flow and free cash flo"
+    },
+    {
+      "slide": 12,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 12,
+      "role": "title",
+      "size": 28,
+      "lines": 2,
+      "overflow": false,
+      "text": "Judge 2026 by whether DAU growth re-accelerates above 2025's"
+    },
+    {
+      "slide": 12,
+      "role": "body",
+      "size": 16,
+      "lines": 10,
+      "overflow": false,
+      "text": "Planned exhibit: three metrics to track each quarter, with t"
+    },
+    {
+      "slide": 13,
+      "role": "sticker",
+      "size": 10,
+      "lines": 1,
+      "overflow": false,
+      "text": "DRAFT"
+    },
+    {
+      "slide": 13,
+      "role": "tracker",
+      "size": 11,
+      "lines": 1,
+      "overflow": false,
+      "text": "Appendix"
+    },
+    {
+      "slide": 13,
+      "role": "title",
+      "size": 28,
+      "lines": 1,
+      "overflow": false,
+      "text": "Key figures FY2023-FY2025"
+    },
+    {
+      "slide": 13,
+      "role": "body",
+      "size": 16,
+      "lines": 10,
+      "overflow": false,
+      "text": "Planned exhibit: table — revenue, gross profit, operating in"
+    }
+  ],
+  "checks": []
+}

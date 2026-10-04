@@ -1,0 +1,33 @@
+TITLE-ONLY READ-OUT
+
+Q3 2026 board update. Executive summary. Bookings performance. Q3 ARR bridge. Churn by segment. Q4 outlook. Setup status of churned accounts. Churn by setup status. Onboarding capacity. Proposal: hiring plan changes. Risks. Next steps. Cash runway. Q1-Q3 2026 metrics by quarter.
+
+PER-TITLE LINT
+  [ok ]  1. (cover) Q3 2026 board update
+  [ERR]  2. (summary) Executive summary
+         error: topic label, not a claim
+  [ERR]  3. (evidence) Bookings performance
+         error: too short to be a claim (<= 3 words)
+  [ERR]  4. (evidence) Q3 ARR bridge
+         error: too short to be a claim (<= 3 words)
+  [ERR]  5. (evidence) Churn by segment
+         error: too short to be a claim (<= 3 words)
+  [ERR]  6. (evidence) Q4 outlook
+         error: too short to be a claim (<= 3 words)
+  [wrn]  7. (evidence) Setup status of churned accounts
+         warn: no verb found; may be a topic label
+  [wrn]  8. (evidence) Churn by setup status
+         warn: no verb found; may be a topic label
+  [ERR]  9. (evidence) Onboarding capacity
+         error: too short to be a claim (<= 3 words)
+  [wrn] 10. (evidence) Proposal: hiring plan changes
+         warn: no verb found; may be a topic label
+  [ERR] 11. (evidence) Risks
+         error: topic label, not a claim
+  [ERR] 12. (next-steps) Next steps
+         error: topic label, not a claim
+  [ok ] 13. (appendix) Cash runway
+  [ok ] 14. (appendix) Q1-Q3 2026 metrics by quarter
+
+Now answer the 7 title-only questions (references/action-titles.md, section 9)
+and record PASS/FAIL with reasoning in section 5 of storyline.md.
