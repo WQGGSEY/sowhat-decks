@@ -119,6 +119,62 @@ def _contains(a, b, tol=0):
             a[0] + a[2] + tol >= b[0] + b[2] and a[1] + a[3] + tol >= b[1] + b[3])
 
 
+EXHIBIT_FRAMES = ("chart", "table", "picture", "diagram", "object")
+
+
+def _union(boxes):
+    x1 = min(b[0] for b in boxes)
+    y1 = min(b[1] for b in boxes)
+    x2 = max(b[0] + b[2] for b in boxes)
+    y2 = max(b[1] + b[3] for b in boxes)
+    return [x1, y1, x2 - x1, y2 - y1]
+
+
+def exhibit_parts(deck, slide):
+    """Which shapes on a slide belong to an exhibit. Returns (data_ids, frame_ids).
+
+    frame_ids: native charts, tables, pictures, SmartArt and embedded objects.
+    data_ids: shapes whose position or size is part of an exhibit, so a near-miss
+    edge is deliberate and moving them would change what the exhibit shows:
+      - shapes named "sw:*" (built by SoWhat Decks skills)
+      - members of a group, lines and connectors
+      - anything sitting on a chart, table or picture
+      - drawn charts (4+ filled shapes, e.g. Mekko segments or Gantt bars) and
+        everything inside their area, including labels
+      - grids of 3+ same-size shapes (cells, harvey balls, status markers)
+    Checks do not ask to nudge data shapes, and fix never moves, resizes or
+    restyles either kind.
+    """
+    W, H = deck["slide_width"], deck["slide_height"]
+    shapes = [s for s in slide["shapes"] if s.get("bbox")]
+    data, frames, areas = set(), set(), []
+    for s in shapes:
+        if s["kind"] in EXHIBIT_FRAMES:
+            frames.add(s["id"])
+            areas.append(s.get("extent") or s["bbox"])
+        if (s.get("name") or "").startswith("sw:") or s.get("in_group") or \
+                s["kind"] in ("line", "ink"):
+            data.add(s["id"])
+    filled = [s for s in shapes if s.get("fill") and s["kind"] in ("shape", "text")
+              and s.get("role") != "title" and _area(s["bbox"]) < 0.25 * W * H]
+    if len(filled) >= 4:
+        data.update(s["id"] for s in filled)
+        pad = int(0.4 * EMU_IN)
+        x, y, w, h = _union([s["bbox"] for s in filled])
+        areas.append([x - pad, y - pad, w + 2 * pad, h + 2 * pad])
+    cells = [s for s in shapes if s["kind"] == "shape" or (s["kind"] == "text" and s.get("fill"))]
+    sizes = Counter((round(s["bbox"][2] / 9144), round(s["bbox"][3] / 9144)) for s in cells)
+    data.update(s["id"] for s in cells
+                if sizes[(round(s["bbox"][2] / 9144), round(s["bbox"][3] / 9144))] >= 3)
+    for s in shapes:
+        if s["id"] in frames or s.get("role") == "title":
+            continue
+        cx, cy = s["bbox"][0] + s["bbox"][2] / 2, s["bbox"][1] + s["bbox"][3] / 2
+        if any(a[0] <= cx <= a[0] + a[2] and a[1] <= cy <= a[1] + a[3] for a in areas):
+            data.add(s["id"])
+    return data, frames
+
+
 def _runs(shape):
     if shape["kind"] == "text":
         for p in shape.get("paragraphs", []):
@@ -439,6 +495,7 @@ def check_overlap(deck, slide, cfg):
     out = []
     idx = slide["index"]
     items = _overlap_items(slide)
+    data, _ = exhibit_parts(deck, slide)
     for i in range(len(items)):
         for j in range(i + 1, len(items)):
             ka, a, ba = items[i]
@@ -451,6 +508,8 @@ def check_overlap(deck, slide, cfg):
             small = min(_area(ba), _area(bb)) or 1
             frac = _area(inter) / small
             if ka == "text" and kb == "text":
+                if a["id"] in data and b["id"] in data and (a.get("fill") or b.get("fill")):
+                    continue  # a label drawn on a bar or segment of a drawn chart
                 if frac >= cfg["overlap_text_frac"] and inter[2] > 0.03 * EMU_IN and \
                         inter[3] > 0.03 * EMU_IN:
                     out.append(_issue(
@@ -469,6 +528,8 @@ def check_overlap(deck, slide, cfg):
             else:
                 text, tb = (a, ba) if ka == "text" else (b, bb)
                 obj = b if ka == "text" else a
+                if text["id"] in data:
+                    continue  # the exhibit's own label
                 tfrac = _area(inter) / (_area(tb) or 1)
                 if tfrac >= cfg["overlap_label_frac"]:
                     out.append(_issue(
@@ -578,8 +639,9 @@ def check_alignment(deck, slide, cfg):
     outlier; it gets one issue per edge, pointing at the shape to snap to.
     """
     lo, hi = cfg["align_min_in"] * EMU_IN, cfg["align_max_in"] * EMU_IN
+    data, frames = exhibit_parts(deck, slide)
     items = [s for s in slide["shapes"]
-             if s.get("bbox") and not s.get("in_group") and
+             if s.get("bbox") and not s.get("in_group") and s["id"] not in data and
              (s["kind"] in ("picture", "chart", "table") or
               (s["kind"] == "text" and s.get("role") in ("title", "body", "source",
                                                          "subtitle")))]
@@ -607,6 +669,8 @@ def check_alignment(deck, slide, cfg):
                 outlier, anchor = (a, b) if ca < cb else (b, a)
                 if a.get("role") == "title" and ca == cb:
                     outlier, anchor = b, a
+                if outlier["id"] in frames and anchor["id"] not in frames:
+                    outlier, anchor = anchor, outlier  # never move a whole exhibit
                 found.setdefault((outlier["id"], edge), (outlier, anchor, d))
     out = []
     for (_, edge), (o, a, d) in found.items():
@@ -618,7 +682,8 @@ def check_alignment(deck, slide, cfg):
             "misaligned", "low",
             f"\"{o['name']}\" is {_fmt_in(d)} off the {edge} edge of \"{a['name']}\".",
             "Snap it to the same edge.", slide=slide["index"], shape=o,
-            bbox=[x1, y1, x2 - x1, y2 - y1], auto_fix=True, anchor_id=a["id"], edge=edge))
+            bbox=[x1, y1, x2 - x1, y2 - y1], auto_fix=o["id"] not in frames,
+            anchor_id=a["id"], edge=edge))
     return out
 
 

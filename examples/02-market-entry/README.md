@@ -10,7 +10,7 @@ A 13-slide recommendation for a language-learning app choosing between Indonesia
 | [deck.json](deck.json) | The deck spec deck-build reads |
 | [deck.pptx](deck.pptx) · [deck.pdf](deck.pdf) | The deck. Charts are native PowerPoint charts |
 | [preview/](preview/) | Slide images (rendered with LibreOffice, scaled to 960 px) |
-| [review.md](review.md) | deck-review report: 0 high, 0 medium, 9 low (all explained) |
+| [review.md](review.md) | deck-review report: 0 high, 0 medium, 1 low (explained) |
 | [SOURCES.md](SOURCES.md) | Indicator codes, API URLs and every formula |
 
 **Titles only:** Launch in Indonesia first, and let a six-week paid test confirm it before full spend. Indonesia has 206M internet users, 2.4 times Vietnam's and over 3 times Thailand's. ... Adjusted for income, Indonesia's online market is at least twice that of any other candidate. Vietnam is the best backup: the fastest-growing economy, but under half Indonesia's online audience. ... We cannot yet say if we can win: app spending, competition and acquisition cost are unknown. ... Approve the paid test now, and launch in Indonesia if acquisition cost meets our payback target.

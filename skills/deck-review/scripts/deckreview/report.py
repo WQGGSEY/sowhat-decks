@@ -225,9 +225,12 @@ def build_markdown(deck, issues, scores, *, fixes=None, after=None, render=None,
     if fixed_name is not None:
         L.append("## Automatic fixes")
         L.append("")
-        L.append(f"`{fixed_name}` changes layout and size only. Words, numbers, chart data "
-                 "and slide order are unchanged. Any `[SOURCE NEEDED]` line it adds must be "
-                 "replaced with the real source.")
+        L.append(f"`{fixed_name}` changes layout and size only, and only for free-standing "
+                 "text and shapes: anything that is part of an exhibit (charts, tables, "
+                 "pictures, charts drawn from shapes, groups, connectors) keeps its exact "
+                 "position and size and is listed as \"left as is\". Words, numbers, chart "
+                 "data and slide order are unchanged. Any `[SOURCE NEEDED]` line it adds must "
+                 "be replaced with the real source.")
         L.append("")
         if fixes:
             L.append("| Slide | Shape | Check | Change |")

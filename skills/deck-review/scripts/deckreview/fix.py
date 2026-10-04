@@ -11,6 +11,12 @@ Fixes:
                     (shapes entirely off the slide are left alone: they may be parked)
   missing_source    add the source placeholder line under the exhibit
   misaligned        snap a near-miss edge to its neighbour's edge
+
+Shapes that are part of an exhibit (see checks.exhibit_parts: charts, tables,
+pictures, drawn charts and grids, groups, connectors, shapes named sw:*, and
+anything sitting on an exhibit) are never moved, resized or restyled; their
+findings are logged as "left as is". The one exception is raising the text of
+a plain native table to the floor, which changes no shape's position or size.
 """
 
 from __future__ import annotations
@@ -173,7 +179,7 @@ def _fix_alignment(deck, slide, rec, issue):
     return f"snapped its {edge} edge to \"{anchor['name']}\""
 
 
-def _fix_source(deck, slide, slide_rec, lang):
+def _fix_source(deck, slide, slide_rec, lang, exhibit_ids=frozenset()):
     W, H = deck["slide_width"], deck["slide_height"]
     margin = int(0.5 * EMU_IN)
     title = next((s for s in slide_rec["shapes"] if s["id"] == slide_rec.get("title_id")),
@@ -184,7 +190,8 @@ def _fix_source(deck, slide, slide_rec, lang):
     right = min(W - int(0.2 * EMU_IN), max(right, W * 3 // 4))
     height = int(0.32 * EMU_IN)
     bottoms = [s["extent"][1] + s["extent"][3] for s in slide_rec["shapes"]
-               if s.get("extent") and s["kind"] in ("chart", "table", "picture")]
+               if s.get("extent") and (s["kind"] in ("chart", "table", "picture")
+                                       or s["id"] in exhibit_ids)]
     top = max(bottoms) + int(0.05 * EMU_IN) if bottoms else H - margin
     if top + height > H - int(0.1 * EMU_IN):
         top = H - height - int(0.1 * EMU_IN)
@@ -218,16 +225,32 @@ def fix_pptx(src, dst, issues: list | None = None, config: dict | None = None) -
     lang = _language(deck)
     applied = []
     sourced = set()
+    parts = {}  # slide -> (data ids, frame ids), see checks.exhibit_parts
     for issue in issues:
         check, idx = issue["check"], issue.get("slide")
         if check not in FIXABLE or not issue.get("auto_fix") or idx is None:
             continue
         slide = slides[idx - 1]
         rec = _record(deck, idx, issue.get("shape_id")) if issue.get("shape_id") else None
+        if idx not in parts:
+            parts[idx] = C.exhibit_parts(deck, deck["slides"][idx - 1])
+        data, frames = parts[idx]
+        if rec is not None and check != "missing_source" and (
+                rec["id"] in data or (rec["id"] in frames and not (
+                    check == "font_below_floor" and rec["kind"] == "table"))):
+            # Part of an exhibit: its position and size carry the data, so it is
+            # reported, never moved, resized or restyled. (A plain native table
+            # may have its text raised to the floor; that changes no geometry.)
+            applied.append({"check": check, "slide": idx, "shape": issue.get("shape"),
+                            "shape_id": issue.get("shape_id"),
+                            "action": "left as is: part of an exhibit; check by hand",
+                            "ok": False})
+            continue
         action = None
         try:
             if check == "missing_source" and idx not in sourced:
-                action = _fix_source(deck, slide, deck["slides"][idx - 1], lang)
+                action = _fix_source(deck, slide, deck["slides"][idx - 1], lang,
+                                     data | frames)
                 sourced.add(idx)
             elif rec is None:
                 continue

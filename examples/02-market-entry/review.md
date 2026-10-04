@@ -1,18 +1,16 @@
 # Deck review: deck.pptx
 
-Automatic checks by deck-review on 2026-10-04 (`review.py run deck.pptx --no-fix --no-render`; deck-build had already rendered every slide to `preview/`). Story scores, so-what lines and the rubric review were filled in by the agent with `skills/deck-review/references/rubric.md` after looking at each rendered slide.
+Automatic checks by deck-review on 2026-10-05 (`review.py run deck.pptx --no-fix --no-render`; deck-build had already rendered every slide to `preview/`). Story scores, so-what lines and the rubric review were filled in by the agent with `skills/deck-review/references/rubric.md` after looking at each rendered slide.
 
 - **Slides:** 13
-- **Issues:** 0 high, 0 medium, 9 low
-- **Mechanical score:** 9.7/10 (mean of slides; story score is the agent's)
+- **Issues:** 0 high, 0 medium, 1 low
+- **Mechanical score:** 10.0/10 (mean of slides; story score is the agent's)
 
 ## Top 5 fixes
 
-1. **[low] Text or exhibits collide** — slide 4 (#1, #2, #3, #4, #5, #6, …). Move or resize so nothing sits on top of text.
-2. **[low] Edges that almost line up** — slide 4 (#8). Snap them to a shared edge.
-3. **[low] Titles that may be topic labels (heuristic; confirm by reading)** — slide 12 (#9). Rewrite each as one sentence that states what the slide proves (see Rewritten titles).
+1. **[low] Titles that may be topic labels (heuristic; confirm by reading)** — slide 12 (#1). Rewrite each as one sentence that states what the slide proves (see Rewritten titles).
 
-Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. All 9 findings are low severity and are explained (and overruled) in the rubric review below.
+Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. The one finding is low severity and is explained (and overruled) in the rubric review below.
 
 ## Title read-through
 
@@ -51,7 +49,7 @@ Proposed by the agent from the slide's own content. No number was added that the
 | 1 | Which Southeast Asian market first? | 10.0 | — | — |
 | 2 | Launch in Indonesia first, and let a six-week paid test con… | 10.0 | 10 | — |
 | 3 | Indonesia has 206M internet users, 2.4 times Vietnam's and … | 10.0 | 9 | — |
-| 4 | Indonesia also added the most users since 2019 (+76M) and s… | 6.0 | 9 | #1, #2, #3, #4, #5, #6, #7, #8 |
+| 4 | Indonesia also added the most users since 2019 (+76M) and s… | 10.0 | 9 | — |
 | 5 | Income per person in Indonesia matches Vietnam's and trails… | 10.0 | 9 | — |
 | 6 | Adjusted for income, Indonesia's online market is at least … | 10.0 | 10 | — |
 | 7 | Vietnam is the best backup: the fastest-growing economy, bu… | 10.0 | 9 | — |
@@ -59,7 +57,7 @@ Proposed by the agent from the slide's own content. No number was added that the
 | 9 | We cannot yet say if we can win: app spending, competition … | 10.0 | 9 | — |
 | 10 | A six-week paid test in Indonesia and Vietnam answers those… | 10.0 | 8 | — |
 | 11 | Approve the paid test now, and launch in Indonesia if acqui… | 10.0 | 10 | — |
-| 12 | Indicator table for the four markets, latest World Bank data | 9.5 | 7 | #9 |
+| 12 | Indicator table for the four markets, latest World Bank data | 9.5 | 7 | #1 |
 | 13 | The Philippines' internet-use rate fell 10.6 points in 2024… | 10.0 | 10 | — |
 
 ### Slide 1: Which Southeast Asian market first?
@@ -79,14 +77,7 @@ Proposed by the agent from the slide's own content. No number was added that the
 
 ### Slide 4: Indonesia also added the most users since 2019 (+76M) and still has 77M people offline
 
-- **#1 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#2 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#3 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#4 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#5 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#6 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#7 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#8 [low] misaligned**: "sw:label" is 0.08 in off the left edge of "sw:title". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** Indonesia's audience is still growing fastest, with the largest offline pool; the highlighted segment shows the +76M.
 
 ### Slide 5: Income per person in Indonesia matches Vietnam's and trails only Thailand's
@@ -126,7 +117,7 @@ Proposed by the agent from the slide's own content. No number was added that the
 
 ### Slide 12: Indicator table for the four markets, latest World Bank data
 
-- **#9 [low] title_not_claim**: Title "Indicator table for the four markets, latest World Bank data" may be a topic label (no verb found; reads like a topic). This is a heuristic guess; confirm it with the title-only read in the rubric; in the appendix a label is acceptable, a claim is better. Fix: Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.
+- **#1 [low] title_not_claim**: Title "Indicator table for the four markets, latest World Bank data" may be a topic label (no verb found; reads like a topic). This is a heuristic guess; confirm it with the title-only read in the rubric; in the appendix a label is acceptable, a claim is better. Fix: Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.
 - **So what:** Back-up table, including the two indicators that do not separate the markets.
 
 ### Slide 13: The Philippines' internet-use rate fell 10.6 points in 2024, so treat its online count with caution
@@ -156,8 +147,7 @@ Audience and purpose (from the brief): CEO and CFO of a hypothetical app company
 
 **[DATA NEEDED] and placeholders:** none in the deck. The storyline listed eight open requests (app spending, competitors, payment methods, rules, budgets, acquisition cost, payback target, the Philippines series break). The deck does not need any of those numbers to make its argument, so it states them as unknowns with an owner and a way to find out (slides 9-11, 13) instead of leaving placeholders.
 
-**Low findings overruled (all 9):**
-- `overlap` and one label `misaligned` on slide 4: the series names are deliberate labels beside the stacked bars.
+**Low finding overruled (1):**
 - `title_not_claim` on slide 12: appendix label, allowed.
 
 **Verdict:** ready. Mechanical: 0 high, 0 medium. Story: mean 9.1 over the 12 content slides.

@@ -1,17 +1,16 @@
 # Deck review: deck.pptx
 
-Automatic checks by deck-review on 2026-10-04: `python3 skills/deck-review/scripts/review.py run examples/03-review-before-after/deck.pptx --no-fix --no-render` (deck-build had already rendered every slide to `preview/`). Story scores, so-what lines and the rubric review were filled in by the agent with `skills/deck-review/references/rubric.md` after looking at each rendered slide. Compare with `review.md`, the review of the draft this deck replaces.
+Automatic checks by deck-review on 2026-10-05: `python3 skills/deck-review/scripts/review.py run examples/03-review-before-after/deck.pptx --no-fix --no-render` (deck-build had already rendered every slide to `preview/`). Story scores, so-what lines and the rubric review were filled in by the agent with `skills/deck-review/references/rubric.md` after looking at each rendered slide. Compare with `review.md`, the review of the draft this deck replaces.
 
 - **Slides:** 14
-- **Issues:** 0 high, 0 medium, 6 low
-- **Mechanical score:** 9.8/10 (mean of slides; story score is the agent's)
+- **Issues:** 0 high, 0 medium, 0 low
+- **Mechanical score:** 10.0/10 (mean of slides; story score is the agent's)
 
 ## Top 5 fixes
 
-1. **[low] Text or exhibits collide** — slide 5 (#1, #2, #3, #4, #5). Move or resize so nothing sits on top of text.
-2. **[low] Edges that almost line up** — slide 5 (#6). Snap them to a shared edge.
+No automatic findings. Do the rubric review below.
 
-Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. All 6 findings are low severity and are explained (and overruled) in the rubric review below.
+Agent re-rank: the rubric review below found no storyline, evidence or readability problem either, so there is nothing to fix before this deck is shown.
 
 ## Title read-through
 
@@ -48,7 +47,7 @@ No title failed the automatic claim and length checks. The agent checked each cl
 | 2 | Q3 beat plan, but SMB churn puts year-end ARR $230k short; … | 10.0 | 10 | — |
 | 3 | New ARR beat plan by 21% in Q3, the third straight quarter … | 10.0 | 9 | — |
 | 4 | Ending ARR of $11.05M beat plan by 1.4%, a smaller margin t… | 10.0 | 9 | — |
-| 5 | SMB churned ARR more than doubled since Q1 and now offsets … | 7.0 | 10 | #1, #2, #3, #4, #5, #6 |
+| 5 | SMB churned ARR more than doubled since Q1 and now offsets … | 10.0 | 10 | — |
 | 6 | If the SMB trend continues, year-end ARR lands about $230k … | 10.0 | 10 | — |
 | 7 | Most SMB accounts that churned in Q3 never finished setup i… | 10.0 | 9 | — |
 | 8 | Accounts that finish setup churn at about a fifth of the ra… | 10.0 | 9 | — |
@@ -81,12 +80,7 @@ No title failed the automatic claim and length checks. The agent checked each cl
 
 ### Slide 5: SMB churned ARR more than doubled since Q1 and now offsets a third of new bookings
 
-- **#1 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#2 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#3 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#4 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#5 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#6 [low] misaligned**: "sw:label" is 0.08 in off the left edge of "sw:title". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** SMB is the whole change in churn; the stacked bar shows 170 to 390 and the takeaway gives the one-third share.
 
 ### Slide 6: If the SMB trend continues, year-end ARR lands about $230k below the $12.0M plan
@@ -156,8 +150,8 @@ Audience and purpose (from `brief.md`): the board of a fictional SaaS company; t
 
 **[DATA NEEDED] and placeholders:** none. The storyline kept one open item (2027 sales capacity). The board can decide without it, so slides 11 and 12 state it as unsized and assign it to the VP Sales for the January meeting instead of leaving a placeholder.
 
-**Low findings overruled (all 6):** `overlap` plus one label `misaligned` on slide 5 (series names placed beside the stacked bars on purpose).
+**Low findings:** none.
 
-**Before and after.** Draft (`review.md`): 1 high, 18 medium, 11 low; story mean 2.8; verdict "needs a storyline rework". This deck: 0 high, 0 medium, 6 low; story mean 9.2 over slides 2-14; verdict ready.
+**Before and after.** Draft (`review.md`): 1 high, 18 medium, 11 low; story mean 2.8; verdict "needs a storyline rework". This deck: 0 high, 0 medium, 0 low; story mean 9.2 over slides 2-14; verdict ready.
 
 **Verdict:** ready.

@@ -50,7 +50,9 @@ Workflow:
   final verdict.
 - [ ] 4. Re-rank the Top 5 fixes across script and rubric findings (rubric section 8).
 - [ ] 5. Reply with the verdict, the top 5 fixes and the paths. Tell the user that
-  the fixed copy only changed layout and sizes, and that any
+  the fixed copy only moved, resized or enlarged free-standing text and shapes,
+  never anything that is part of an exhibit (charts, tables, pictures, charts
+  drawn from shapes, groups, connectors, shapes named `sw:*`), and that any
   `Source: [SOURCE NEEDED]` it added must be filled in.
 
 Other commands:

@@ -327,11 +327,95 @@ def build_plain_default_deck(path) -> Path:
     return Path(path)
 
 
+def _rect(slide, left, top, width, height, rgb, name, text=None):
+    shp = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(left), Inches(top),
+                                 Inches(width), Inches(height))
+    shp.name = name
+    shp.fill.solid()
+    shp.fill.fore_color.rgb = rgb
+    shp.line.fill.background()
+    if text:
+        shp.text_frame.text = text
+        for r in shp.text_frame.paragraphs[0].runs:
+            r.font.size = Pt(12)
+    return shp
+
+
+# Shapes the fix may change in build_drawn_exhibits_deck; everything else is part
+# of an exhibit and must keep its exact position and size.
+DRAWN_SAFE_SHAPES = {"Off-slide note", "Nudged note", "Margin note", "Tiny note", "Source"}
+
+
+def build_drawn_exhibits_deck(path) -> Path:
+    """Charts drawn with shapes, as another tool would draw them (no sw: names).
+
+    Their positions are data, and near-miss edges are deliberate. Only the three
+    free-standing notes in DRAWN_SAFE_SHAPES are safe to fix.
+    """
+    from pptx.enum.shapes import MSO_CONNECTOR
+
+    prs = new_deck()
+    add_cover(prs, "Drawn exhibits")
+    light = RGBColor(0xBF, 0xBF, 0xBF)
+
+    # Mekko: column widths are sizes, segment heights are shares, so segment tops
+    # differ by a few hundredths of an inch between columns.
+    s = add_titled_slide(prs, "Enterprise is the largest segment in every region")
+    base = 6.0
+    for c, (left, width, shares) in enumerate([(0.6, 3.0, (0.62, 0.38)),
+                                               (3.7, 2.4, (0.58, 0.42)),
+                                               (6.2, 1.8, (0.55, 0.45))]):
+        top = 1.8
+        for k, share in enumerate(shares):
+            h = 4.2 * share
+            _rect(s, left, top, width, h, ACCENT if k == 0 else light, f"Mekko {c}-{k}",
+                  text=f"{int(share * 100)}%")
+            top += h
+        add_text(s, f"Region {c + 1}", left, base + 0.05, width, 0.4, size=12,
+                 name=f"Mekko label {c}")
+    add_text(s, "Note: widths show revenue.", 8.6, 1.8, 4.1, 0.6, size=12, name="Margin note")
+    add_text(s, "Shares are of regional revenue.", 8.7, 2.6, 4.0, 0.6, size=12,
+             name="Nudged note")  # left edge 0.1 in off the note above
+    add_source(s, "Source: Sample data")
+
+    # Gantt: bars start at their dates and sit a little below each row label.
+    s = add_titled_slide(prs, "Go-live holds only if data migration finishes in August")
+    for r, (label, start, length) in enumerate([("Design", 0.0, 2.0), ("Build", 1.5, 3.0),
+                                                ("Migrate", 3.0, 2.5), ("Train", 4.5, 1.5)]):
+        y = 2.0 + r * 0.9
+        add_text(s, label, 0.6, y, 2.0, 0.5, size=12, name=f"Row {r}")
+        _rect(s, 3.0 + start, y + 0.1, length, 0.4, ACCENT, f"Bar {r}")
+    for k in range(7):
+        line = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(3.0 + k), Inches(1.9),
+                                      Inches(3.0 + k), Inches(5.6))
+        line.name = f"Grid {k}"
+    add_text(s, "Owner: PMO", 11.0, 6.2, 3.0, 0.5, size=12, name="Off-slide note")
+    add_source(s, "Source: Sample data")
+
+    # Native chart with a label placed on it, plus a group and a small note.
+    s = add_titled_slide(prs, "Revenue grew every quarter and reached $4.6M in Q4")
+    add_bar_chart(s)
+    add_text(s, "Record quarter", 6.4, 2.0, 2.0, 0.4, size=12, name="Chart callout")
+    grp = s.shapes.add_group_shape()
+    grp.name = "Legend group"
+    for k in range(3):
+        box = grp.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(9.0), Inches(2.0 + k * 0.5),
+                                   Inches(0.3), Inches(0.3))
+        box.name = f"Swatch {k}"
+    add_text(s, "Q4 includes one large renewal.", 9.0, 4.0, 3.7, 0.8, size=9,
+             name="Tiny note")
+    add_source(s)
+
+    prs.save(str(path))
+    return Path(path)
+
+
 BUILDERS = {
     "flawed1": build_flawed_deck_1,
     "flawed2": build_flawed_deck_2,
     "clean": build_clean_deck,
     "plain": build_plain_default_deck,
+    "drawn": build_drawn_exhibits_deck,
 }
 
 
