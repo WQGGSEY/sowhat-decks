@@ -83,7 +83,9 @@ Pass `--template brand.pptx` (or `.potx`), or set `"template": {"path": "brand.p
 
 Set `meta.language` to `en`, `ko` or `ja`. This sets the East Asian theme font (Malgun Gothic / Yu Gothic), run language tags, and the built-in labels (Source / 출처 / 出所, DRAFT / 초안 / ドラフト). Korean and Japanese titles fit about half as many characters per line as English: keep them to 25-50 characters.
 
-## No-code mode (Claude for PowerPoint, plain chat)
+## No-code mode (chat, Claude for PowerPoint)
+
+Designed for chat and the Claude for PowerPoint sidebar; not yet tested in Claude for PowerPoint.
 
 When you cannot run scripts, apply the same rules by hand inside PowerPoint or in your answer:
 

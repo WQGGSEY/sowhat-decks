@@ -67,7 +67,9 @@ If the message does not fit one row, the slide probably has two messages: split 
 
 Full rules and the reasons: [references/chart-style.md](references/chart-style.md).
 
-## No-code mode (Claude for PowerPoint, plain chat)
+## No-code mode (chat, Claude for PowerPoint)
+
+Designed for chat and the Claude for PowerPoint sidebar; not yet tested in Claude for PowerPoint.
 
 Build the same exhibits with PowerPoint's own tools:
 

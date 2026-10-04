@@ -1,0 +1,1175 @@
+{
+ "file": "before.pptx",
+ "slides": [
+  {
+   "index": 1,
+   "title": "Q3 2026 board update",
+   "hidden": false,
+   "score": 10.0
+  },
+  {
+   "index": 2,
+   "title": "Executive summary",
+   "hidden": false,
+   "score": 8.0
+  },
+  {
+   "index": 3,
+   "title": "Bookings performance",
+   "hidden": false,
+   "score": 6.5
+  },
+  {
+   "index": 4,
+   "title": "Q3 ARR bridge",
+   "hidden": false,
+   "score": 6.5
+  },
+  {
+   "index": 5,
+   "title": "Churn by segment",
+   "hidden": false,
+   "score": 6.5
+  },
+  {
+   "index": 6,
+   "title": "Q4 outlook",
+   "hidden": false,
+   "score": 5.0
+  },
+  {
+   "index": 7,
+   "title": "Setup status of churned accounts",
+   "hidden": false,
+   "score": 8.5
+  },
+  {
+   "index": 8,
+   "title": "Churn by setup status",
+   "hidden": false,
+   "score": 8.0
+  },
+  {
+   "index": 9,
+   "title": "Onboarding capacity",
+   "hidden": false,
+   "score": 6.5
+  },
+  {
+   "index": 10,
+   "title": "Proposal: hiring plan changes",
+   "hidden": false,
+   "score": 8.0
+  },
+  {
+   "index": 11,
+   "title": "Risks",
+   "hidden": false,
+   "score": 8.0
+  },
+  {
+   "index": 12,
+   "title": "Next steps",
+   "hidden": false,
+   "score": 8.0
+  },
+  {
+   "index": 13,
+   "title": "Cash runway",
+   "hidden": false,
+   "score": 8.0
+  },
+  {
+   "index": 14,
+   "title": "Q1-Q3 2026 metrics by quarter",
+   "hidden": false,
+   "score": 7.0
+  }
+ ],
+ "issues": [
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 2,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 1
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 2,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Executive summary\" may be a topic label (common topic label). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Executive summary",
+   "n": 2
+  },
+  {
+   "check": "missing_source",
+   "severity": "medium",
+   "slide": 3,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "Exhibit slide (picture) has no source line.",
+   "fix": "Add 'Source: ...' under the exhibit (10 pt or more). If the numbers are not real, say 'Sample data'.",
+   "auto_fix": true,
+   "n": 3
+  },
+  {
+   "check": "chart_as_image",
+   "severity": "medium",
+   "slide": 3,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "\"Picture 2\" looks like a chart pasted as a picture (few flat colors (77), a light background (69%) and straight axis lines).",
+   "fix": "Rebuild it as a native chart so the numbers stay editable and text stays sharp.",
+   "auto_fix": false,
+   "n": 4
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 3,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Bookings performance\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Bookings performance",
+   "n": 5
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 4,
+   "shape_id": 3,
+   "shape": "Table 2",
+   "bbox": [
+    731520,
+    1554480,
+    10698480,
+    2194560
+   ],
+   "message": "Table text at 9 pt (floor 10 pt).",
+   "fix": "Raise the table text size; drop columns or rows that do not support the title.",
+   "auto_fix": true,
+   "min_pt": 9.0,
+   "floor_pt": 10.0,
+   "n": 6
+  },
+  {
+   "check": "missing_source",
+   "severity": "medium",
+   "slide": 4,
+   "shape_id": 3,
+   "shape": "Table 2",
+   "bbox": [
+    731520,
+    1554480,
+    10698480,
+    2194560
+   ],
+   "message": "Exhibit slide (table) has no source line.",
+   "fix": "Add 'Source: ...' under the exhibit (10 pt or more). If the numbers are not real, say 'Sample data'.",
+   "auto_fix": true,
+   "n": 7
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 4,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Q3 ARR bridge\" may be a topic label (3 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Q3 ARR bridge",
+   "n": 8
+  },
+  {
+   "check": "missing_source",
+   "severity": "medium",
+   "slide": 5,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "Exhibit slide (picture) has no source line.",
+   "fix": "Add 'Source: ...' under the exhibit (10 pt or more). If the numbers are not real, say 'Sample data'.",
+   "auto_fix": true,
+   "n": 9
+  },
+  {
+   "check": "chart_as_image",
+   "severity": "medium",
+   "slide": 5,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "\"Picture 2\" looks like a chart pasted as a picture (few flat colors (63), a light background (93%) and straight axis lines).",
+   "fix": "Rebuild it as a native chart so the numbers stay editable and text stays sharp.",
+   "auto_fix": false,
+   "n": 10
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 5,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Churn by segment\" may be a topic label (3 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Churn by segment",
+   "n": 11
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 6,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    2272792,
+    1005840
+   ],
+   "message": "Unfinished content in \"Content Placeholder 2\": TBD.",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "TBD"
+   ],
+   "n": 12
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 6,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 13
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 6,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Q4 outlook\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Q4 outlook",
+   "n": 14
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 7,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 15
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 8,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 16
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 8,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Churn by setup status\" may be a topic label (no verb found; reads like a topic). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Churn by setup status",
+   "n": 17
+  },
+  {
+   "check": "missing_source",
+   "severity": "medium",
+   "slide": 9,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "Exhibit slide (picture) has no source line.",
+   "fix": "Add 'Source: ...' under the exhibit (10 pt or more). If the numbers are not real, say 'Sample data'.",
+   "auto_fix": true,
+   "n": 18
+  },
+  {
+   "check": "chart_as_image",
+   "severity": "medium",
+   "slide": 9,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "\"Picture 2\" looks like a chart pasted as a picture (few flat colors (81), a light background (92%) and straight axis lines).",
+   "fix": "Rebuild it as a native chart so the numbers stay editable and text stays sharp.",
+   "auto_fix": false,
+   "n": 19
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 9,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Onboarding capacity\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Onboarding capacity",
+   "n": 20
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 10,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 10 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 10.0,
+   "floor_pt": 12.0,
+   "n": 21
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 10,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Proposal: hiring plan changes\" may be a topic label (no verb found; reads like a topic). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Proposal: hiring plan changes",
+   "n": 22
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 11,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 23
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 11,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Risks\" may be a topic label (common topic label). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Risks",
+   "n": 24
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 12,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 25
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 12,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Next steps\" may be a topic label (common topic label). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Next steps",
+   "n": 26
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 13,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    8229600,
+    4525963
+   ],
+   "message": "Body text at 11 pt in \"Content Placeholder 2\" (floor 12 pt).",
+   "fix": "Raise to 12 pt; if it no longer fits, cut words or split the slide.",
+   "auto_fix": true,
+   "min_pt": 11.0,
+   "floor_pt": 12.0,
+   "n": 27
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 13,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Cash runway\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Cash runway",
+   "n": 28
+  },
+  {
+   "check": "font_below_floor",
+   "severity": "medium",
+   "slide": 14,
+   "shape_id": 3,
+   "shape": "Table 2",
+   "bbox": [
+    731520,
+    1554480,
+    10698480,
+    2468879
+   ],
+   "message": "Table text at 8 pt (floor 10 pt).",
+   "fix": "Raise the table text size; drop columns or rows that do not support the title.",
+   "auto_fix": true,
+   "min_pt": 8.0,
+   "floor_pt": 10.0,
+   "n": 29
+  },
+  {
+   "check": "missing_source",
+   "severity": "medium",
+   "slide": 14,
+   "shape_id": 3,
+   "shape": "Table 2",
+   "bbox": [
+    731520,
+    1554480,
+    10698480,
+    2468879
+   ],
+   "message": "Exhibit slide (table) has no source line.",
+   "fix": "Add 'Source: ...' under the exhibit (10 pt or more). If the numbers are not real, say 'Sample data'.",
+   "auto_fix": true,
+   "n": 30
+  }
+ ],
+ "fixes": [
+  {
+   "check": "font_below_floor",
+   "slide": 2,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 6 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "missing_source",
+   "slide": 3,
+   "shape": "Picture 2",
+   "shape_id": 3,
+   "action": "added a 'Source: [SOURCE NEEDED]' line under the exhibit",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 4,
+   "shape": "Table 2",
+   "shape_id": 3,
+   "action": "raised 16 text run(s) to the 10 pt floor",
+   "ok": true
+  },
+  {
+   "check": "missing_source",
+   "slide": 4,
+   "shape": "Table 2",
+   "shape_id": 3,
+   "action": "added a 'Source: [SOURCE NEEDED]' line under the exhibit",
+   "ok": true
+  },
+  {
+   "check": "missing_source",
+   "slide": 5,
+   "shape": "Picture 2",
+   "shape_id": 3,
+   "action": "added a 'Source: [SOURCE NEEDED]' line under the exhibit",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 6,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 4 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 7,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 3 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 8,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 3 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "missing_source",
+   "slide": 9,
+   "shape": "Picture 2",
+   "shape_id": 3,
+   "action": "added a 'Source: [SOURCE NEEDED]' line under the exhibit",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 10,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 4 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 11,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 3 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 12,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 3 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 13,
+   "shape": "Content Placeholder 2",
+   "shape_id": 3,
+   "action": "raised 2 text run(s) to the 12 pt floor",
+   "ok": true
+  },
+  {
+   "check": "font_below_floor",
+   "slide": 14,
+   "shape": "Table 2",
+   "shape_id": 3,
+   "action": "raised 36 text run(s) to the 10 pt floor",
+   "ok": true
+  },
+  {
+   "check": "missing_source",
+   "slide": 14,
+   "shape": "Table 2",
+   "shape_id": 3,
+   "action": "added a 'Source: [SOURCE NEEDED]' line under the exhibit",
+   "ok": true
+  }
+ ],
+ "issues_after_fix": [
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 2,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Executive summary\" may be a topic label (common topic label). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Executive summary"
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 3,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    457200,
+    6473952,
+    1669161,
+    243840
+   ],
+   "message": "Unfinished content in \"Source (added by deck-review)\": [SOURCE NEEDED].",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "[SOURCE NEEDED]"
+   ]
+  },
+  {
+   "check": "chart_as_image",
+   "severity": "medium",
+   "slide": 3,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "\"Picture 2\" looks like a chart pasted as a picture (few flat colors (77), a light background (69%) and straight axis lines).",
+   "fix": "Rebuild it as a native chart so the numbers stay editable and text stays sharp.",
+   "auto_fix": false
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 3,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Bookings performance\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Bookings performance"
+  },
+  {
+   "check": "overlap",
+   "severity": "low",
+   "slide": 3,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    1371600,
+    6473952,
+    754761,
+    243840
+   ],
+   "message": "Text \"Source (added by deck-review)\" sits on top of picture \"Picture 2\".",
+   "fix": "Fine if it is a deliberate label; otherwise move it clear.",
+   "auto_fix": false,
+   "other": 3
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 4,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    457200,
+    3794760,
+    1669161,
+    243840
+   ],
+   "message": "Unfinished content in \"Source (added by deck-review)\": [SOURCE NEEDED].",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "[SOURCE NEEDED]"
+   ]
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 4,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Q3 ARR bridge\" may be a topic label (3 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Q3 ARR bridge"
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 5,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    457200,
+    6473952,
+    1669161,
+    243840
+   ],
+   "message": "Unfinished content in \"Source (added by deck-review)\": [SOURCE NEEDED].",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "[SOURCE NEEDED]"
+   ]
+  },
+  {
+   "check": "chart_as_image",
+   "severity": "medium",
+   "slide": 5,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "\"Picture 2\" looks like a chart pasted as a picture (few flat colors (63), a light background (93%) and straight axis lines).",
+   "fix": "Rebuild it as a native chart so the numbers stay editable and text stays sharp.",
+   "auto_fix": false
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 5,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Churn by segment\" may be a topic label (3 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Churn by segment"
+  },
+  {
+   "check": "overlap",
+   "severity": "low",
+   "slide": 5,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    1371600,
+    6473952,
+    754761,
+    243840
+   ],
+   "message": "Text \"Source (added by deck-review)\" sits on top of picture \"Picture 2\".",
+   "fix": "Fine if it is a deliberate label; otherwise move it clear.",
+   "auto_fix": false,
+   "other": 3
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 6,
+   "shape_id": 3,
+   "shape": "Content Placeholder 2",
+   "bbox": [
+    457200,
+    1600200,
+    2431669,
+    1066800
+   ],
+   "message": "Unfinished content in \"Content Placeholder 2\": TBD.",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "TBD"
+   ]
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 6,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Q4 outlook\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Q4 outlook"
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 8,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Churn by setup status\" may be a topic label (no verb found; reads like a topic). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Churn by setup status"
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 9,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    457200,
+    6473952,
+    1669161,
+    243840
+   ],
+   "message": "Unfinished content in \"Source (added by deck-review)\": [SOURCE NEEDED].",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "[SOURCE NEEDED]"
+   ]
+  },
+  {
+   "check": "chart_as_image",
+   "severity": "medium",
+   "slide": 9,
+   "shape_id": 3,
+   "shape": "Picture 2",
+   "bbox": [
+    1371600,
+    1463040,
+    9418320,
+    5297805
+   ],
+   "message": "\"Picture 2\" looks like a chart pasted as a picture (few flat colors (81), a light background (92%) and straight axis lines).",
+   "fix": "Rebuild it as a native chart so the numbers stay editable and text stays sharp.",
+   "auto_fix": false
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 9,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Onboarding capacity\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Onboarding capacity"
+  },
+  {
+   "check": "overlap",
+   "severity": "low",
+   "slide": 9,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    1371600,
+    6473952,
+    754761,
+    243840
+   ],
+   "message": "Text \"Source (added by deck-review)\" sits on top of picture \"Picture 2\".",
+   "fix": "Fine if it is a deliberate label; otherwise move it clear.",
+   "auto_fix": false,
+   "other": 3
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 10,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Proposal: hiring plan changes\" may be a topic label (no verb found; reads like a topic). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Proposal: hiring plan changes"
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 11,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Risks\" may be a topic label (common topic label). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Risks"
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 12,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Next steps\" may be a topic label (common topic label). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Next steps"
+  },
+  {
+   "check": "title_not_claim",
+   "severity": "low",
+   "slide": 13,
+   "shape_id": 2,
+   "shape": "Title 1",
+   "bbox": [
+    457200,
+    274638,
+    8229600,
+    1143000
+   ],
+   "message": "Title \"Cash runway\" may be a topic label (2 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric.",
+   "fix": "Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.",
+   "auto_fix": false,
+   "title": "Cash runway"
+  },
+  {
+   "check": "data_needed",
+   "severity": "high",
+   "slide": 14,
+   "shape_id": 4,
+   "shape": "Source (added by deck-review)",
+   "bbox": [
+    457200,
+    4069079,
+    1669161,
+    243840
+   ],
+   "message": "Unfinished content in \"Source (added by deck-review)\": [SOURCE NEEDED].",
+   "fix": "Fill in the real figure and its source, or cut the claim that needs it.",
+   "auto_fix": false,
+   "markers": [
+    "[SOURCE NEEDED]"
+   ]
+  }
+ ],
+ "render_error": null,
+ "annotated": {
+  "2": "annotated/slide-02.png",
+  "3": "annotated/slide-03.png",
+  "4": "annotated/slide-04.png",
+  "5": "annotated/slide-05.png",
+  "6": "annotated/slide-06.png",
+  "7": "annotated/slide-07.png",
+  "8": "annotated/slide-08.png",
+  "9": "annotated/slide-09.png",
+  "10": "annotated/slide-10.png",
+  "11": "annotated/slide-11.png",
+  "12": "annotated/slide-12.png",
+  "13": "annotated/slide-13.png",
+  "14": "annotated/slide-14.png"
+ }
+}

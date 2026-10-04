@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guide for coding agents (Codex, Cursor, Claude Code and others) that use or change this repository.
+Guide for coding agents that use or change this repository. The skills are tested in Claude Code.
 
 ## Using the skills
 
@@ -22,7 +22,7 @@ python3 skills/deck-build/scripts/build.py deck.json -o out/   # deck.pptx, buil
 
 LibreOffice is optional and only used for the PDF/PNG preview. The scripts never install anything and never use the network.
 
-No-code mode (Claude for PowerPoint, plain chat): follow the same rules in each `SKILL.md` and its `references/` without running scripts.
+No-code mode (plain chat; designed for Claude for PowerPoint too, not yet tested there): follow the same rules in each `SKILL.md` and its `references/` without running scripts.
 
 ## Rules for changing this repository
 

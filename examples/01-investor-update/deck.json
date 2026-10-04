@@ -1,0 +1,464 @@
+{
+  "spec_version": "1.0",
+  "meta": {
+    "title": "Duolingo FY2025 investor update",
+    "organization": "SoWhat Decks example",
+    "date": "Figures as published in February 2026",
+    "language": "en",
+    "draft": false
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "title": "Duolingo FY2025 investor update",
+      "subtitle": "Results and the 2026 plan, built only from public filings. Illustrative example, not affiliated with Duolingo, Inc. Not investment advice.",
+      "date": "Figures as published in February 2026",
+      "author": "SoWhat Decks example",
+      "notes": "Built only from the FY2025 Form 10-K and the Q4 FY2025 and Q4 FY2024 shareholder letters. Every figure is cited on its slide; derived figures show the formula in the speaker notes."
+    },
+    {
+      "layout": "executive_summary",
+      "title": "Duolingo is trading 2026 bookings growth for user growth, so judge 2026 by DAUs",
+      "points": [
+        {
+          "headline": "2025 delivered scale and profit",
+          "detail": "Revenue rose 39% to $1.04B; adjusted EBITDA margin widened from 25.7% to 29.5% (non-GAAP)."
+        },
+        {
+          "headline": "But user growth slowed sharply",
+          "detail": "DAU growth fell from 51% to 30% and paid subscriber growth from 43% to 28% (Q4 vs Q4)."
+        },
+        {
+          "headline": "The 2026 plan gives up bookings growth and margin on purpose",
+          "detail": "Guidance: bookings +10% to +12%, adjusted EBITDA margin 25%, over $50M of bookings invested in free users."
+        },
+        {
+          "headline": "Cash flow can fund the bet",
+          "detail": "$360M of free cash flow in 2025, $1.04B in cash at year end, and a $400M buyback authorization."
+        }
+      ],
+      "source": "Duolingo FY2025 Form 10-K; Q4 FY2025 and Q4 FY2024 shareholder letters (SEC EDGAR). Adjusted EBITDA and free cash flow are non-GAAP.",
+      "notes": "The answer first; the rest of the deck is the proof. Slide 12 turns it into three metrics to track."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "2025 results",
+      "title": "Revenue grew 39% to $1.04B in 2025, the first year above $1B",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "Revenue, fiscal years, $M",
+        "number_format": "#,##0",
+        "categories": [
+          "FY2023",
+          "FY2024",
+          "FY2025"
+        ],
+        "values": [
+          531.1,
+          748.0,
+          1037.6
+        ],
+        "highlight": [
+          "FY2025"
+        ]
+      },
+      "takeaways": [
+        "Growth was 41% in 2024 and 39% in 2025: the top line barely slowed",
+        "Revenue has nearly doubled in two years, from $531M to $1,038M"
+      ],
+      "source": "Duolingo Form 10-K FY2025, revenue (SEC XBRL company facts). Growth: 748.0 / 531.1 - 1 and 1,037.6 / 748.0 - 1.",
+      "notes": "Revenue growth 40.8% in FY2024 and 38.7% in FY2025 (the letters round to 41% and 39%)."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "2025 results",
+      "title": "Operating margin rose from 8.4% to 13.1%, and adjusted EBITDA margin reached 29.5%",
+      "exhibit": {
+        "type": "line",
+        "title": "Margins, fiscal years, %",
+        "number_format": "0.0",
+        "categories": [
+          "FY2023",
+          "FY2024",
+          "FY2025"
+        ],
+        "series": [
+          {
+            "name": "Adj. EBITDA",
+            "values": [
+              null,
+              25.7,
+              29.5
+            ]
+          },
+          {
+            "name": "Operating",
+            "values": [
+              -2.5,
+              8.4,
+              13.1
+            ]
+          }
+        ],
+        "highlight": "Operating"
+      },
+      "takeaways": [
+        "Operating income went from a $13M loss in 2023 to $136M in 2025",
+        "Adjusted EBITDA margin (non-GAAP) rose from 25.7% to 29.5%; the letters used here do not give FY2023"
+      ],
+      "source": "Form 10-K FY2025 (operating income / revenue, SEC XBRL); Q4 FY2025 shareholder letter (adjusted EBITDA, non-GAAP).",
+      "notes": "Operating margin = operating income / revenue: -13.3 / 531.1, 62.6 / 748.0, 135.6 / 1,037.6. Adjusted EBITDA is non-GAAP: $191.9M in FY2024, $305.9M in FY2025."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "2025 results",
+      "title": "A one-time $257M tax benefit makes up most of 2025's $414M net income",
+      "exhibit": {
+        "type": "stacked_bar",
+        "title": "FY2025 net income by component, $M",
+        "number_format": "#,##0",
+        "categories": [
+          "FY2025"
+        ],
+        "series": [
+          {
+            "name": "Rest of net income",
+            "values": [
+              157.4
+            ]
+          },
+          {
+            "name": "One-time tax benefit",
+            "values": [
+              256.7
+            ]
+          }
+        ],
+        "highlight": "One-time tax benefit",
+        "show_totals": true
+      },
+      "takeaways": [
+        "62% of 2025 net income came from releasing a tax valuation allowance",
+        "Without it, net income was about $157M, still up from $89M in 2024",
+        "Read 2025 profit through operating margin, not net income"
+      ],
+      "source": "Form 10-K FY2025 (net income, SEC XBRL); Q4 FY2025 shareholder letter ($256.7M one-time benefit). Rest = 414.1 - 256.7, not a company-reported figure.",
+      "notes": "FY2024 shows no comparable one-time benefit: income tax was an expense of $13.7M (10-K). 256.7 / 414.1 = 62%."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "User engine",
+      "title": "User growth slowed in 2025: DAUs grew 30% after 51%, and MAUs 14% after 32%",
+      "exhibit": {
+        "type": "line",
+        "title": "Growth vs the prior year's fourth quarter, %",
+        "number_format": "0",
+        "categories": [
+          "Q4 2024",
+          "Q4 2025"
+        ],
+        "series": [
+          {
+            "name": "DAUs",
+            "values": [
+              51,
+              30
+            ]
+          },
+          {
+            "name": "Paid subscribers",
+            "values": [
+              43,
+              28
+            ]
+          },
+          {
+            "name": "MAUs",
+            "values": [
+              32,
+              14
+            ]
+          }
+        ],
+        "highlight": "DAUs"
+      },
+      "takeaways": [
+        "Every user metric grew more slowly in 2025 than in 2024",
+        "Q4 2025 base: 52.7M DAUs, 133.1M MAUs, 12.2M paid subscribers",
+        "DAUs feed future subscribers, so this is the number the 2026 plan targets"
+      ],
+      "source": "Duolingo shareholder letters, Q4 FY2025 and Q4 FY2024 (SEC EDGAR).",
+      "notes": "This is the complication: the engine behind revenue is slowing."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "User engine",
+      "title": "Engagement still deepened: 40% of monthly users now open the app daily, up from 35%",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "Daily active users as a share of monthly active users, Q4, %",
+        "number_format": "0.0",
+        "categories": [
+          "Q4 2024",
+          "Q4 2025"
+        ],
+        "values": [
+          34.7,
+          39.6
+        ],
+        "highlight": [
+          "Q4 2025"
+        ]
+      },
+      "takeaways": [
+        "Fewer new users arrived, but the ones who stayed used the app more often",
+        "Daily habit is what converts free users into subscribers"
+      ],
+      "source": "Duolingo shareholder letters, Q4 FY2025 and Q4 FY2024. Ratio = DAUs / MAUs: 40.5 / 116.7 and 52.7 / 133.1.",
+      "notes": "DAU/MAU 34.7% in Q4 2024, 39.6% in Q4 2025."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "User engine",
+      "title": "Paid subscribers grew 28% to 12.2M, slower than the 43% of a year earlier",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "Paid subscribers at quarter end, M",
+        "number_format": "0.0",
+        "categories": [
+          "Q4 2024",
+          "Q4 2025"
+        ],
+        "values": [
+          9.5,
+          12.2
+        ],
+        "highlight": [
+          "Q4 2025"
+        ]
+      },
+      "takeaways": [
+        "The paid share of monthly users still rose, from 8.1% to 9.2%",
+        "Monetization of the base improves even as the base grows more slowly"
+      ],
+      "source": "Duolingo shareholder letters, Q4 FY2025 and Q4 FY2024. Paid share = paid subscribers / MAUs: 9.5 / 116.7 and 12.2 / 133.1.",
+      "notes": "Growth rates as printed in the letters: +43% (Q4 2024), +28% (Q4 2025)."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "2026 plan",
+      "title": "2026 guidance cuts bookings growth to 10-12% by giving up over $50M of bookings to grow free users",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "Total bookings growth, year over year, %",
+        "number_format": "0",
+        "categories": [
+          "FY2024",
+          "FY2025",
+          "FY2026 guidance"
+        ],
+        "values": [
+          40,
+          33,
+          11
+        ],
+        "highlight": [
+          "FY2026 guidance"
+        ]
+      },
+      "takeaways": [
+        "Guidance: bookings of $1,274M to $1,298M in 2026",
+        "Management puts the cost at over $50M of bookings, about 5 points of growth",
+        "The money goes into the free user experience to grow users faster"
+      ],
+      "source": "Duolingo Q4 FY2025 and Q4 FY2024 shareholder letters. FY2026 bar = guidance midpoint: (1,274 + 1,298) / 2 / 1,158.4 - 1 = 11%.",
+      "footnotes": [
+        "FY2026 is company guidance, not a result."
+      ],
+      "notes": "FY2024 bookings $870.6M (+40%); FY2025 $1,158.4M (+33%)."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "2026 plan",
+      "title": "Margins step down in 2026: gross margin to about 69% on AI costs, adjusted EBITDA margin to 25%",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "Gross margin, fiscal years and 2026 guidance, %",
+        "number_format": "0.0",
+        "categories": [
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "Q1 2026",
+          "Rest of 2026"
+        ],
+        "values": [
+          73.2,
+          72.8,
+          72.2,
+          71.0,
+          69.0
+        ],
+        "highlight": [
+          "Q1 2026",
+          "Rest of 2026"
+        ]
+      },
+      "takeaways": [
+        "Gross margin was about 72-73% for three years",
+        "AI-powered features for all users drive the 2026 step-down",
+        "Adjusted EBITDA margin guidance: 25.0%, down from 29.5%"
+      ],
+      "source": "Form 10-K FY2025 (gross profit / revenue, SEC XBRL); Q4 FY2025 shareholder letter (2026 outlook: about 71% in Q1, roughly 69% after).",
+      "footnotes": [
+        "Q1 2026 and rest of 2026 are company guidance, not results."
+      ],
+      "notes": "Gross margin = gross profit / revenue: 389.0 / 531.1, 544.4 / 748.0, 749.5 / 1,037.6."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Cash",
+      "title": "$360M of free cash flow and $1.04B in cash can fund the user bet and a $400M buyback",
+      "exhibit": {
+        "type": "bar",
+        "title": "Cash resources and the buyback authorization, $M",
+        "number_format": "#,##0",
+        "categories": [
+          "Cash, end of 2025",
+          "Buyback authorized",
+          "FY2025 free cash flow"
+        ],
+        "values": [
+          1036.4,
+          400.0,
+          360.4
+        ],
+        "highlight": [
+          "Cash, end of 2025"
+        ]
+      },
+      "takeaways": [
+        "Free cash flow rose 36% from $264M in 2024 (non-GAAP)",
+        "Operating cash flow was $388M in 2025, up from $286M",
+        "The buyback is an authorization; timing is at the company's discretion"
+      ],
+      "source": "Form 10-K FY2025 (cash and operating cash flow, SEC XBRL); Q4 FY2025 shareholder letter (free cash flow, non-GAAP; $400M authorization).",
+      "notes": "The over-$50M of foregone bookings is small next to one year of free cash flow."
+    },
+    {
+      "layout": "recommendations",
+      "title": "Judge 2026 by whether DAU growth re-accelerates above 2025's 30%, not by bookings growth",
+      "items": [
+        {
+          "action": "Track DAU growth against the 30% of Q4 2025",
+          "detail": "The plan only works if user growth speeds up; this is the first number to read in each letter",
+          "owner": "Investors",
+          "due": "Each quarter"
+        },
+        {
+          "action": "Check bookings against the $1,274M to $1,298M guidance",
+          "detail": "Slower bookings growth is planned; a miss below the range is not",
+          "owner": "Investors",
+          "due": "Each quarter"
+        },
+        {
+          "action": "Watch gross margin against the roughly 69% outlook",
+          "detail": "A wider drop would mean the AI cost of serving free users is higher than planned",
+          "owner": "Investors",
+          "due": "Each quarter"
+        }
+      ],
+      "source": "Q4 FY2025 shareholder letter (Q4 2025 DAU growth, 2026 guidance and gross-margin outlook).",
+      "notes": "2026 quarterly results are outside this deck's material; compare each 2026 shareholder letter with these three baselines."
+    },
+    {
+      "layout": "appendix",
+      "title": "Key figures FY2023-FY2025",
+      "table": {
+        "columns": [
+          "$M unless stated",
+          "FY2023",
+          "FY2024",
+          "FY2025"
+        ],
+        "rows": [
+          [
+            "Revenue",
+            531.1,
+            748.0,
+            1037.6
+          ],
+          [
+            "Gross profit",
+            389.0,
+            544.4,
+            749.5
+          ],
+          [
+            "Operating income",
+            -13.3,
+            62.6,
+            135.6
+          ],
+          [
+            "Net income",
+            16.1,
+            88.6,
+            414.1
+          ],
+          [
+            "Operating cash flow",
+            153.6,
+            285.5,
+            387.8
+          ],
+          [
+            "Cash at year end",
+            "n/a",
+            785.8,
+            1036.4
+          ],
+          [
+            "DAUs in Q4, M",
+            "n/a",
+            40.5,
+            52.7
+          ],
+          [
+            "MAUs in Q4, M",
+            "n/a",
+            116.7,
+            133.1
+          ],
+          [
+            "Paid subscribers in Q4, M",
+            "n/a",
+            9.5,
+            12.2
+          ]
+        ],
+        "number_format": "#,##0.0",
+        "highlight": {
+          "cols": [
+            3
+          ]
+        },
+        "align": [
+          "left",
+          "right",
+          "right",
+          "right"
+        ]
+      },
+      "source": "Form 10-K FY2025 (financials, SEC XBRL company facts, CIK 0001562088); Q4 FY2025 and Q4 FY2024 shareholder letters (users).",
+      "footnotes": [
+        "n/a: not in the material used for this deck."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# SAMPLE DATA - fictional company "Sample Co.", invented for testing the deck-storyline skill. Not real figures.
+# Units: ARR figures in $ thousands (k). Quarters are calendar 2026.
+quarter,begin_arr_k,new_arr_k,expansion_arr_k,contraction_arr_k,churned_arr_k,end_arr_k,plan_new_arr_k,plan_end_arr_k,churned_arr_smb_k,churned_arr_midmarket_k,smb_logo_churn_monthly_pct,midmarket_logo_churn_monthly_pct
+Q1,8400,900,250,60,240,9250,850,9200,170,70,1.8,0.6
+Q2,9250,1000,280,70,300,10160,950,10050,220,80,2.2,0.7
+Q3,10160,1150,300,80,480,11050,950,10900,390,90,3.1,0.6
+Q4 (plan),11050,,,,,,1050,12000,,,,

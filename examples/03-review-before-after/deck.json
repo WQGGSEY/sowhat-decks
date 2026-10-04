@@ -1,0 +1,554 @@
+{
+  "spec_version": "1.0",
+  "meta": {
+    "title": "Q3 2026 board update",
+    "organization": "Sample Co. (fictional)",
+    "date": "October 2026",
+    "language": "en",
+    "draft": false,
+    "sample_data": true
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "title": "Q3 2026 board update",
+      "subtitle": "Sample Co. is a fictional B2B software company. Every figure in this deck is sample data, invented for this example.",
+      "date": "Board meeting, October 2026",
+      "author": "CEO, Sample Co."
+    },
+    {
+      "layout": "executive_summary",
+      "title": "Q3 beat plan, but SMB churn puts year-end ARR $230k short; we propose moving two hires to onboarding",
+      "points": [
+        {
+          "headline": "New business is healthy",
+          "detail": "Q3 new ARR beat plan by 21%, the third straight quarter above plan."
+        },
+        {
+          "headline": "SMB churn now limits growth",
+          "detail": "If the trend continues, year-end ARR lands about $230k below the $12.0M plan."
+        },
+        {
+          "headline": "The cause is SMB accounts that never finish setup",
+          "detail": "Onboarding load per specialist rose 41% while the team stayed at two people."
+        },
+        {
+          "headline": "Move two Q4 sales hires to onboarding",
+          "detail": "It saves $110k a year and recovers about $82k of Q4 ARR. We ask for two approvals today."
+        }
+      ],
+      "source": "metrics.csv, smb_onboarding.csv, CEO notes",
+      "notes": "Lead with the ask; the rest of the deck is the proof."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Results",
+      "title": "New ARR beat plan by 21% in Q3, the third straight quarter above plan",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "New ARR versus plan, 2026, %",
+        "number_format": "0.0",
+        "categories": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "values": [
+          5.9,
+          5.3,
+          21.1
+        ],
+        "highlight": [
+          "Q3"
+        ]
+      },
+      "takeaways": [
+        "Q3 new ARR was $1,150k against a $950k plan",
+        "Q1 and Q2 also beat plan, by $50k each",
+        "Demand is not the problem"
+      ],
+      "source": "metrics.csv (new ARR and plan new ARR by quarter). Beat = actual / plan - 1.",
+      "notes": "Q1 900 vs 850; Q2 1,000 vs 950; Q3 1,150 vs 950."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Results",
+      "title": "Ending ARR of $11.05M beat plan by 1.4%, a smaller margin than new ARR because churn rose",
+      "exhibit": {
+        "type": "highlight_table",
+        "title": "ARR bridge by quarter, $k",
+        "columns": [
+          "$k",
+          "Q2",
+          "Q3"
+        ],
+        "rows": [
+          [
+            "Beginning ARR",
+            9250,
+            10160
+          ],
+          [
+            "New",
+            1000,
+            1150
+          ],
+          [
+            "Expansion",
+            280,
+            300
+          ],
+          [
+            "Contraction",
+            -70,
+            -80
+          ],
+          [
+            "Churned",
+            -300,
+            -480
+          ],
+          [
+            "Ending ARR",
+            10160,
+            11050
+          ],
+          [
+            "Plan, ending ARR",
+            10050,
+            10900
+          ],
+          [
+            "Ending ARR vs plan",
+            110,
+            150
+          ]
+        ],
+        "number_format": "#,##0",
+        "highlight": {
+          "rows": [
+            4
+          ]
+        }
+      },
+      "takeaways": [
+        "New ARR beat plan by $200k, ending ARR by only $150k",
+        "Churned ARR rose from $300k in Q2 to $480k in Q3"
+      ],
+      "source": "metrics.csv (ARR movements and plan by quarter).",
+      "notes": "Q3 bridge: 10,160 + 1,150 + 300 - 80 - 480 = 11,050. 150 / 10,900 = 1.4%."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Constraint",
+      "title": "SMB churned ARR more than doubled since Q1 and now offsets a third of new bookings",
+      "exhibit": {
+        "type": "stacked_bar",
+        "title": "Churned ARR by segment, 2026, $k",
+        "number_format": "#,##0",
+        "categories": [
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "series": [
+          {
+            "name": "Mid-market",
+            "values": [
+              70,
+              80,
+              90
+            ]
+          },
+          {
+            "name": "SMB",
+            "values": [
+              170,
+              220,
+              390
+            ]
+          }
+        ],
+        "highlight": "SMB",
+        "show_totals": true
+      },
+      "takeaways": [
+        "Q3 SMB churn of $390k equals 34% of Q3 new ARR",
+        "SMB logo churn rose from 1.8% to 3.1% a month",
+        "Mid-market churn is flat at $70-90k a quarter"
+      ],
+      "source": "metrics.csv (churned ARR by segment, monthly logo churn). 390 / 1,150 = 34%.",
+      "notes": "The change is all SMB."
+    },
+    {
+      "layout": "table",
+      "tracker": "Constraint",
+      "title": "If the SMB trend continues, year-end ARR lands about $230k below the $12.0M plan",
+      "table": {
+        "columns": [
+          "Q4 projection",
+          "$k",
+          "Assumption"
+        ],
+        "rows": [
+          [
+            "Q3 ending ARR",
+            11050,
+            "Actual"
+          ],
+          [
+            "+ New ARR",
+            1150,
+            "Same as Q3 (plan: 1,050)"
+          ],
+          [
+            "+ Expansion",
+            300,
+            "Same as Q3"
+          ],
+          [
+            "- Contraction",
+            -80,
+            "Same as Q3"
+          ],
+          [
+            "- SMB churn",
+            -560,
+            "Rises by the same $170k step as Q2 to Q3"
+          ],
+          [
+            "- Mid-market churn",
+            -90,
+            "Flat at Q3 level"
+          ],
+          [
+            "Year-end ARR",
+            11770,
+            "Projection, not a commitment"
+          ],
+          [
+            "Plan",
+            12000,
+            "Approved annual plan"
+          ],
+          [
+            "Gap to plan",
+            -230,
+            ""
+          ]
+        ],
+        "number_format": "#,##0",
+        "align": [
+          "left",
+          "right",
+          "left"
+        ],
+        "highlight": {
+          "rows": [
+            8
+          ]
+        }
+      },
+      "source": "metrics.csv; projection uses the assumptions in the right-hand column.",
+      "notes": "11,050 + 1,150 + 300 - 80 - 560 - 90 = 11,770; 12,000 - 11,770 = 230."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Cause",
+      "title": "Most SMB accounts that churned in Q3 never finished setup in their first 30 days",
+      "exhibit": {
+        "type": "bar",
+        "title": "SMB accounts that churned in Q3, by setup status, count",
+        "number_format": "0",
+        "categories": [
+          "Never finished setup",
+          "Finished setup"
+        ],
+        "values": [
+          44,
+          17
+        ],
+        "highlight": [
+          "Never finished setup"
+        ]
+      },
+      "takeaways": [
+        "44 of 61 churned SMB accounts (72%) never connected their integrations within 30 days",
+        "Setup is the common thread among the SMB accounts we lost"
+      ],
+      "source": "RevOps pull of the 61 SMB accounts that churned in Q3 (CEO notes). 44 / 61 = 72%.",
+      "notes": "Finished setup = integrations connected within 30 days of signing."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Cause",
+      "title": "Accounts that finish setup churn at about a fifth of the rate of those that do not",
+      "exhibit": {
+        "type": "bar",
+        "orientation": "vertical",
+        "title": "90-day churn by setup status, SMB accounts signed Jan-Jun 2026, %",
+        "number_format": "0",
+        "categories": [
+          "Setup within 30 days",
+          "Setup not finished"
+        ],
+        "values": [
+          4,
+          19
+        ],
+        "highlight": [
+          "Setup not finished"
+        ]
+      },
+      "takeaways": [
+        "4% against 19% in the Jan-Jun cohort",
+        "Getting accounts through setup is the lever onboarding controls"
+      ],
+      "source": "Jan-Jun 2026 SMB cohort (CEO notes). 4 / 19 = 0.21.",
+      "notes": "Cohort analysis; it shows association, which the Q3 churn pull on the previous slide supports."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Cause",
+      "title": "Setup completion fell from 68% to 55% as new accounts per specialist rose 41%",
+      "exhibit": {
+        "type": "highlight_table",
+        "title": "SMB onboarding load and results, 2026",
+        "columns": [
+          "Quarter",
+          "New SMB / month",
+          "Specialists",
+          "Per specialist",
+          "Setup in 30 days, %"
+        ],
+        "rows": [
+          [
+            "Q1",
+            "85",
+            "2",
+            "42.5",
+            "68"
+          ],
+          [
+            "Q2",
+            "100",
+            "2",
+            "50",
+            "61"
+          ],
+          [
+            "Q3",
+            "120",
+            "2",
+            "60",
+            "55"
+          ]
+        ],
+        "highlight": {
+          "cols": [
+            3,
+            4
+          ]
+        },
+        "align": [
+          "left",
+          "right",
+          "right",
+          "right",
+          "right"
+        ]
+      },
+      "takeaways": [
+        "The team is still two specialists, as in January",
+        "Median days to setup went from 9 to 17",
+        "Load per specialist: 42.5 to 60 new accounts a month (+41%)"
+      ],
+      "source": "smb_onboarding.csv. Per specialist = new SMB accounts per month / specialists; 60 / 42.5 - 1 = 41%.",
+      "notes": "Monthly SMB sign-ups rose from 85 to 120 while the team stayed the same."
+    },
+    {
+      "layout": "two_column",
+      "tracker": "Fix",
+      "title": "Shifting two Q4 sales hires to onboarding saves $110k a year and recovers about $82k of Q4 ARR",
+      "left": {
+        "heading": "Plan as approved: 4 sales hires",
+        "bullets": [
+          "4 account executives at about $150k each: $600k a year",
+          "New hires take about 5 months to ramp, so Q4 bookings barely change",
+          "Onboarding stays at 2 specialists"
+        ]
+      },
+      "right": {
+        "heading": "Proposed: 2 sales hires + 2 onboarding",
+        "highlight": true,
+        "bullets": [
+          "2 account executives ($300k) and 2 onboarding specialists ($190k): $110k less a year",
+          "Two support team members can transfer now",
+          "Setting up half of the 170-account backlog saves about $82k of ARR in Q4"
+        ]
+      },
+      "source": "CEO notes (costs, ramp time, backlog of 170 accounts, average SMB ARR $6.4k). $82k = 85 accounts x (19% - 4%) x $6.4k.",
+      "footnotes": [
+        "The $82k is an estimate: it assumes half the backlog is set up in Q4 and the cohort churn rates hold."
+      ],
+      "notes": "Costs are fully loaded annual figures."
+    },
+    {
+      "layout": "two_column",
+      "tracker": "Fix",
+      "title": "The cost is slower sales capacity in 2027, which Sales has not yet sized",
+      "left": {
+        "heading": "What we give up",
+        "bullets": [
+          "Two fewer account executives ramping into 2027",
+          "Sales has not yet modelled the effect on 2027 new ARR",
+          "VP Sales brings that model to the January board"
+        ]
+      },
+      "right": {
+        "heading": "What we keep",
+        "highlight": true,
+        "bullets": [
+          "Q4 bookings: new hires would add little before they ramp",
+          "The $110k a year saving",
+          "A fix for the cause of SMB churn before it grows further"
+        ]
+      },
+      "source": "CEO notes (ramp time, costs); Sales capacity model to follow in January.",
+      "notes": "Be explicit that the 2027 effect is open and when it will be sized."
+    },
+    {
+      "layout": "recommendations",
+      "title": "We ask the board to approve the swap and a revised year-end forecast of $11.85M",
+      "items": [
+        {
+          "action": "Approve converting two Q4 sales requisitions into onboarding specialists",
+          "detail": "Two support team members transfer now; saves $110k a year",
+          "owner": "Board",
+          "due": "Today"
+        },
+        {
+          "action": "Accept a revised year-end ARR forecast of $11.85M",
+          "detail": "$11.77M projection plus about $82k recovered by onboarding",
+          "owner": "Board",
+          "due": "Today"
+        },
+        {
+          "action": "Review SMB churn and the 2027 sales capacity model",
+          "detail": "Setup completion back above 60% is the first test",
+          "owner": "CEO and VP Sales",
+          "due": "January board"
+        }
+      ],
+      "source": "Slides 6 and 10. 11,770 + 82 = 11,852, shown as $11.85M.",
+      "notes": "Two decisions today, one review in January."
+    },
+    {
+      "layout": "appendix",
+      "title": "Cash runway stays near 22 months at the current $650k monthly burn",
+      "table": {
+        "columns": [
+          "Item",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Cash at end of Q3",
+            "$14.2M"
+          ],
+          [
+            "Net burn per month",
+            "About $650k"
+          ],
+          [
+            "Runway at current burn",
+            "About 22 months"
+          ],
+          [
+            "Effect of the swap on annual cost",
+            "$110k lower"
+          ]
+        ],
+        "align": [
+          "left",
+          "right"
+        ]
+      },
+      "source": "CEO notes. Runway = 14,200 / 650 = 21.8 months.",
+      "footnotes": [
+        "The swap lowers annual cost slightly; runway is not the constraint."
+      ]
+    },
+    {
+      "layout": "appendix",
+      "title": "Q1-Q3 2026 metrics by quarter",
+      "table": {
+        "columns": [
+          "$k unless stated",
+          "Q1",
+          "Q2",
+          "Q3"
+        ],
+        "rows": [
+          [
+            "New ARR",
+            900,
+            1000,
+            1150
+          ],
+          [
+            "Plan new ARR",
+            850,
+            950,
+            950
+          ],
+          [
+            "Ending ARR",
+            9250,
+            10160,
+            11050
+          ],
+          [
+            "Plan ending ARR",
+            9200,
+            10050,
+            10900
+          ],
+          [
+            "Churned ARR, SMB",
+            170,
+            220,
+            390
+          ],
+          [
+            "Churned ARR, mid-market",
+            70,
+            80,
+            90
+          ],
+          [
+            "SMB logo churn, % a month",
+            "1.8",
+            "2.2",
+            "3.1"
+          ],
+          [
+            "Mid-market logo churn, % a month",
+            "0.6",
+            "0.7",
+            "0.6"
+          ]
+        ],
+        "number_format": "#,##0",
+        "align": [
+          "left",
+          "right",
+          "right",
+          "right"
+        ]
+      },
+      "source": "metrics.csv."
+    }
+  ]
+}

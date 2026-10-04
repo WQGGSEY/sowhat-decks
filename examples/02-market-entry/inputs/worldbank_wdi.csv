@@ -1,0 +1,301 @@
+iso3,country,indicator_id,indicator,year,value,wdi_last_updated
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2015,129.468797674053,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2016,145.704251250337,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2017,162.782511760443,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2018,118.330216938024,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2019,125.244348145809,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2020,129.40362112725,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2021,132.199444256099,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2022,122.873012230307,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2023,125.238194847046,2026-07-13
+IDN,Indonesia,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2024,122.514946500491,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2015,111.893197374926,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2016,112.517998777897,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2017,110.962137119646,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2018,122.960456861544,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2019,151.006642923206,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2020,133.45620905917,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2021,144.424289981649,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2022,147.428926406785,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2023,117.275521687262,2026-07-13
+PHL,Philippines,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2024,115.298749599352,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2015,145.932577028654,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2016,168.88127084564,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2017,170.783699598766,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2018,175.266001933225,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2019,181.221874232713,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2020,162.327737376294,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2021,168.485285358167,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2022,176.22279253783,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2023,168.642808295144,2026-07-13
+THA,Thailand,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2024,160.639312286761,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2015,129.627056599416,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2016,128.297962650408,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2017,126.097912313395,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2018,146.137840768403,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2019,140.192561828615,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2020,141.655558720912,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2021,136.806313165021,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2022,137.852422819653,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2023,130.991428667547,2026-07-13
+VNM,Viet Nam,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),2024,127.606471743496,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2015,22.062742603379,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2016,25.447353701827,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2017,32.335806250688,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2018,39.9046386385762,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2019,47.6906489788375,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2020,53.72649449,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2021,62.10447842,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2022,66.48461277,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2023,69.20836554,2026-07-13
+IDN,Indonesia,IT.NET.USER.ZS,Individuals using the Internet (% of population),2024,72.78075544,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2015,36.90000153,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2016,39.20000076,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2017,41.59999847,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2018,44.09999847,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2019,43.0266118680279,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2020,53.76490021,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2021,66.90779877,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2022,75.21114422,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2023,77.86699677,2026-07-13
+PHL,Philippines,IT.NET.USER.ZS,Individuals using the Internet (% of population),2024,67.26300914,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2015,39.3161267365004,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2016,47.5049656215909,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2017,52.8919293439676,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2018,56.8174809301456,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2019,66.6524194587528,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2020,77.84374066,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2021,85.26956666,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2022,87.97724503,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2023,89.53525238,2026-07-13
+THA,Thailand,IT.NET.USER.ZS,Individuals using the Internet (% of population),2024,90.86718789,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2015,45,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2016,53,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2017,58.1400000036297,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2018,69.8479286837965,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2019,68.6615802057338,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2020,70.30000012,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2021,74.20999985,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2022,78.58999918,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2023,78.08,2026-07-13
+VNM,Viet Nam,IT.NET.USER.ZS,Individuals using the Internet (% of population),2024,84.15,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2015,4.87632230022123,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2016,5.03306918280177,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2017,5.06978590134916,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2018,5.17429153955024,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2019,5.01928768046282,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2020,-2.06551182934165,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2021,3.70288562827751,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2022,5.30719722664799,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2023,5.04883117855516,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2024,5.03257477088519,2026-07-13
+IDN,Indonesia,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2025,5.10808904438025,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2015,6.34830971672761,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2016,7.14945675000752,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2017,6.9309883258402,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2018,6.34148557153473,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2019,6.11852566221303,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2020,-9.51829474045297,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2021,5.71473313185116,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2022,7.58098212785563,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2023,5.51894967856043,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2024,5.71474526128652,2026-07-13
+PHL,Philippines,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2025,4.40240158710621,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2015,3.13404724911635,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2016,3.43515771692182,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2017,4.1776810321001,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2018,4.22287028746071,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2019,2.11455779628278,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2020,-6.09306312966953,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2021,1.55858232076893,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2022,2.63784213566305,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2023,2.24883437970568,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2024,2.94859986593323,2026-07-13
+THA,Thailand,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2025,2.44247444990198,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2015,6.98715430598611,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2016,6.69000892660424,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2017,6.94019037359206,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2018,7.46500685572751,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2019,7.35926270105006,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2020,2.86541320912272,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2021,2.55372852648131,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2022,8.53750041218142,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2023,4.97865959483225,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2024,7.03955197123018,2026-07-13
+VNM,Viet Nam,NY.GDP.MKTP.KD.ZG,GDP growth (annual %),2025,8.01882998978245,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2015,3288.22269725538,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2016,3521.46943457574,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2017,3798.88326174526,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2018,3860.95353090726,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2019,4106.94856160358,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2020,3853.70288774146,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2021,4287.17313995098,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2022,4730.83484836107,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2023,4876.2992959843,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2024,4925.43644992666,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.CD,GDP per capita (current US$),2025,5059.62596411213,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2015,2909.85818010301,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2016,2985.19564024046,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2017,3038.12124959289,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2018,3168.51036609727,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2019,3400.78949767074,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2020,3227.57910235199,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2021,3484.38593882819,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2022,3548.06930572116,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2023,3804.08274131718,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2024,3985.29464669706,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.CD,GDP per capita (current US$),2025,4170.72347271451,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2015,5688.85335397884,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2016,5833.57715617098,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2017,6413.09182530343,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2018,7099.77650081458,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2019,7605.69657797759,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2020,6983.03412836245,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2021,7055.18760721422,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2022,6910.00995211206,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2023,7210.54130832685,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2024,7386.63615126055,2026-07-13
+THA,Thailand,NY.GDP.PCAP.CD,GDP per capita (current US$),2025,8056.56359761558,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2015,2577.56885340113,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2016,2735.0604380416,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2017,2956.10992127753,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2018,3222.31003125366,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2019,3440.90025375434,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2020,3534.03953482647,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2021,3704.1935590038,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2022,4147.69777213621,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2023,4322.82572261566,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2024,4716.6599379632,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.CD,GDP per capita (current US$),2025,5065.99091899299,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2015,10027.5372996025,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2016,10262.5951651871,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2017,10687.6409218443,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2018,11372.0971987612,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2019,11986.4701508376,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2020,11729.3674458448,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2021,12757.0746440204,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2022,14282.6654124401,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2023,15428.3856954945,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2024,16472.4825935409,2026-07-13
+IDN,Indonesia,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2025,17659.7921291587,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2015,6894.26702217935,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2016,7382.66758431792,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2017,7773.79853599024,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2018,8357.74357934219,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2019,8924.10116402887,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2020,8238.36802037457,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2021,8857.78995115514,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2022,10129.7407504053,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2023,10994.8840414773,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2024,11813.805926453,2026-07-13
+PHL,Philippines,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2025,12576.9867435109,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2015,15791.1714762207,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2016,16671.2506902144,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2017,17573.339815536,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2018,18876.2208766741,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2019,19963.3918407099,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2020,19156.5820127644,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2021,20236.9760408784,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2022,22245.6387597542,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2023,23598.3745068685,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2024,24909.2266037939,2026-07-13
+THA,Thailand,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2025,26250.0723587304,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2015,7671.5819778084,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2016,8374.50684516118,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2017,9169.73192052855,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2018,10009.9714756006,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2019,11029.2732083963,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2020,11609.3177276423,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2021,12048.9019935536,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2022,13902.9499867089,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2023,15033.899969483,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2024,16387.9087954113,2026-07-13
+VNM,Viet Nam,NY.GDP.PCAP.PP.CD,"GDP per capita, PPP (current international $)",2025,18088.491587163,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2015,66.9524898064165,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2016,67.077798038297,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2017,67.1982866155746,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2018,67.3141002204628,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2019,67.4223673692444,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2020,67.5576712934403,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2021,67.7378359790672,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2022,67.9012667725156,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2023,68.0168202172248,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2024,68.1136017534969,2026-07-13
+IDN,Indonesia,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2025,68.2099803183862,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2015,62.6875930117321,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2016,63.1300684825105,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2017,63.5459353202846,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2018,63.899758760509,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2019,64.2071776686226,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2020,64.592028512455,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2021,65.1056206866521,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2022,65.6276748361945,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2023,66.130280353328,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2024,66.6399983988767,2026-07-13
+PHL,Philippines,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2025,67.1371327086275,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2015,71.5683231839936,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2016,71.4840033899878,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2017,71.3970271044959,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2018,71.2751569841428,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2019,71.119813854904,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2020,70.9348809059768,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2021,70.7171395974968,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2022,70.4702497426338,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2023,70.1920646070109,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2024,69.887763454186,2026-07-13
+THA,Thailand,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2025,69.5683912436415,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2015,69.5564437980164,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2016,69.2591615032732,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2017,68.8126189382964,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2018,68.4353308489645,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2019,68.2102971289821,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2020,68.0438111484831,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2021,67.91665042917,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2022,67.8350734151978,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2023,67.7729868011901,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2024,67.7288116705198,2026-07-13
+VNM,Viet Nam,SP.POP.1564.TO.ZS,Population ages 15-64 (% of total population),2025,67.6494468271179,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2015,261799249,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2016,264627418,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2017,267346658,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2018,269951846,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2019,272489381,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2020,274814866,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2021,276758053,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2022,278830529,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2023,281190067,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2024,283487931,2026-07-13
+IDN,Indonesia,SP.POP.TOTL,"Population, total",2025,285721236,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2015,105312992,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2016,106735719,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2017,108119693,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2018,109465287,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2019,110804683,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2020,112081264,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2021,113100950,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2022,113964338,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2023,114891199,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2024,115843670,2026-07-13
+PHL,Philippines,SP.POP.TOTL,"Population, total",2025,116786962,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2015,70540795,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2016,70859841,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2017,71160187,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2018,71376079,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2019,71522271,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2020,71641484,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2021,71727332,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2022,71735329,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2023,71702435,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2024,71668011,2026-07-13
+THA,Thailand,SP.POP.TOTL,"Population, total",2025,71619863,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2015,92823254,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2016,94000117,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2017,95176977,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2018,96237319,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2019,97173776,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2020,98079191,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2021,98935098,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2022,99680655,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2023,100352192,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2024,100987686,2026-07-13
+VNM,Viet Nam,SP.POP.TOTL,"Population, total",2025,101598527,2026-07-13

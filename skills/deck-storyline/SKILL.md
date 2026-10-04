@@ -93,7 +93,7 @@ reasoning each. If it fails, fix titles or order and rerun before going on.
 **8. Ghost deck.** Write the ghost spec and, if deck-build is installed, render it.
 Open the PNGs and read the titles once more as a reader would.
 
-## Script mode (Claude Code, Codex, Cowork, any agent with a shell)
+## Script mode (any agent that can run Python, such as Claude Code)
 
 The helper uses only the Python standard library and makes no network calls.
 
@@ -122,9 +122,9 @@ python3 <deck-build>/scripts/build.py ghost.json -o out/ --name ghost
 - When the storyline is accepted, deck-build turns the same slide plan into a full
   spec: keep each title and swap the ghost slide for its planned layout.
 
-## No-code mode (Claude for PowerPoint sidebar, plain chat)
+## No-code mode (chat, Claude for PowerPoint sidebar)
 
-Same method, no files or scripts.
+Same method, no files or scripts. Designed for chat and the Claude for PowerPoint sidebar; not yet tested in Claude for PowerPoint.
 
 - **Plain chat:** reply with the storyline in the template's order: brief,
   governing message, SCQA, key arguments, slide plan (numbered titles, each with

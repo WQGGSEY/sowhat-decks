@@ -1,0 +1,538 @@
+{
+  "spec_version": "1.0",
+  "meta": {
+    "title": "Which Southeast Asian market first?",
+    "organization": "Hypothetical company",
+    "date": "October 2026",
+    "language": "en",
+    "draft": false
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "title": "Which Southeast Asian market first?",
+      "subtitle": "Market-entry recommendation for a language-learning app. The company is hypothetical; every market statistic is public World Bank data, cited on each slide.",
+      "date": "October 2026",
+      "author": "Head of Growth (hypothetical company)",
+      "notes": "The company, its budget and its team are invented for this example. The market statistics are real: World Bank World Development Indicators, last updated 2026-07-13, retrieved 2026-10-04."
+    },
+    {
+      "layout": "executive_summary",
+      "title": "Launch in Indonesia first, and let a six-week paid test confirm it before full spend",
+      "points": [
+        {
+          "headline": "Indonesia is the largest reachable market",
+          "detail": "206M internet users in 2024, 2.4 times Vietnam's and over 3 times Thailand's."
+        },
+        {
+          "headline": "It stays largest after adjusting for income",
+          "detail": "Internet users times income per person (PPP) puts Indonesia at least twice any other candidate."
+        },
+        {
+          "headline": "Vietnam is the best backup",
+          "detail": "The fastest-growing economy of the four, but its online audience is 41% of Indonesia's."
+        },
+        {
+          "headline": "Whether we can win is still unknown",
+          "detail": "Public statistics do not show willingness to pay, competition or acquisition cost; a six-week paid test does."
+        }
+      ],
+      "source": "World Bank, World Development Indicators (population, internet use, GDP per capita PPP, GDP growth), 2019-2025, retrieved 2026-10-04.",
+      "notes": "The answer, then the four reasons. The recommendation is conditional by design: the test decides."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Reach",
+      "title": "Indonesia has 206M internet users, 2.4 times Vietnam's and over 3 times Thailand's",
+      "exhibit": {
+        "type": "bar",
+        "title": "Internet users, 2024, millions",
+        "number_format": "0.0",
+        "categories": [
+          "Indonesia",
+          "Vietnam",
+          "Philippines",
+          "Thailand"
+        ],
+        "values": [
+          206.3,
+          85.0,
+          77.9,
+          65.1
+        ],
+        "highlight": [
+          "Indonesia"
+        ],
+        "sort": "desc"
+      },
+      "takeaways": [
+        "Indonesia has more internet users than Vietnam and Thailand combined (150M)",
+        "For a mobile app, internet users are the audience we can reach"
+      ],
+      "source": "World Bank WDI, population (SP.POP.TOTL) and individuals using the internet, % (IT.NET.USER.ZS), 2024. Internet users = population x share online.",
+      "notes": "Indonesia 283.5M x 72.8% = 206.3M; Vietnam 101.0M x 84.2% = 85.0M; Philippines 115.8M x 67.3% = 77.9M; Thailand 71.7M x 90.9% = 65.1M."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Reach",
+      "title": "Indonesia also added the most users since 2019 (+76M) and still has 77M people offline",
+      "exhibit": {
+        "type": "stacked_bar",
+        "title": "Population by internet use, millions",
+        "number_format": "0",
+        "categories": [
+          "Thailand",
+          "Vietnam",
+          "Philippines",
+          "Indonesia"
+        ],
+        "series": [
+          {
+            "name": "Online in 2019",
+            "values": [
+              47.7,
+              66.7,
+              47.7,
+              130.0
+            ]
+          },
+          {
+            "name": "Added 2019-2024",
+            "values": [
+              17.5,
+              18.3,
+              30.2,
+              76.4
+            ]
+          },
+          {
+            "name": "Offline in 2024",
+            "values": [
+              6.5,
+              16.0,
+              37.9,
+              77.2
+            ]
+          }
+        ],
+        "highlight": "Added 2019-2024"
+      },
+      "takeaways": [
+        "Indonesia added more users in five years (76M) than Thailand has in total (65M)",
+        "Vietnam and Thailand are already mostly online, so they have less room to add users"
+      ],
+      "source": "World Bank WDI, population and internet use (% of population), 2019 and 2024. Users = population x share online; offline = 2024 population - 2024 users.",
+      "notes": "Bars add up to 2024 population (rounding): Indonesia 283.5M, Philippines 115.8M, Vietnam 101.0M, Thailand 71.7M."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Ability to pay",
+      "title": "Income per person in Indonesia matches Vietnam's and trails only Thailand's",
+      "exhibit": {
+        "type": "bar",
+        "title": "GDP per capita, PPP, 2024, current international $",
+        "number_format": "#,##0",
+        "categories": [
+          "Thailand",
+          "Indonesia",
+          "Vietnam",
+          "Philippines"
+        ],
+        "values": [
+          24909,
+          16472,
+          16388,
+          11814
+        ],
+        "highlight": [
+          "Indonesia"
+        ],
+        "sort": "desc"
+      },
+      "takeaways": [
+        "Indonesia and Vietnam are within 1% of each other",
+        "In 2025 Vietnam edges ahead (18,088 vs 17,660); the two remain close",
+        "The Philippines has the lowest income of the four"
+      ],
+      "source": "World Bank WDI, GDP per capita, PPP (current international $) (NY.GDP.PCAP.PP.CD), 2024 and 2025.",
+      "notes": "PPP adjusts for local prices, which matters for a subscription priced locally."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Ability to pay",
+      "title": "Adjusted for income, Indonesia's online market is at least twice that of any other candidate",
+      "exhibit": {
+        "type": "bar",
+        "title": "Internet users x GDP per capita (PPP), 2024, international $ trillion",
+        "number_format": "0.00",
+        "categories": [
+          "Indonesia",
+          "Thailand",
+          "Vietnam",
+          "Philippines"
+        ],
+        "values": [
+          3.4,
+          1.62,
+          1.39,
+          0.92
+        ],
+        "highlight": [
+          "Indonesia"
+        ],
+        "sort": "desc"
+      },
+      "takeaways": [
+        "2.1 times Thailand, 2.4 times Vietnam, 3.7 times the Philippines",
+        "A rough proxy used only to rank markets, not to size revenue"
+      ],
+      "source": "World Bank WDI, 2024: internet users (population x share online) x GDP per capita, PPP. Assumes users' ability to pay tracks national income per person.",
+      "notes": "Indonesia 206.3M x 16,472 = 3.40T; Thailand 65.1M x 24,909 = 1.62T; Vietnam 85.0M x 16,388 = 1.39T; Philippines 77.9M x 11,814 = 0.92T."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "tracker": "Alternatives",
+      "title": "Vietnam is the best backup: the fastest-growing economy, but under half Indonesia's online audience",
+      "exhibit": {
+        "type": "bar",
+        "title": "Average real GDP growth, 2021-2025, %",
+        "number_format": "0.0",
+        "categories": [
+          "Vietnam",
+          "Philippines",
+          "Indonesia",
+          "Thailand"
+        ],
+        "values": [
+          6.2,
+          5.8,
+          4.8,
+          2.4
+        ],
+        "highlight": [
+          "Vietnam"
+        ],
+        "sort": "desc"
+      },
+      "takeaways": [
+        "Vietnam also grew fastest in 2025: 8.0%, against 5.1% for Indonesia",
+        "Its income per person (PPP) rose 64% from 2019 to 2025, the most of the four",
+        "But its 85M internet users are 41% of Indonesia's, so it is the backup, not the first launch"
+      ],
+      "source": "World Bank WDI: GDP growth, annual % (NY.GDP.MKTP.KD.ZG), mean of 2021-2025; GDP per capita, PPP (2025 / 2019 - 1); internet users 2024.",
+      "notes": "If the Indonesia test fails, Vietnam is next. Average growth = simple mean of the five annual values."
+    },
+    {
+      "layout": "two_column",
+      "tracker": "Alternatives",
+      "title": "Thailand is small and slow-growing, and the Philippines has the lowest income of the four",
+      "left": {
+        "heading": "Thailand",
+        "bullets": [
+          "Fewest internet users: 65.1M in 2024",
+          "Slowest economy: 2.4% average growth in 2021-2025",
+          "Highest income per person: $24,909 (PPP, 2024)",
+          "91% already online, so little room for new users"
+        ]
+      },
+      "right": {
+        "heading": "Philippines",
+        "bullets": [
+          "Lowest income per person: $11,814 (PPP, 2024)",
+          "77.9M internet users in 2024, after a break in the series (appendix)",
+          "Solid growth: 5.8% average in 2021-2025",
+          "Smallest market after adjusting for income: $0.92T"
+        ]
+      },
+      "source": "World Bank WDI: population, internet use, GDP per capita PPP and GDP growth, 2021-2025.",
+      "notes": "Thailand is richest per person but has the smallest online audience."
+    },
+    {
+      "layout": "table",
+      "tracker": "Ability to win",
+      "title": "We cannot yet say if we can win: app spending, competition and acquisition cost are unknown",
+      "table": {
+        "columns": [
+          "Question",
+          "What public statistics show",
+          "What we still have to learn",
+          "How we find out"
+        ],
+        "rows": [
+          [
+            "Will people pay?",
+            "Income per person",
+            "Spend on learning apps",
+            "Paid test: install-to-paid rate"
+          ],
+          [
+            "Who do we beat?",
+            "Not covered",
+            "Top apps and their prices",
+            "App-store rankings"
+          ],
+          [
+            "Can they pay us?",
+            "Not covered",
+            "Card, e-wallet, carrier billing",
+            "Payment-provider reports"
+          ],
+          [
+            "What does a user cost?",
+            "Not covered",
+            "Cost per paying subscriber",
+            "Paid test in both markets"
+          ],
+          [
+            "Can we operate?",
+            "Not covered",
+            "Data and local-entity rules",
+            "Legal review"
+          ]
+        ]
+      },
+      "source": "World Bank WDI covers population, internet use and income only; the other columns list what the team must still collect.",
+      "notes": "Public statistics rank markets; they do not tell us whether this product wins. Owners: Strategy (spend), Growth (competition, test), Finance (payments), Legal (rules)."
+    },
+    {
+      "layout": "exhibit",
+      "tracker": "Ability to win",
+      "title": "A six-week paid test in Indonesia and Vietnam answers those questions before full spend",
+      "exhibit": {
+        "type": "process",
+        "title": "Paid market test, six weeks",
+        "steps": [
+          {
+            "label": "Localize",
+            "detail": "Store page and onboarding in Bahasa Indonesia and Vietnamese"
+          },
+          {
+            "label": "Run paid ads",
+            "detail": "Same budget and creative in both markets"
+          },
+          {
+            "label": "Measure",
+            "detail": "Install-to-paid conversion and cost per paying subscriber"
+          },
+          {
+            "label": "Decide",
+            "detail": "Launch where cost per subscriber meets our payback target"
+          }
+        ],
+        "highlight": 3
+      },
+      "source": "Test design proposed by the team; budget and payback target to be set by Finance before the test starts.",
+      "notes": "Testing both markets at once also confirms the backup."
+    },
+    {
+      "layout": "recommendations",
+      "title": "Approve the paid test now, and launch in Indonesia if acquisition cost meets our payback target",
+      "items": [
+        {
+          "action": "Approve a six-week paid test in Indonesia and Vietnam",
+          "detail": "Same budget and creative in both; test budget set by Finance",
+          "owner": "CEO",
+          "due": "This month"
+        },
+        {
+          "action": "Set the payback target for a new market",
+          "detail": "The go/no-go rule for the test, agreed before it starts",
+          "owner": "CFO",
+          "due": "Before test"
+        },
+        {
+          "action": "Check data-protection and local-entity rules",
+          "detail": "Indonesia and Vietnam, for a consumer subscription app",
+          "owner": "Legal",
+          "due": "Week 4"
+        },
+        {
+          "action": "Decide go or no-go on Indonesia",
+          "detail": "Vietnam is next if Indonesia misses the target",
+          "owner": "CEO and CFO",
+          "due": "Week 6"
+        }
+      ],
+      "source": "Recommendation of this deck; market ranking from World Bank WDI (slides 3-8).",
+      "notes": "Budget figures are not in this deck on purpose: Finance sets them before the test."
+    },
+    {
+      "layout": "appendix",
+      "title": "Indicator table for the four markets, latest World Bank data",
+      "table": {
+        "columns": [
+          "Indicator",
+          "Indonesia",
+          "Vietnam",
+          "Philippines",
+          "Thailand"
+        ],
+        "rows": [
+          [
+            "Population 2024, M",
+            283.5,
+            101.0,
+            115.8,
+            71.7
+          ],
+          [
+            "Internet use 2024, %",
+            72.8,
+            84.2,
+            67.3,
+            90.9
+          ],
+          [
+            "Internet users 2024, M",
+            206.3,
+            85.0,
+            77.9,
+            65.1
+          ],
+          [
+            "GDP per capita PPP 2024, $",
+            "16,472",
+            "16,388",
+            "11,814",
+            "24,909"
+          ],
+          [
+            "GDP growth 2025, %",
+            5.1,
+            8.0,
+            4.4,
+            2.4
+          ],
+          [
+            "Avg GDP growth 2021-25, %",
+            4.8,
+            6.2,
+            5.8,
+            2.4
+          ],
+          [
+            "Income growth 2019-25, %",
+            47.3,
+            64.0,
+            40.9,
+            31.5
+          ],
+          [
+            "Ages 15-64 2025, % of total",
+            68.2,
+            67.7,
+            67.1,
+            69.6
+          ],
+          [
+            "Mobile subscriptions per 100, 2024",
+            122.5,
+            127.6,
+            115.3,
+            160.6
+          ]
+        ],
+        "number_format": "0.0",
+        "align": [
+          "left",
+          "right",
+          "right",
+          "right",
+          "right"
+        ]
+      },
+      "source": "World Bank WDI (SP.POP.TOTL, IT.NET.USER.ZS, NY.GDP.PCAP.PP.CD, NY.GDP.MKTP.KD.ZG, SP.POP.1564.TO.ZS, IT.CEL.SETS.P2), last updated 2026-07-13.",
+      "footnotes": [
+        "Working-age share and mobile subscriptions do not separate the four markets, so the main slides leave them out."
+      ]
+    },
+    {
+      "layout": "appendix",
+      "title": "The Philippines' internet-use rate fell 10.6 points in 2024, so treat its online count with caution",
+      "exhibit": {
+        "type": "line",
+        "title": "Individuals using the internet, % of population",
+        "number_format": "0",
+        "categories": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "Thailand",
+            "values": [
+              39.3,
+              47.5,
+              52.9,
+              56.8,
+              66.7,
+              77.8,
+              85.3,
+              88.0,
+              89.5,
+              90.9
+            ]
+          },
+          {
+            "name": "Vietnam",
+            "values": [
+              45.0,
+              53.0,
+              58.1,
+              69.8,
+              68.7,
+              70.3,
+              74.2,
+              78.6,
+              78.1,
+              84.2
+            ]
+          },
+          {
+            "name": "Indonesia",
+            "values": [
+              22.1,
+              25.4,
+              32.3,
+              39.9,
+              47.7,
+              53.7,
+              62.1,
+              66.5,
+              69.2,
+              72.8
+            ]
+          },
+          {
+            "name": "Philippines",
+            "values": [
+              36.9,
+              39.2,
+              41.6,
+              44.1,
+              43.0,
+              53.8,
+              66.9,
+              75.2,
+              77.9,
+              67.3
+            ]
+          }
+        ],
+        "highlight": "Philippines"
+      },
+      "source": "World Bank WDI, individuals using the internet (% of population) (IT.NET.USER.ZS), 2015-2024.",
+      "footnotes": [
+        "On 2023 data the Philippines had about 89M users (114.9M x 77.9%), still well below Indonesia. This deck does not explain the 2024 drop; check the series notes before using it."
+      ]
+    }
+  ]
+}

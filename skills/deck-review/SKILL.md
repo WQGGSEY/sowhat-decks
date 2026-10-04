@@ -1,6 +1,6 @@
 ---
 name: deck-review
-description: Reviews any PowerPoint deck (.pptx from any tool) like a demanding senior reader. Renders the slides, runs automatic checks (label or overlong titles, text overflow, overlapping or off-slide shapes, text under 12/10 pt, exhibits without a source, charts pasted as pictures, too many fonts or accent colors, misalignment, [DATA NEEDED]), then applies a storyline rubric (title-only read-through, per-slide so-what, duplication and gaps, evidence). Writes review.md with per-slide scores, top 5 fixes and rewritten titles, annotated PNGs, and a safely auto-fixed copy that never changes words or numbers. Use when the user says "review my deck", "check my slides", "critique this presentation", asks for deck feedback, a slide QA or score, or "is this deck ready?" before a board, client or investor meeting (also 덱 리뷰, 장표 검토, 발표자료 피드백, 資料レビュー). Also works without scripts in Claude for PowerPoint or chat.
+description: Reviews any PowerPoint deck (.pptx from any tool) like a demanding senior reader. Renders the slides, runs automatic checks (label or overlong titles, text overflow, overlapping or off-slide shapes, text under 12/10 pt, exhibits without a source, charts pasted as pictures, too many fonts or accent colors, misalignment, [DATA NEEDED]), then applies a storyline rubric (title-only read-through, per-slide so-what, duplication and gaps, evidence). Writes review.md with per-slide scores, top 5 fixes and rewritten titles, annotated PNGs, and a safely auto-fixed copy that never changes words or numbers. Use when the user says "review my deck", "check my slides", "critique this presentation", asks for deck feedback, a slide QA or score, or "is this deck ready?" before a board, client or investor meeting (also 덱 리뷰, 장표 검토, 발표자료 피드백, 資料レビュー). Includes a no-code mode for chat and Claude for PowerPoint (not yet tested there).
 ---
 
 # deck-review
@@ -66,6 +66,8 @@ What each check measures, its threshold and whether it auto-fixes:
 [references/checks.md](references/checks.md).
 
 ## No-code mode
+
+Designed for chat and the Claude for PowerPoint sidebar; not yet tested in Claude for PowerPoint.
 
 In the Claude for PowerPoint sidebar or a plain chat, apply the same standard
 yourself:
