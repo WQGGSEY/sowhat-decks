@@ -10,10 +10,12 @@ from .text import Report
 
 
 def build_deck(spec: dict, template: str | pathlib.Path | None = None,
-               base_dir: str | pathlib.Path | None = None):
+               base_dir: str | pathlib.Path | None = None, on_template=None):
     """Build the deck. Returns (presentation, report). Raises SpecError on an invalid spec.
 
     template overrides spec["template"]["path"]; relative paths resolve against base_dir.
+    on_template(template), if given, runs once after the template is opened and before any slide
+    is drawn; add-on skills use it to adjust template.frame (for example to keep clear of a logo).
     """
     errors = deckspec.validate(spec)
     if errors:
@@ -25,6 +27,8 @@ def build_deck(spec: dict, template: str | pathlib.Path | None = None,
         path = pathlib.Path(base_dir or ".") / tmpl["path"]
     tpl = open_template(path, accent=(spec.get("theme") or {}).get("accent"),
                         language=meta.get("language", "en"), layout_map=tmpl.get("layout_map"))
+    if on_template is not None:
+        on_template(tpl)
     ghost_mode = spec.get("mode") == "ghost"
     if ghost_mode:
         meta = {**meta, "draft": meta.get("draft", True)}  # a ghost deck is a draft unless told otherwise

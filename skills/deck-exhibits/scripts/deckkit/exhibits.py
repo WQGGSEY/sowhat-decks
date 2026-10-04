@@ -19,7 +19,7 @@ from pptx.oxml import parse_xml
 from pptx.oxml.ns import nsdecls, qn
 from pptx.util import Pt
 
-from . import text_fit, theme
+from . import spec as deckspec, text_fit, theme
 from .draw import Ctx, common_size, connector, rect, text
 from .grid import Box, pt, to_pt
 from .numbers import auto_format, fmt_number, format_cell
@@ -579,6 +579,21 @@ def process(ctx: Ctx, slide, ex: dict, box: Box) -> None:
 
 RENDERERS = {"bar": bar, "line": line, "stacked_bar": stacked, "stacked_bar_100": stacked,
              "highlight_table": table, "matrix_2x2": matrix_2x2, "process": process}
+
+
+def register(schema: dict, render, check=None) -> None:
+    """Add an exhibit type from an add-on skill; the validator and every exhibit layout accept it.
+
+    schema: the type's JSON Schema branch, with properties.type.const = the type name. It may $ref
+            deck-spec.schema.json's $defs, e.g. {"$ref": "#/$defs/ex_common/title"}.
+    render: render(ctx, slide, ex, box) draws the exhibit in box, under the shared exhibit title.
+            Its return value is ignored (it may return None): layouts use the area that
+            exhibits.render() returns.
+    check:  optional check(ex, path, errors) for rules a schema cannot express. Like the built-in
+            checks it runs only on a schema-valid spec and appends readable errors.
+    Registering a name again replaces it. Built-in types cannot be replaced (ValueError).
+    """
+    RENDERERS[deckspec.add_exhibit(schema, check)] = render
 
 
 def render(ctx: Ctx, slide, ex: dict, box: Box) -> Box:

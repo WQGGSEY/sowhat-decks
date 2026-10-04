@@ -17,6 +17,7 @@ from .numbers import is_excel_format, is_python_format
 
 SCHEMA_PATH = pathlib.Path(__file__).with_name("deck-spec.schema.json")
 _SCHEMA: dict | None = None
+_ADDED_EXHIBITS: dict = {}  # type name -> check(ex, path, errors) or None, for add-on exhibit types
 
 
 class SpecError(ValueError):
@@ -199,6 +200,27 @@ def _check_exhibit(ex: dict, path: str, errors: list[str]) -> None:
     elif kind == "process":
         if ex.get("highlight", 0) >= len(ex.get("steps", [])):
             errors.append(f"{path}.highlight: step {ex['highlight']} does not exist")
+    elif _ADDED_EXHIBITS.get(kind):
+        _ADDED_EXHIBITS[kind](ex, path, errors)
+
+
+def add_exhibit(branch: dict, check=None) -> str:
+    """Accept one more exhibit type in validation (exhibits.register calls this). Returns its name.
+
+    branch is the type's JSON Schema object with properties.type.const set to the type name; it may
+    $ref this schema's $defs. Adding a name again replaces it; built-in types cannot be replaced.
+    """
+    try:
+        name = branch["properties"]["type"]["const"]
+    except (KeyError, TypeError):
+        raise ValueError("an exhibit schema needs properties.type.const (the type name)") from None
+    branches = schema()["$defs"]["exhibit"]["oneOf"]
+    taken = [_resolve(b)["properties"]["type"]["const"] for b in branches]
+    if name in taken and name not in _ADDED_EXHIBITS:
+        raise ValueError(f"{name!r} is a built-in exhibit type and cannot be replaced")
+    branches[:] = [b for b, t in zip(branches, taken) if t != name] + [branch]
+    _ADDED_EXHIBITS[name] = check
+    return name
 
 
 def validate(spec: Any) -> list[str]:

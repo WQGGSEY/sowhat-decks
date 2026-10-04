@@ -29,6 +29,7 @@ No-code mode (plain chat; designed for Claude for PowerPoint too, not yet tested
 - Runtime dependency is `python-pptx` only (`pypdfium2` is optional, for PNG previews). No network calls, no shell eval, no obfuscated code, no secrets.
 - The shared library lives in `skills/deck-build/scripts/deckkit/`. Never edit a copy in another skill. After changing it run `python tools/sync_lib.py`; CI runs `python tools/sync_lib.py --check`.
 - The deck spec contract is `skills/deck-build/references/deck-spec.schema.json` (explained in `layouts.md`). Keep changes backward compatible.
+- Add-on skills extend deckkit through two public hooks, never by editing a copy: `deckkit.exhibits.register(schema, render, check=None)` adds an exhibit type (its schema branch may `$ref` this schema's `$defs`), and `build_deck(..., on_template=fn)` lets them adjust the opened template's frame before slides are drawn. Built-in exhibit types cannot be replaced. Tests: `tests/test_extension_hooks.py`.
 - No symlinks anywhere: plugin installs and `npx skills add` copy folders and drop links.
 - Never invent numbers in examples or tests. Use public sources with citations, or mark the data "Sample data".
 - Do not use consulting-firm or third-party product trademarks in names, docs or examples.
