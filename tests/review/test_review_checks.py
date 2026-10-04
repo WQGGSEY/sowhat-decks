@@ -1,6 +1,7 @@
 """Behaviour of individual checks on small purpose-built decks."""
 
 import review_builders as B
+from pptx.enum.text import MSO_AUTO_SIZE
 from deckreview.checks import run_checks
 from deckreview.inspect import inspect_pptx
 
@@ -80,7 +81,7 @@ def test_fixed_size_box_that_spills_is_overflow(make_deck):
     def build(prs):
         s = B.add_titled_slide(prs, "Vietnam scores highest on five of seven criteria")
         box = B.add_text(s, B.LONG_TEXT, 0.6, 1.7, 6.0, 1.5, size=16, name="Fixed")
-        box.text_frame.auto_size = 0  # MSO_AUTO_SIZE.NONE
+        box.text_frame.auto_size = MSO_AUTO_SIZE.NONE
 
     found = _issues(make_deck(build), "text_overflow")
     assert [(i["shape"], i["severity"]) for i in found] == [("Fixed", "high")]
