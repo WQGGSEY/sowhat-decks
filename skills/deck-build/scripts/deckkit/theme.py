@@ -119,7 +119,7 @@ def set_east_asian_font(prs, language: str, force: bool = False) -> None:
 
 def _set_color_scheme(root, accent: str) -> None:
     scheme = root.find(".//" + qn("a:clrScheme"))
-    scheme.set("name", "SoWhat")
+    scheme.set("name", "SoWhat Decks")
     colors = {"dk1": INK, "lt1": WHITE, "dk2": INK_2, "lt2": GREY_4, "accent1": accent,
               "accent2": GREY_1, "accent3": GREY_2, "accent4": INK_2, "accent5": GREY_3,
               "accent6": INK, "hlink": accent, "folHlink": INK_2}
@@ -131,7 +131,7 @@ def _set_color_scheme(root, accent: str) -> None:
 
 def _set_font_scheme(root) -> None:
     scheme = root.find(".//" + qn("a:fontScheme"))
-    scheme.set("name", "SoWhat")
+    scheme.set("name", "SoWhat Decks")
     for role, face in (("majorFont", HEAD_FONT), ("minorFont", BODY_FONT)):
         node = scheme.find(qn(f"a:{role}"))
         node.find(qn("a:latin")).set("typeface", face)
@@ -216,7 +216,7 @@ def make_default_template(accent: str = ACCENT, language: str = "en"):
     prs.slide_width, prs.slide_height = SLIDE_W, SLIDE_H
 
     root = _theme_xml(prs)
-    root.set("name", "SoWhat")
+    root.set("name", "SoWhat Decks")
     _set_color_scheme(root, accent.lstrip("#").upper())
     _set_font_scheme(root)
     _save_theme(prs, root)

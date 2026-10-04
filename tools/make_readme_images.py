@@ -68,6 +68,11 @@ def titles_from(storyline: pathlib.Path) -> list[str]:
     return re.findall(r"^### \d+\. (.+)$", storyline.read_text(encoding="utf-8"), re.M)
 
 
+def issues(review: pathlib.Path) -> str:
+    """The "0 high, 0 medium, 6 low" count from a deck-review report, so the image never goes stale."""
+    return re.search(r"^- \*\*Issues:\*\* (.+)$", review.read_text(encoding="utf-8"), re.M).group(1)
+
+
 def hero() -> None:
     picks = [("03-review-before-after", 2), ("01-investor-update", 6), ("02-market-entry", 4),
              ("03-review-before-after", 5), ("02-market-entry", 13), ("03-review-before-after", 12)]
@@ -161,7 +166,7 @@ def demo() -> None:
         card("5  deck-build: native charts, a source on every exhibit", Image.open(e3 / "preview" / "slide-05.png").convert("RGB")),
         card("5  deck-build: the deck ends on the decision", Image.open(e3 / "preview" / "slide-12.png").convert("RGB")),
         card("6  deck-review on the rebuilt deck: 0 high, 0 medium",
-             text=["Draft:    1 high, 18 medium, 11 low", "Rebuilt:  0 high, 0 medium, 12 low",
+             text=[f"Draft:    {issues(e3 / 'review.md')}", f"Rebuilt:  {issues(e3 / 'after-review.md')}",
                    "", "examples/03-review-before-after"]),
     ]
     pal =[f.quantize(colors=64, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE) for f in frames]

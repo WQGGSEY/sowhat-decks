@@ -57,7 +57,7 @@ class Ctx:
 
 def text(ctx: Ctx, slide, box: Box, paras: list[P], *, role: str = "body", max_size: float = 16,
          min_size: float | None = None, align: str = "l", anchor: str = "t", max_lines: int | None = None,
-         color: str | None = theme.INK, size: float | None = None):
+         color: str | None = theme.INK, size: float | None = None, insets: tuple[int, int, int, int] = (0, 0, 0, 0)):
     """Add a text box, shrink its text to fit, record the result. Returns (shape, fit).
 
     The role's floor (text.FLOORS) is the lowest size the text may shrink to.
@@ -66,10 +66,11 @@ def text(ctx: Ctx, slide, box: Box, paras: list[P], *, role: str = "body", max_s
     if size is not None and size < floor:
         raise ValueError(f"{role} text at {size}pt is below its {floor}pt floor")
     lo, hi = (size, size) if size is not None else (max(floor, min_size or floor), max_size)
-    fit = fit_box(paras, box, ctx.frame, max_size=hi, min_size=lo, max_lines=max_lines)
+    fit = fit_box(paras, box, ctx.frame, max_size=hi, min_size=lo, max_lines=max_lines, insets=insets)
     shape = slide.shapes.add_textbox(box.x, box.y, box.w, box.h)
     shape.name = f"sw:{role}"
-    write(shape.text_frame, paras, fit.sizes, align=align, anchor=anchor, lang=ctx.lang, default_color=color)
+    write(shape.text_frame, paras, fit.sizes, align=align, anchor=anchor, insets=insets, lang=ctx.lang,
+          default_color=color)
     ctx.report.add(ctx.slide_no, role, fit, " / ".join(p.text for p in paras))
     return shape, fit
 

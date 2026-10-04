@@ -4,7 +4,7 @@ A draft board deck with planted problems, the deck-review report on it, and the 
 
 | | Draft (`before/before.pptx`) | Rebuilt (`deck.pptx`) |
 |---|---|---|
-| deck-review findings | 1 high, 18 medium, 11 low | 0 high, 0 medium, 12 low |
+| deck-review findings | 1 high, 18 medium, 11 low | 0 high, 0 medium, 6 low |
 | Mechanical score | 7.5 / 10 | 9.6 / 10 |
 | Story score (rubric, mean) | 2.8 / 10 | 9.2 / 10 |
 | Verdict | needs a storyline rework | ready |

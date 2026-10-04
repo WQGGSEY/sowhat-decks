@@ -14,7 +14,7 @@ from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
 from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION, XL_MARKER_STYLE, XL_TICK_LABEL_POSITION, XL_TICK_MARK
 from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
-from pptx.enum.text import MSO_ANCHOR
+from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.oxml import parse_xml
 from pptx.oxml.ns import nsdecls, qn
 from pptx.util import Pt
@@ -26,6 +26,7 @@ from .numbers import auto_format, fmt_number, format_cell
 from .text import P, fit_box, write
 
 LABEL_PT = 12
+END_LABEL_ONE_LINE = 0.18  # widest one-line line-chart end label, as a share of the chart width
 NO_STYLE_TABLE = "{2D5ABB26-0587-4C30-8999-92F81FD0307C}"  # "No Style, No Grid"
 
 
@@ -154,6 +155,15 @@ def _spread(ys: list[float], gap: float, lo: float, hi: float) -> list[float]:
     return [max(lo, y) for y in out]
 
 
+def _label_room(values: list, k: float) -> tuple[float, float]:
+    """Axis (min, max) that keeps a share k of the plot free past each bar end, on the side it points."""
+    top, bottom = max(0, max(values, default=0)), min(0, min(values, default=0))
+    if top == bottom:
+        return 0, 1
+    span = (top - bottom) / (1 - k * (top > 0) - k * (bottom < 0))
+    return bottom - (k * span if bottom < 0 else 0), top + (k * span if top > 0 else 0)
+
+
 def _chart_frame(slide, kind, data, box: Box):
     gf = slide.shapes.add_chart(kind, box.x, box.y, box.w, box.h, data)
     gf.name = "sw:chart"
@@ -198,10 +208,25 @@ def bar(ctx: Ctx, slide, ex: dict, box: Box) -> None:
             dl.font.size = Pt(LABEL_PT)
             dl.font.color.rgb = _rgb(ctx.accent)
             dl.position = XL_LABEL_POSITION.OUTSIDE_END
+    # A fixed plot area and an axis range with room for the value labels: every label, past the end of
+    # its bar (below it when the value is negative), stays inside the plot, so it can never run into the
+    # category labels drawn outside the plot.
     nums = [v for v in vals if v is not None]
-    room = 1.18 if horizontal else 1.12  # headroom so outside-end labels stay inside the plot
-    lo, top = min(0, min(nums, default=0)), max(0, max(nums, default=0))
-    _hide_value_axis(chart, lo=lo * room, hi=top * room if top > 0 else 0)
+    font = ctx.frame.body_font
+    w_pt, h_pt = to_pt(box.w), to_pt(box.h)
+    if horizontal:
+        x = min(0.45, (max(text_fit.text_width(c, font, LABEL_PT) for c in cats) + 10) / w_pt)
+        y, pw, ph = 0.02, 1 - x - 0.01, 0.96
+        label = max((text_fit.text_width(fmt_number(v, fmt), font, LABEL_PT, bold=True) for v in nums), default=0)
+        k = (label * text_fit.SAFETY + 6) / (pw * w_pt)
+    else:
+        slot = 0.96 * w_pt / len(cats)
+        lines = 2 if any(text_fit.text_width(c, font, LABEL_PT) > slot - 4 for c in cats) else 1
+        x, y, pw = 0.02, 0.04, 0.96
+        ph = 1 - y - (lines * LABEL_PT * 1.2 + 8) / h_pt
+        k = (LABEL_PT * 1.2 + 4) / (ph * h_pt)
+    _plot_layout(chart, x, y, pw, ph)
+    _hide_value_axis(chart, *_label_room(nums, min(k, 0.3)))
     _category_axis(chart)
     if horizontal:
         chart.category_axis.reverse_order = True
@@ -244,29 +269,40 @@ def line(ctx: Ctx, slide, ex: dict, box: Box) -> None:
         ser.format.line.color.rgb = _rgb(color)
         ser.format.line.width = Pt(2.5 if color == ctx.accent else 1.75)
 
-    # end labels "Series value" at each series' last point; the plot leaves room for them on the right
+    # End labels "Series value" at each series' last point; the plot leaves room for them on the right.
+    # A label wider than END_LABEL_ONE_LINE of the chart is written as two lines, name then value, so a renderer
+    # can only break between them (LibreOffice wraps data labels at about a fifth of the chart width
+    # and would otherwise split the number). wrap="none" asks renderers not to re-wrap at all.
     font = ctx.frame.body_font
     w_pt, h_pt = to_pt(box.w), to_pt(box.h)
-    ends = [(i, last, f"{s['name']} {fmt_number(s['values'][last], fmt)}")
-            for i, s in enumerate(series_spec)
-            for last in [max((j for j, v in enumerate(s["values"]) if v is not None), default=None)]
-            if last is not None]
-    label_w = max((text_fit.text_width(t, font, LABEL_PT, bold=colors[i] == ctx.accent) for i, _, t in ends), default=0)
+    ends = []
+    for i, s in enumerate(series_spec):
+        last = max((j for j, v in enumerate(s["values"]) if v is not None), default=None)
+        if last is not None:
+            name, value = s["name"], fmt_number(s["values"][last], fmt)
+            ends.append((i, last, [name, value]))
+    width = lambda t, i: text_fit.text_width(t, font, LABEL_PT, bold=colors[i] == ctx.accent)  # noqa: E731
+    two_lines = any(width(" ".join(lines), i) > END_LABEL_ONE_LINE * w_pt for i, _, lines in ends)
+    ends = [(i, last, lines if two_lines else [" ".join(lines)]) for i, last, lines in ends]
+    label_w = max((width(t, i) for i, _, lines in ends for t in lines), default=0)
     axis_w = max(text_fit.text_width(fmt_number(v, fmt), font, LABEL_PT) for v in (lo, hi)) + 8
     x, y = min(0.25, axis_w / w_pt), 0.04
     pw = 1 - x - min(0.45, (label_w + 14) / w_pt)
     ph = 1 - y - (LABEL_PT * 1.6 + 6) / h_pt
     _plot_layout(chart, x, y, pw, ph)
-    gap = LABEL_PT * 1.25 / h_pt
+    gap = (2 if two_lines else 1) * LABEL_PT * 1.25 / h_pt
     want = [y + ph * (hi - series_spec[i]["values"][last]) / (hi - lo) for i, last, _ in ends]
-    for (i, last, label), y0, y1 in zip(ends, want, _spread(want, gap, 0.0, 1 - gap)):
+    for (i, last, lines), y0, y1 in zip(ends, want, _spread(want, gap, 0.0, 1 - gap)):
         dl = series[i].points[last].data_label
         dl.has_text_frame = True
-        dl.text_frame.text = label
-        for run in dl.text_frame.paragraphs[0].runs:
-            run.font.size = Pt(LABEL_PT)
-            run.font.bold = colors[i] == ctx.accent
-            run.font.color.rgb = _rgb(colors[i])
+        dl.text_frame.text = "\n".join(lines)  # one paragraph per line
+        dl.text_frame._txBody.find(qn("a:bodyPr")).set("wrap", "none")
+        for paragraph in dl.text_frame.paragraphs:
+            paragraph.alignment = PP_ALIGN.LEFT  # name and value start at the same x, next to the line end
+            for run in paragraph.runs:
+                run.font.size = Pt(LABEL_PT)
+                run.font.bold = colors[i] == ctx.accent
+                run.font.color.rgb = _rgb(colors[i])
         dl.position = XL_LABEL_POSITION.RIGHT
         if abs(y1 - y0) > 1e-4:  # nudge labels that would collide
             _label_offset(series[i]._element.get_or_add_dLbls().get_or_add_dLbl_for_point(last), 0, y1 - y0)
@@ -442,20 +478,25 @@ def matrix_2x2(ctx: Ctx, slide, ex: dict, box: Box) -> None:
     gap = ctx.s(0.05)
     quads = [q for row in area.rows(2, gap) for q in row.cols(2, gap)]  # TL, TR, BL, BR
     hq = ex.get("highlight_quadrant")
-    # quadrant names sit on the outer edges (top row at the top, bottom row at the bottom), so the
-    # middle of the matrix stays free for items; name_h is the strip they take
-    pad = ctx.s(0.1)
-    names = [(q.inset(ctx.s(0.12), 0, ctx.s(0.12), 0), [P(label, bold=True)]) for q, label in zip(quads, ex["quadrants"])]
-    name_size = common_size(ctx, [(b.moved(h=ctx.s(0.5)), p) for b, p in names], max_size=14, min_size=12, max_lines=2)
-    name_h = max(pt(fit_box(p, b.moved(h=ctx.s(0.5)), ctx.frame, max_size=name_size, min_size=name_size).height_pt)
-                 for b, p in names) + ctx.s(0.04)
-    for i, (q, (nbox, paras)) in enumerate(zip(quads, names)):
+    # Quadrant names sit on the outer edges (top row at the top, bottom row at the bottom), so the
+    # middle of the matrix stays free for items. Each name box spans its quadrant edge to edge and
+    # keeps the padding as text insets, so its edges line up with the quadrant's. name_h is the
+    # strip a name takes, padding included.
+    pad, side = ctx.s(0.1), ctx.s(0.12)
+    names = [[P(label, bold=True)] for label in ex["quadrants"]]
+    probe = [(q.inset(side, 0, side, 0).moved(h=ctx.s(0.5)), p) for q, p in zip(quads, names)]
+    name_size = common_size(ctx, probe, max_size=14, min_size=12, max_lines=2)
+    name_h = pad + ctx.s(0.04) + max(pt(fit_box(p, b, ctx.frame, max_size=name_size, min_size=name_size).height_pt)
+                                     for b, p in probe)
+    for i, (q, paras) in enumerate(zip(quads, names)):
         lit = i == hq
         rect(slide, q, fill=ctx.accent_tint if lit else theme.GREY_4, name="sw:quadrant")
         if paras[0].text:
-            top = nbox.y + pad if i < 2 else nbox.bottom - pad - name_h
-            text(ctx, slide, nbox.moved(y=top, h=name_h), paras, role="label", size=name_size, max_lines=2,
-                 anchor="t" if i < 2 else "b", color=ctx.accent if lit else theme.INK_2)
+            top_row = i < 2
+            text(ctx, slide, q.moved(y=q.y if top_row else q.bottom - name_h, h=name_h), paras, role="label",
+                 size=name_size, max_lines=2, anchor="t" if top_row else "b",
+                 insets=(side, pad, side, 0) if top_row else (side, 0, side, pad),
+                 color=ctx.accent if lit else theme.INK_2)
     for x2, y2 in ((area.x, area.y), (area.right, area.bottom)):
         connector(slide, area.x, area.bottom, x2, y2, color=theme.INK_2, width=1.25, name="sw:axis", arrow=True)
     lab_h = ctx.s(0.3)
@@ -480,7 +521,7 @@ def matrix_2x2(ctx: Ctx, slide, ex: dict, box: Box) -> None:
     dot = ctx.s(0.18)
     lh = ctx.s(0.28)
     font = ctx.frame.body_font
-    keep_out = pad + name_h + ctx.s(0.04) + lh // 2  # item labels stay clear of the quadrant names
+    keep_out = name_h + ctx.s(0.04) + lh // 2  # item labels stay clear of the quadrant names
     for item in ex.get("items", []):
         cx = area.x + int(item["x"] * area.w)
         cy = area.bottom - int(item["y"] * area.h)
@@ -540,6 +581,8 @@ RENDERERS = {"bar": bar, "line": line, "stacked_bar": stacked, "stacked_bar_100"
              "highlight_table": table, "matrix_2x2": matrix_2x2, "process": process}
 
 
-def render(ctx: Ctx, slide, ex: dict, box: Box) -> None:
+def render(ctx: Ctx, slide, ex: dict, box: Box) -> Box:
+    """Exhibit title, then the exhibit. Returns the box the exhibit itself fills (under its title)."""
     area = header(ctx, slide, exhibit_title(ex), box)
     RENDERERS[ex["type"]](ctx, slide, ex, area)
+    return area

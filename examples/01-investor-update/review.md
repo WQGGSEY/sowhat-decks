@@ -3,16 +3,16 @@
 Automatic checks by deck-review on 2026-10-04 (`review.py run deck.pptx --no-fix --no-render`; deck-build had already rendered every slide to `preview/`). Story scores, so-what lines and the rubric review were filled in by the agent with `skills/deck-review/references/rubric.md` after looking at each rendered slide.
 
 - **Slides:** 13
-- **Issues:** 0 high, 0 medium, 14 low
-- **Mechanical score:** 9.5/10 (mean of slides; story score is the agent's)
+- **Issues:** 0 high, 0 medium, 5 low
+- **Mechanical score:** 9.8/10 (mean of slides; story score is the agent's)
 
 ## Top 5 fixes
 
-1. **[low] Edges that almost line up** — slides 3, 4, 5, 6, 7, 8, 9, 10, 11 (#1, #2, #6, #7, #8, #9, …). Snap them to a shared edge.
-2. **[low] Text or exhibits collide** — slide 5 (#3, #4, #5). Move or resize so nothing sits on top of text.
-3. **[low] Titles that may be topic labels (heuristic; confirm by reading)** — slide 13 (#14). Rewrite each as one sentence that states what the slide proves (see Rewritten titles).
+1. **[low] Text or exhibits collide** — slide 5 (#1, #2, #3). Move or resize so nothing sits on top of text.
+2. **[low] Edges that almost line up** — slide 5 (#4). Snap them to a shared edge.
+3. **[low] Titles that may be topic labels (heuristic; confirm by reading)** — slide 13 (#5). Rewrite each as one sentence that states what the slide proves (see Rewritten titles).
 
-Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. All 14 findings are low severity and are explained (and overruled) in the rubric review below. Nothing needs to change before this deck is shown.
+Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. All 5 findings are low severity and are explained (and overruled) in the rubric review below. Nothing needs to change before this deck is shown.
 
 ## Title read-through
 
@@ -50,17 +50,17 @@ Proposed by the agent from the slide's own content. No number was added that the
 |---|---|---|---|---|
 | 1 | Duolingo FY2025 investor update | 10.0 | — | — |
 | 2 | Duolingo is trading 2026 bookings growth for user growth, s… | 10.0 | 10 | — |
-| 3 | Revenue grew 39% to $1.04B in 2025, the first year above $1B | 9.5 | 9 | #1 |
-| 4 | Operating margin rose from 8.4% to 13.1%, and adjusted EBIT… | 9.5 | 9 | #2 |
-| 5 | A one-time $257M tax benefit makes up most of 2025's $414M … | 7.5 | 10 | #3, #4, #5, #6, #7 |
-| 6 | User growth slowed in 2025: DAUs grew 30% after 51%, and MA… | 9.5 | 9 | #8 |
-| 7 | Engagement still deepened: 40% of monthly users now open th… | 9.5 | 9 | #9 |
-| 8 | Paid subscribers grew 28% to 12.2M, slower than the 43% of … | 9.5 | 9 | #10 |
-| 9 | 2026 guidance cuts bookings growth to 10-12% by giving up o… | 9.5 | 10 | #11 |
-| 10 | Margins step down in 2026: gross margin to about 69% on AI … | 9.5 | 9 | #12 |
-| 11 | $360M of free cash flow and $1.04B in cash can fund the use… | 9.5 | 9 | #13 |
+| 3 | Revenue grew 39% to $1.04B in 2025, the first year above $1B | 10.0 | 9 | — |
+| 4 | Operating margin rose from 8.4% to 13.1%, and adjusted EBIT… | 10.0 | 9 | — |
+| 5 | A one-time $257M tax benefit makes up most of 2025's $414M … | 8.0 | 10 | #1, #2, #3, #4 |
+| 6 | User growth slowed in 2025: DAUs grew 30% after 51%, and MA… | 10.0 | 9 | — |
+| 7 | Engagement still deepened: 40% of monthly users now open th… | 10.0 | 9 | — |
+| 8 | Paid subscribers grew 28% to 12.2M, slower than the 43% of … | 10.0 | 9 | — |
+| 9 | 2026 guidance cuts bookings growth to 10-12% by giving up o… | 10.0 | 10 | — |
+| 10 | Margins step down in 2026: gross margin to about 69% on AI … | 10.0 | 9 | — |
+| 11 | $360M of free cash flow and $1.04B in cash can fund the use… | 10.0 | 9 | — |
 | 12 | Judge 2026 by whether DAU growth re-accelerates above 2025'… | 10.0 | 10 | — |
-| 13 | Key figures FY2023-FY2025 | 9.5 | 7 | #14 |
+| 13 | Key figures FY2023-FY2025 | 9.5 | 7 | #5 |
 
 ### Slide 1: Duolingo FY2025 investor update
 
@@ -74,51 +74,50 @@ Proposed by the agent from the slide's own content. No number was added that the
 
 ### Slide 3: Revenue grew 39% to $1.04B in 2025, the first year above $1B
 
-- **#1 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The business has real scale. The highlighted FY2025 bar shows $1,038M and the source line gives the growth formula.
 
 ### Slide 4: Operating margin rose from 8.4% to 13.1%, and adjusted EBITDA margin reached 29.5%
 
-- **#2 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** Profitability improved on both measures; both lines are on the chart and the non-GAAP measure is labelled.
 
 ### Slide 5: A one-time $257M tax benefit makes up most of 2025's $414M net income
 
+- **#1 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
+- **#2 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
 - **#3 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#4 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#5 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#6 [low] misaligned**: "sw:label" is 0.08 in off the left edge of "sw:title". Fix: Snap it to the same edge.
-- **#7 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- **#4 [low] misaligned**: "sw:label" is 0.08 in off the left edge of "sw:title". Fix: Snap it to the same edge.
 - **So what:** Most of 2025's net income will not repeat. The stacked bar splits $414M into $257M one-time and $157M rest; the subtraction is disclosed.
 
 ### Slide 6: User growth slowed in 2025: DAUs grew 30% after 51%, and MAUs 14% after 32%
 
-- **#8 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The complication: all three user metrics slowed, and DAUs fell most. The slope chart shows every number in the title.
 
 ### Slide 7: Engagement still deepened: 40% of monthly users now open the app daily, up from 35%
 
-- **#9 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** A counterweight: engagement deepened. Both ratios are on the chart and the formula is in the source line.
 
 ### Slide 8: Paid subscribers grew 28% to 12.2M, slower than the 43% of a year earlier
 
-- **#10 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** Subscribers still grew, but more slowly. The chart shows 9.5M and 12.2M; the growth rates in the title come from the letters cited.
 
 ### Slide 9: 2026 guidance cuts bookings growth to 10-12% by giving up over $50M of bookings to grow free users
 
-- **#11 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The slowdown in 2026 is chosen, not suffered: the bar shows the 11% guidance midpoint and the takeaways give the $50M cost. The footnote says it is guidance.
 
 ### Slide 10: Margins step down in 2026: gross margin to about 69% on AI costs, adjusted EBITDA margin to 25%
 
-- **#12 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** Margins fall on purpose too. Gross margin is on the chart; the 25% adjusted EBITDA guidance is in the takeaways rather than the exhibit (minor).
 
 ### Slide 11: $360M of free cash flow and $1.04B in cash can fund the user bet and a $400M buyback
 
-- **#13 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The bet is affordable. Cash, buyback and free cash flow are on the chart; the comparison with the over-$50M bet is in the speaker notes rather than on the slide (minor).
 
 ### Slide 12: Judge 2026 by whether DAU growth re-accelerates above 2025's 30%, not by bookings growth
@@ -128,7 +127,7 @@ Proposed by the agent from the slide's own content. No number was added that the
 
 ### Slide 13: Key figures FY2023-FY2025
 
-- **#14 [low] title_not_claim**: Title "Key figures FY2023-FY2025" may be a topic label (3 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric; in the appendix a label is acceptable, a claim is better. Fix: Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.
+- **#5 [low] title_not_claim**: Title "Key figures FY2023-FY2025" may be a topic label (3 words, no verb). This is a heuristic guess; confirm it with the title-only read in the rubric; in the appendix a label is acceptable, a claim is better. Fix: Rewrite as a claim: subject + verb + so-what, e.g. what changed, by how much, and why it matters.
 - **So what:** Back-up table for every financial and user figure used in the deck; n/a marks what the material did not cover.
 
 ## Rubric review
@@ -153,8 +152,7 @@ Audience and purpose (from the brief): investors who know the headline numbers; 
 
 **[DATA NEEDED] and placeholders:** none. The storyline had one open request (2026 quarterly DAU growth). It is outside the material the brief allows, so the final deck states what to track instead of leaving a placeholder.
 
-**Low findings overruled (all 14):**
-- `misaligned` on slides 3-11: the takeaways panel starts at the exhibit-title row by design, 0.06 in above the chart frame. Visible as intended in `preview/`.
+**Low findings overruled (all 5):**
 - `overlap` and one label `misaligned` on slide 5: the series names are deliberate labels beside the stacked bar.
 - `title_not_claim` on slide 13: appendix label, allowed.
 

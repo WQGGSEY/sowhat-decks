@@ -12,7 +12,7 @@ Illustrative example, not affiliated with or endorsed by Duolingo, Inc. Not inve
 | [deck.json](deck.json) | The deck spec deck-build reads |
 | [deck.pptx](deck.pptx) · [deck.pdf](deck.pdf) | The deck. Charts are native PowerPoint charts |
 | [preview/](preview/) | Slide images (rendered with LibreOffice, scaled to 960 px) |
-| [review.md](review.md) | deck-review report: 0 high, 0 medium, 14 low (all explained) |
+| [review.md](review.md) | deck-review report: 0 high, 0 medium, 5 low (all explained) |
 | [SOURCES.md](SOURCES.md) | Every source with its URL, and every formula |
 
 **Titles only:** Duolingo is trading 2026 bookings growth for user growth, so judge 2026 by DAUs. Revenue grew 39% to $1.04B in 2025, the first year above $1B. Operating margin rose from 8.4% to 13.1%, and adjusted EBITDA margin reached 29.5%. A one-time $257M tax benefit makes up most of 2025's $414M net income. User growth slowed in 2025: DAUs grew 30% after 51%, and MAUs 14% after 32%. ... Judge 2026 by whether DAU growth re-accelerates above 2025's 30%, not by bookings growth.

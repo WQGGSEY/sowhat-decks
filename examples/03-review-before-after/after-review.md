@@ -3,15 +3,15 @@
 Automatic checks by deck-review on 2026-10-04: `python3 skills/deck-review/scripts/review.py run examples/03-review-before-after/deck.pptx --no-fix --no-render` (deck-build had already rendered every slide to `preview/`). Story scores, so-what lines and the rubric review were filled in by the agent with `skills/deck-review/references/rubric.md` after looking at each rendered slide. Compare with `review.md`, the review of the draft this deck replaces.
 
 - **Slides:** 14
-- **Issues:** 0 high, 0 medium, 12 low
-- **Mechanical score:** 9.6/10 (mean of slides; story score is the agent's)
+- **Issues:** 0 high, 0 medium, 6 low
+- **Mechanical score:** 9.8/10 (mean of slides; story score is the agent's)
 
 ## Top 5 fixes
 
-1. **[low] Edges that almost line up** — slides 3, 4, 5, 7, 8, 9 (#1, #2, #8, #9, #10, #11, …). Snap them to a shared edge.
-2. **[low] Text or exhibits collide** — slide 5 (#3, #4, #5, #6, #7). Move or resize so nothing sits on top of text.
+1. **[low] Text or exhibits collide** — slide 5 (#1, #2, #3, #4, #5). Move or resize so nothing sits on top of text.
+2. **[low] Edges that almost line up** — slide 5 (#6). Snap them to a shared edge.
 
-Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. All 12 findings are low severity and are explained (and overruled) in the rubric review below.
+Agent re-rank: no storyline, evidence or readability problem was found, so the list above stays as polish only. All 6 findings are low severity and are explained (and overruled) in the rubric review below.
 
 ## Title read-through
 
@@ -46,13 +46,13 @@ No title failed the automatic claim and length checks. The agent checked each cl
 |---|---|---|---|---|
 | 1 | Q3 2026 board update | 10.0 | — | — |
 | 2 | Q3 beat plan, but SMB churn puts year-end ARR $230k short; … | 10.0 | 10 | — |
-| 3 | New ARR beat plan by 21% in Q3, the third straight quarter … | 9.5 | 9 | #1 |
-| 4 | Ending ARR of $11.05M beat plan by 1.4%, a smaller margin t… | 9.5 | 9 | #2 |
-| 5 | SMB churned ARR more than doubled since Q1 and now offsets … | 6.5 | 10 | #3, #4, #5, #6, #7, #8, #9 |
+| 3 | New ARR beat plan by 21% in Q3, the third straight quarter … | 10.0 | 9 | — |
+| 4 | Ending ARR of $11.05M beat plan by 1.4%, a smaller margin t… | 10.0 | 9 | — |
+| 5 | SMB churned ARR more than doubled since Q1 and now offsets … | 7.0 | 10 | #1, #2, #3, #4, #5, #6 |
 | 6 | If the SMB trend continues, year-end ARR lands about $230k … | 10.0 | 10 | — |
-| 7 | Most SMB accounts that churned in Q3 never finished setup i… | 9.5 | 9 | #10 |
-| 8 | Accounts that finish setup churn at about a fifth of the ra… | 9.5 | 9 | #11 |
-| 9 | Setup completion fell from 68% to 55% as new accounts per s… | 9.5 | 9 | #12 |
+| 7 | Most SMB accounts that churned in Q3 never finished setup i… | 10.0 | 9 | — |
+| 8 | Accounts that finish setup churn at about a fifth of the ra… | 10.0 | 9 | — |
+| 9 | Setup completion fell from 68% to 55% as new accounts per s… | 10.0 | 9 | — |
 | 10 | Shifting two Q4 sales hires to onboarding saves $110k a yea… | 10.0 | 10 | — |
 | 11 | The cost is slower sales capacity in 2027, which Sales has … | 10.0 | 9 | — |
 | 12 | We ask the board to approve the swap and a revised year-end… | 10.0 | 10 | — |
@@ -71,23 +71,22 @@ No title failed the automatic claim and length checks. The agent checked each cl
 
 ### Slide 3: New ARR beat plan by 21% in Q3, the third straight quarter above plan
 
-- **#1 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** Demand is not the problem: the Q3 bar shows the 21% beat and the takeaways show all three quarters beat plan.
 
 ### Slide 4: Ending ARR of $11.05M beat plan by 1.4%, a smaller margin than new ARR because churn rose
 
-- **#2 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:table". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The bridge shows why ending ARR beat plan by less: churned ARR is the highlighted row, $300k to $480k.
 
 ### Slide 5: SMB churned ARR more than doubled since Q1 and now offsets a third of new bookings
 
+- **#1 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
+- **#2 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
 - **#3 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
 - **#4 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
 - **#5 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#6 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#7 [low] overlap**: Text "sw:label" sits on top of chart "sw:chart". Fix: Fine if it is a deliberate label; otherwise move it clear.
-- **#8 [low] misaligned**: "sw:label" is 0.08 in off the left edge of "sw:title". Fix: Snap it to the same edge.
-- **#9 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- **#6 [low] misaligned**: "sw:label" is 0.08 in off the left edge of "sw:title". Fix: Snap it to the same edge.
 - **So what:** SMB is the whole change in churn; the stacked bar shows 170 to 390 and the takeaway gives the one-third share.
 
 ### Slide 6: If the SMB trend continues, year-end ARR lands about $230k below the $12.0M plan
@@ -97,17 +96,17 @@ No title failed the automatic claim and length checks. The agent checked each cl
 
 ### Slide 7: Most SMB accounts that churned in Q3 never finished setup in their first 30 days
 
-- **#10 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The symptom: 44 of 61 churned accounts never finished setup.
 
 ### Slide 8: Accounts that finish setup churn at about a fifth of the rate of those that do not
 
-- **#11 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:chart". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The mechanism: 4% vs 19% churn by setup status.
 
 ### Slide 9: Setup completion fell from 68% to 55% as new accounts per specialist rose 41%
 
-- **#12 [low] misaligned**: "sw:body" is 0.06 in off the top edge of "sw:table". Fix: Snap it to the same edge.
+- No automatic findings.
 - **So what:** The driver: load per specialist up 41% while setup completion fell; both columns are highlighted in the table.
 
 ### Slide 10: Shifting two Q4 sales hires to onboarding saves $110k a year and recovers about $82k of Q4 ARR
@@ -157,8 +156,8 @@ Audience and purpose (from `brief.md`): the board of a fictional SaaS company; t
 
 **[DATA NEEDED] and placeholders:** none. The storyline kept one open item (2027 sales capacity). The board can decide without it, so slides 11 and 12 state it as unsized and assign it to the VP Sales for the January meeting instead of leaving a placeholder.
 
-**Low findings overruled (all 12):** `misaligned` on slides 3, 4, 5, 7, 8 and 9 (the takeaways panel starts at the exhibit-title row by design, 0.06 in above the exhibit frame) and `overlap` plus one label `misaligned` on slide 5 (series names placed beside the stacked bars on purpose).
+**Low findings overruled (all 6):** `overlap` plus one label `misaligned` on slide 5 (series names placed beside the stacked bars on purpose).
 
-**Before and after.** Draft (`review.md`): 1 high, 18 medium, 11 low; story mean 2.8; verdict "needs a storyline rework". This deck: 0 high, 0 medium, 12 low; story mean 9.2 over slides 2-14; verdict ready.
+**Before and after.** Draft (`review.md`): 1 high, 18 medium, 11 low; story mean 2.8; verdict "needs a storyline rework". This deck: 0 high, 0 medium, 6 low; story mean 9.2 over slides 2-14; verdict ready.
 
 **Verdict:** ready.

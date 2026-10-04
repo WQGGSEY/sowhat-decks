@@ -58,3 +58,17 @@ def test_build_flags_what_deck_review_flags(name, lang, slide, tmp_path):
 def test_committed_specs_are_clean_for_deck_review(path, tmp_path):
     mine, theirs = verdicts(json.loads(path.read_text(encoding="utf-8")), tmp_path / "deck.pptx")
     assert not mine and not theirs, [t["message"] for t in theirs]
+
+
+@pytest.mark.parametrize("path", sorted((ROOT / "tests" / "fixtures").glob("*.json")), ids=lambda p: p.stem)
+def test_takeaways_panel_lines_up_with_the_exhibit(path, tmp_path):
+    """deck-review reports no misalignment between the takeaways text and the exhibit beside it (#17)."""
+    spec = json.loads(path.read_text(encoding="utf-8"))
+    panels = [i for i, s in enumerate(spec["slides"], 1) if s["layout"] == "exhibit_takeaways" and spec.get("mode") != "ghost"]
+    if not panels:
+        pytest.skip("no exhibit_takeaways slide")
+    prs, _ = build_deck(spec)
+    prs.save(tmp_path / "deck.pptx")
+    flagged = [i for i in deckreview.run_checks(inspect_pptx(str(tmp_path / "deck.pptx")))
+               if i["check"] == "misaligned" and i["slide"] in panels and "sw:body" in i["message"]]
+    assert flagged == [], [i["message"] for i in flagged]

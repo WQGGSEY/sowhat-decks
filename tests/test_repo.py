@@ -84,3 +84,26 @@ def test_default_template_asset_opens():
     prs = Presentation(ROOT / "skills" / "deck-build" / "assets" / "default-template.pptx")
     assert (prs.slide_width, prs.slide_height) == (12192000, 6858000)
     assert "Title Only" in [layout.name for layout in prs.slide_layouts]
+
+
+def test_brand_name_is_always_sowhat_decks():
+    """The product name is written as a unit: "SoWhat Decks" (#16)."""
+    pattern = re.compile("SoWhat" + r"(?! Decks)")  # split so this file does not match itself
+    hits = [f"{p.relative_to(ROOT)}:{n}" for p in repo_files()
+            if p.is_file() and p.suffix in TEXT_SUFFIXES and "tests" not in p.relative_to(ROOT).parts
+            for n, line in enumerate(p.read_text(encoding="utf-8", errors="ignore").splitlines(), 1)
+            if pattern.search(line)]
+    assert hits == []
+
+
+def test_built_and_shipped_themes_are_named_sowhat_decks():
+    import zipfile
+    from deckkit.template_map import open_template
+    from deckkit.theme import _theme_xml
+    from pptx.oxml.ns import qn
+    root = _theme_xml(open_template(None).prs)
+    names = {root.get("name"), root.find(".//" + qn("a:clrScheme")).get("name"), root.find(".//" + qn("a:fontScheme")).get("name")}
+    assert names == {"SoWhat Decks"}
+    with zipfile.ZipFile(ROOT / "skills" / "deck-build" / "assets" / "default-template.pptx") as z:
+        theme = z.read("ppt/theme/theme1.xml").decode()
+    assert theme.count('name="SoWhat Decks"') == 3

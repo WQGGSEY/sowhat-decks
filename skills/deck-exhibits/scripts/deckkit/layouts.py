@@ -242,14 +242,17 @@ def exhibit(ctx: Ctx, slide, s: dict, body: Box) -> None:
 
 def exhibit_takeaways(ctx: Ctx, slide, s: dict, body: Box) -> None:
     grid = ctx.grid(body)
-    exhibits.render(ctx, slide, s["exhibit"], grid.span(1, 8))
+    exhibit_box = exhibits.render(ctx, slide, s["exhibit"], grid.span(1, 8))
     panel = grid.span(9, 4)
     heading = s.get("takeaways_heading") or ctx.labels["so_what"]
     head_box, rest = panel.take_top(pt(14 * 1.3))  # same top and size as the exhibit title beside it
     text(ctx, slide, head_box, [P(heading, bold=True)], size=14, color=ctx.accent, max_lines=1, role="label")
-    hline(slide, panel.x, rest.y + ctx.s(0.06), panel.w, color=ctx.accent, width=2)
-    text(ctx, slide, rest.inset(top=ctx.s(0.2)), [P(t, bullet=True, space_before=0.6) for t in s["takeaways"]],
-         max_size=16, min_size=12)
+    rule_y = rest.y + ctx.s(0.06)
+    hline(slide, panel.x, rule_y, panel.w, color=ctx.accent, width=2)
+    # the takeaways start on the same line as the chart or table beside them
+    top = max(exhibit_box.y, rule_y + ctx.s(0.08))
+    text(ctx, slide, Box(panel.x, top, panel.w, panel.bottom - top),
+         [P(t, bullet=True, space_before=0.6) for t in s["takeaways"]], max_size=16, min_size=12)
 
 
 def table(ctx: Ctx, slide, s: dict, body: Box) -> None:
