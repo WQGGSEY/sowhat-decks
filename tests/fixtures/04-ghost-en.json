@@ -1,0 +1,22 @@
+{
+  "spec_version": "1.0",
+  "mode": "ghost",
+  "meta": {"title": "Market entry: should we launch in the second country next year?", "subtitle": "Ghost deck: storyline before evidence", "date": "October 2026", "language": "en"},
+  "slides": [
+    {"layout": "cover"},
+    {"layout": "ghost", "title": "We should enter next year, but only through a partner, because the direct route takes too long to pay back",
+     "ghost": {"layout": "executive_summary", "evidence": ["Market size and growth from public statistics", "[DATA NEEDED] Partner terms from two candidate partners"]}},
+    {"layout": "section", "number": 1, "title": "Is the market worth it?"},
+    {"layout": "ghost", "title": "The addressable market is large enough to matter within three years",
+     "ghost": {"layout": "exhibit_takeaways", "exhibit": "Bar: addressable market by segment, latest year, $M", "evidence": ["National statistics office tables", "[DATA NEEDED] Segment split for the mid-market"]}},
+    {"layout": "exhibit", "title": "Two competitors hold most of the market, and neither serves small firms well",
+     "exhibit": {"type": "bar", "title": "Market share by competitor", "unit": "%", "categories": ["Competitor 1", "Competitor 2", "Others"], "values": [null, null, null]},
+     "source": "[DATA NEEDED]", "ghost": {"exhibit": "Bar: market share by competitor, %", "evidence": ["[DATA NEEDED] Share estimates from public filings"]}},
+    {"layout": "section", "number": 2, "title": "How should we enter?"},
+    {"layout": "two_column", "title": "A partner gets us to market a year earlier than building our own sales team",
+     "left": {"heading": "Partner", "bullets": ["[DATA NEEDED] Time to first sale"]}, "right": {"heading": "Direct", "bullets": ["[DATA NEEDED] Time to first sale"]},
+     "ghost": {"layout": "two_column", "evidence": ["[DATA NEEDED] Hiring lead times", "[DATA NEEDED] Partner onboarding time"]}},
+    {"layout": "ghost", "title": "We ask for approval to sign a partner by the end of next quarter",
+     "ghost": {"layout": "recommendations"}}
+  ]
+}

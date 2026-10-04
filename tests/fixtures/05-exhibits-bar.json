@@ -1,0 +1,23 @@
+{
+  "spec_version": "1.0",
+  "meta": {"title": "Exhibit tests: bar", "language": "en", "sample_data": true},
+  "slides": [
+    {"layout": "exhibit", "title": "Product 4 sells the most units per store, almost twice the average",
+     "exhibit": {"type": "bar", "title": "Units sold per store per week, by product", "unit": "units",
+                 "categories": ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5", "Product 6", "Product 7", "Product 8"],
+                 "values": [42, 35, 51, 88, 39, 47, 30, 44], "highlight": ["Product 4"], "sort": "desc"},
+     "source": "Sample data"},
+    {"layout": "exhibit_takeaways", "title": "Costs per order fell every year after the warehouse moved",
+     "exhibit": {"type": "bar", "title": "Fulfilment cost per order", "unit": "$", "orientation": "vertical",
+                 "categories": ["2021", "2022", "2023", "2024", "2025", "2026"], "values": [9.8, 9.6, 8.1, 7.4, 6.9, 6.2],
+                 "highlight": [5], "number_format": "0.0"},
+     "takeaways": ["The move in 2023 cut cost by about a sixth", "Each year since has been lower than the last"],
+     "source": "Sample data"},
+    {"layout": "exhibit", "title": "Two units lost money this year; one is missing data",
+     "exhibit": {"type": "bar", "title": "Change in operating profit by unit", "unit": "$M",
+                 "categories": ["Unit A", "Unit B", "Unit C", "Unit D", "Unit E"], "values": [6, -3, 4, -1, null],
+                 "highlight": ["Unit B", "Unit D"]},
+     "footnotes": ["Unit E has not reported yet; shown as a gap, not zero."],
+     "source": "Sample data"}
+  ]
+}

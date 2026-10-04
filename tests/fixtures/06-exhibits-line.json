@@ -1,0 +1,28 @@
+{
+  "spec_version": "1.0",
+  "meta": {"title": "Exhibit tests: line", "language": "en", "sample_data": true},
+  "slides": [
+    {"layout": "exhibit", "title": "Active users have grown every month since the free tier launched",
+     "exhibit": {"type": "line", "title": "Monthly active users", "unit": "thousands",
+                 "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                 "series": [{"name": "Active users", "values": [12, 13, 15, 18, 22, 25, 29, 33, 36, 41, 45, 50]}]},
+     "source": "Sample data"},
+    {"layout": "exhibit_takeaways", "title": "Channel C overtook the others this year while the rest converged",
+     "exhibit": {"type": "line", "title": "Share of new customers by channel", "unit": "%",
+                 "categories": ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"],
+                 "series": [{"name": "Channel A", "values": [30, 29, 27, 26, 25, 24]},
+                            {"name": "Channel B", "values": [28, 27, 26, 25, 24, 23]},
+                            {"name": "Channel C", "values": [15, 18, 22, 26, 30, 34]},
+                            {"name": "Channel D", "values": [27, 26, 25, 23, 21, 19]}],
+                 "highlight": "Channel C"},
+     "takeaways": ["Channels A and B end within one point of each other; labels are spread to stay readable"],
+     "source": "Sample data"},
+    {"layout": "exhibit", "title": "Price index stayed flat for two years, then rose quickly",
+     "exhibit": {"type": "line", "title": "Input price index, 24 months", "unit": "index, month 1 = 100", "number_format": "0",
+                 "categories": ["M1","M2","M3","M4","M5","M6","M7","M8","M9","M10","M11","M12","M13","M14","M15","M16","M17","M18","M19","M20","M21","M22","M23","M24"],
+                 "series": [{"name": "Index", "values": [100,101,100,99,100,101,100,100,101,102,101,100,101,102,103,104,107,110,114,118,121,123,126,129]},
+                            {"name": "Target band top", "values": [110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110,110]}],
+                 "highlight": "Index"},
+     "source": "Sample data"}
+  ]
+}

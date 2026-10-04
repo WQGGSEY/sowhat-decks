@@ -1,0 +1,37 @@
+{
+  "spec_version": "1.0",
+  "meta": {"title": "Board update: Q3 results and the plan for Q4", "organization": "Example SaaS Co.", "date": "October 2026", "language": "en", "sample_data": true, "draft": false},
+  "slides": [
+    {"layout": "cover", "subtitle": "Quarterly board meeting"},
+    {"layout": "executive_summary", "title": "Q3 beat plan on revenue but missed on churn, so Q4 shifts effort from acquisition to retention",
+     "points": [
+       {"headline": "Revenue finished 4% above plan", "detail": "New business was strong in the mid-market; enterprise deals slipped to Q4."},
+       {"headline": "Net revenue retention fell below 100% for the first time", "detail": "Churn is concentrated in customers on the legacy plan who never adopted the new reporting module."},
+       {"headline": "Cash runway is 21 months at the current burn", "detail": "No new financing is needed before the next board cycle."},
+       {"headline": "Q4 moves two sales engineers to customer success", "detail": "The goal is to migrate every legacy customer before renewal."},
+       {"headline": "We ask the board to approve the revised Q4 targets", "detail": "Revenue target unchanged; retention target added."}
+     ], "source": "Sample data"},
+    {"layout": "exhibit_takeaways", "title": "New business carried the quarter while expansion revenue shrank",
+     "exhibit": {"type": "stacked_bar", "title": "Quarterly new revenue by source", "unit": "$K",
+                 "categories": ["Q4 25", "Q1 26", "Q2 26", "Q3 26"],
+                 "series": [{"name": "New business", "values": [310, 340, 365, 420]}, {"name": "Expansion", "values": [180, 175, 160, 130]}, {"name": "Reactivation", "values": [20, 25, 15, 20]}],
+                 "highlight": "New business"},
+     "takeaways": ["New business is up a third since Q4 25", "Expansion has fallen three quarters in a row", "Expansion is where retention problems show first"],
+     "source": "Sample data; finance system export"},
+    {"layout": "exhibit", "title": "Customers on the legacy plan churn at four times the rate of everyone else",
+     "exhibit": {"type": "bar", "title": "Quarterly logo churn by plan", "unit": "%", "number_format": "0.0",
+                 "categories": ["Legacy plan", "Starter", "Growth", "Enterprise"], "values": [8.4, 2.1, 1.9, 1.2], "highlight": ["Legacy plan"]},
+     "source": "Sample data; billing system"},
+    {"layout": "table", "title": "Every Q3 metric except retention is on or ahead of plan",
+     "table": {"columns": ["Metric", "Plan", "Actual", "vs plan"],
+               "rows": [["Revenue ($K)", 2450, 2548, "+4%"], ["New customers", 85, 92, "+8%"], ["Net revenue retention (%)", 104, 98, "-6 pts"], ["Gross margin (%)", 78, 79, "+1 pt"], ["Burn ($K / month)", 310, 295, "-5%"]],
+               "highlight": {"rows": [2]}},
+     "source": "Sample data"},
+    {"layout": "recommendations", "title": "Approve three changes to the Q4 plan",
+     "items": [
+       {"action": "Add a net revenue retention target of 102%", "detail": "Reported monthly to the board", "owner": "CEO", "due": "Q4"},
+       {"action": "Move two sales engineers to customer success", "detail": "Funded within the current budget", "owner": "CRO", "due": "Nov"},
+       {"action": "Migrate all legacy-plan customers before renewal", "detail": "Free migration, no price change for 12 months", "owner": "VP Customer", "due": "Dec"}
+     ], "source": "Sample data"}
+  ]
+}

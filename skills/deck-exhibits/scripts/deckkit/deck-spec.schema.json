@@ -1,0 +1,610 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sowhat-decks/deck-spec/1.0",
+  "title": "SoWhat Decks deck spec",
+  "description": "One JSON file describes a whole deck. deck-build turns it into an editable .pptx. Text limits here are hard caps; the builder also measures every text box and reports overflow. See layouts.md for recommended limits per layout and language.",
+  "type": "object",
+  "required": ["spec_version", "meta", "slides"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {"type": "string"},
+    "spec_version": {"const": "1.0"},
+    "mode": {
+      "description": "full = render every layout. ghost = title-only ghost deck: every slide shows only its action title plus a dashed box naming the planned exhibit and the evidence still needed.",
+      "enum": ["full", "ghost"],
+      "default": "full"
+    },
+    "meta": {"$ref": "#/$defs/meta"},
+    "theme": {"$ref": "#/$defs/theme"},
+    "template": {"$ref": "#/$defs/template"},
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 80,
+      "items": {"$ref": "#/$defs/slide"}
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "meta": {
+      "type": "object",
+      "required": ["title"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {"type": "string", "minLength": 1, "maxLength": 120, "description": "Deck title. Used on the cover when the cover slide has no title."},
+        "subtitle": {"type": "string", "maxLength": 160},
+        "author": {"type": "string", "maxLength": 80},
+        "organization": {"type": "string", "maxLength": 80},
+        "date": {"type": "string", "maxLength": 40, "description": "Free text, e.g. '2026-10-04' or 'October 2026'."},
+        "language": {"enum": ["en", "ko", "ja"], "default": "en", "description": "Sets East Asian theme font, default labels (Source, Draft, Appendix) and run language tags."},
+        "draft": {"type": "boolean", "default": false, "description": "Put a DRAFT sticker on every slide."},
+        "confidentiality": {"type": "string", "maxLength": 40, "description": "Short footer label, e.g. 'Confidential'."},
+        "sample_data": {"type": "boolean", "default": false, "description": "Put 'Sample data' in every slide's source line ('Source: Sample data; <source>'). Use whenever numbers are not real."}
+      }
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Only applies to the built-in default template. A user template keeps its own theme.",
+      "properties": {
+        "accent": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$", "description": "The single accent color. Default #1F5AA6."}
+      }
+    },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Use a user .pptx/.potx. The CLI flag --template overrides path.",
+      "properties": {
+        "path": {"type": "string", "minLength": 1, "description": "Relative to the spec file."},
+        "layout_map": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Template layout names to use. Missing keys are detected automatically.",
+          "properties": {
+            "cover": {"type": "string"},
+            "section": {"type": "string"},
+            "content": {"type": "string"}
+          }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {"type": "string", "minLength": 1, "maxLength": 200}
+    },
+    "cell": {"type": ["string", "number", "null"]},
+    "table": {
+      "type": "object",
+      "required": ["columns", "rows"],
+      "additionalProperties": false,
+      "properties": {
+        "columns": {"type": "array", "minItems": 2, "maxItems": 6, "items": {"type": "string", "maxLength": 40}},
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {"type": "array", "minItems": 2, "maxItems": 6, "items": {"$ref": "#/$defs/cell"}}
+        },
+        "align": {"type": "array", "items": {"enum": ["left", "center", "right"]}, "description": "Per column. Default: text left, numbers right."},
+        "number_format": {"type": "string", "maxLength": 20, "description": "Format for numeric cells: Excel style like the charts ('#,##0', '0.0', '0%') or a Python format spec (',.1f', '.1%')."},
+        "highlight": {"$ref": "#/$defs/table_highlight"}
+      }
+    },
+    "table_highlight": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rows": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "cols": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "cells": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}}}
+      }
+    },
+    "series": {
+      "type": "object",
+      "required": ["name", "values"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 30},
+        "values": {"type": "array", "minItems": 1, "maxItems": 24, "items": {"type": ["number", "null"]}}
+      }
+    },
+    "exhibit": {
+      "description": "One exhibit. Pick the type from deck-exhibits/references/exhibit-chooser.md.",
+      "oneOf": [
+        {"$ref": "#/$defs/ex_bar"},
+        {"$ref": "#/$defs/ex_line"},
+        {"$ref": "#/$defs/ex_stacked"},
+        {"$ref": "#/$defs/ex_stacked_100"},
+        {"$ref": "#/$defs/ex_highlight_table"},
+        {"$ref": "#/$defs/ex_matrix"},
+        {"$ref": "#/$defs/ex_process"}
+      ]
+    },
+    "ex_common": {
+      "title": {"type": "string", "minLength": 1, "maxLength": 90, "description": "What the exhibit shows, with units: 'Revenue by region, 2025, $M'."},
+      "unit": {"type": "string", "maxLength": 20, "description": "Appended to the exhibit title when the title does not already contain it."},
+      "number_format": {"type": "string", "pattern": "^[$€£¥₩]?(#,##0|0)(\\.0{1,6})?%?$", "description": "Excel number format for chart labels: optional currency sign, '0' or '#,##0', up to 6 decimals, optional '%'. Examples: '0', '0.0', '#,##0', '$#,##0', '0%'."}
+    },
+    "ex_bar": {
+      "type": "object",
+      "required": ["type", "title", "categories", "values"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "bar"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "number_format": {"$ref": "#/$defs/ex_common/number_format"},
+        "categories": {"type": "array", "minItems": 2, "maxItems": 12, "items": {"type": "string", "minLength": 1, "maxLength": 30}},
+        "values": {"type": "array", "minItems": 2, "maxItems": 12, "items": {"type": ["number", "null"]}},
+        "highlight": {"type": "array", "maxItems": 3, "items": {"type": ["string", "integer"]}, "description": "Category names or 0-based indexes drawn in the accent color."},
+        "orientation": {"enum": ["horizontal", "vertical"], "default": "horizontal", "description": "horizontal for rankings and long names; vertical for time."},
+        "sort": {"enum": ["none", "desc", "asc"], "default": "none"}
+      }
+    },
+    "ex_line": {
+      "type": "object",
+      "required": ["type", "title", "categories", "series"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "line"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "number_format": {"$ref": "#/$defs/ex_common/number_format"},
+        "categories": {"type": "array", "minItems": 2, "maxItems": 24, "items": {"type": "string", "minLength": 1, "maxLength": 12}},
+        "series": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/series"}},
+        "highlight": {"type": "string", "description": "Series name drawn in the accent color. Others are grey."}
+      }
+    },
+    "ex_stacked": {
+      "type": "object",
+      "description": "Stacked columns. Series values must be 0 or more (checked by the builder).",
+      "required": ["type", "title", "categories", "series"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "stacked_bar"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "number_format": {"$ref": "#/$defs/ex_common/number_format"},
+        "categories": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string", "minLength": 1, "maxLength": 16}},
+        "series": {"type": "array", "minItems": 2, "maxItems": 5, "items": {"$ref": "#/$defs/series"}},
+        "highlight": {"type": "string", "description": "Series name drawn in the accent color."},
+        "show_totals": {"type": "boolean", "default": true}
+      }
+    },
+    "ex_stacked_100": {
+      "type": "object",
+      "description": "100% stacked columns from raw values or shares. Values must be 0 or more (checked by the builder).",
+      "required": ["type", "title", "categories", "series"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "stacked_bar_100"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "number_format": {"$ref": "#/$defs/ex_common/number_format"},
+        "categories": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string", "minLength": 1, "maxLength": 16}},
+        "series": {"type": "array", "minItems": 2, "maxItems": 5, "items": {"$ref": "#/$defs/series"}},
+        "highlight": {"type": "string"}
+      }
+    },
+    "ex_highlight_table": {
+      "type": "object",
+      "required": ["type", "title", "columns", "rows"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "highlight_table"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "number_format": {"type": "string", "maxLength": 20, "description": "Format for numeric cells: Excel style ('#,##0.0') or a Python format spec (',.1f')."},
+        "columns": {"$ref": "#/$defs/table/properties/columns"},
+        "rows": {"$ref": "#/$defs/table/properties/rows"},
+        "align": {"$ref": "#/$defs/table/properties/align"},
+        "highlight": {"$ref": "#/$defs/table_highlight"}
+      }
+    },
+    "ex_matrix": {
+      "type": "object",
+      "required": ["type", "title", "x_label", "y_label", "quadrants"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "matrix_2x2"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "x_label": {"type": "string", "minLength": 1, "maxLength": 40},
+        "y_label": {"type": "string", "minLength": 1, "maxLength": 40},
+        "x_low": {"type": "string", "maxLength": 16},
+        "x_high": {"type": "string", "maxLength": 16},
+        "y_low": {"type": "string", "maxLength": 16},
+        "y_high": {"type": "string", "maxLength": 16},
+        "quadrants": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "maxLength": 40}, "description": "Order: top-left, top-right, bottom-left, bottom-right."},
+        "highlight_quadrant": {"type": "integer", "minimum": 0, "maximum": 3},
+        "items": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "required": ["label", "x", "y"],
+            "additionalProperties": false,
+            "properties": {
+              "label": {"type": "string", "minLength": 1, "maxLength": 24},
+              "x": {"type": "number", "minimum": 0, "maximum": 1},
+              "y": {"type": "number", "minimum": 0, "maximum": 1},
+              "highlight": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "ex_process": {
+      "type": "object",
+      "required": ["type", "title", "steps"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {"const": "process"},
+        "title": {"$ref": "#/$defs/ex_common/title"},
+        "unit": {"$ref": "#/$defs/ex_common/unit"},
+        "steps": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["label"],
+            "additionalProperties": false,
+            "properties": {
+              "label": {"type": "string", "minLength": 1, "maxLength": 30},
+              "detail": {"type": "string", "maxLength": 140}
+            }
+          }
+        },
+        "highlight": {"type": "integer", "minimum": 0, "maximum": 5}
+      }
+    },
+    "ghost": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Ghost-deck hints. Shown in a dashed box under the title when mode is ghost or layout is ghost.",
+      "properties": {
+        "layout": {"type": "string", "description": "Planned final layout, e.g. 'exhibit_takeaways'."},
+        "exhibit": {"type": "string", "maxLength": 160, "description": "Planned exhibit, e.g. 'Bar: revenue by region, 2025, $M'."},
+        "evidence": {"type": "array", "maxItems": 5, "items": {"type": "string", "maxLength": 160}, "description": "Evidence for the slide. Tag what you have ([SRC n], [CALC], [SAMPLE]); mark gaps [DATA NEEDED] or [DATA NEEDED: what]."}
+      }
+    },
+    "slide_common": {
+      "id": {"type": "string", "maxLength": 40},
+      "title": {"type": "string", "minLength": 1, "maxLength": 120, "description": "Action title: a full sentence stating the so-what. Max 2 lines at >=24pt."},
+      "tracker": {"type": "string", "maxLength": 40, "description": "Small label above the title, e.g. section name."},
+      "notes": {"type": "string", "maxLength": 4000, "description": "Speaker notes."},
+      "source": {"type": "string", "maxLength": 300, "description": "Source line, shown as 'Source: <text>' ('출처: ' / '出所：' for ko / ja); the prefix is added if missing. With sample_data it reads 'Source: Sample data; <text>'. Required for exhibits."},
+      "footnotes": {"type": "array", "maxItems": 3, "items": {"type": "string", "maxLength": 200}},
+      "sample_data": {"type": "boolean", "description": "Put 'Sample data' in this slide's source line."},
+      "draft": {"type": "boolean", "description": "Override meta.draft for this slide."},
+      "ghost": {"$ref": "#/$defs/ghost"}
+    },
+    "slide": {
+      "oneOf": [
+        {"$ref": "#/$defs/s_cover"},
+        {"$ref": "#/$defs/s_executive_summary"},
+        {"$ref": "#/$defs/s_section"},
+        {"$ref": "#/$defs/s_exhibit"},
+        {"$ref": "#/$defs/s_exhibit_takeaways"},
+        {"$ref": "#/$defs/s_two_column"},
+        {"$ref": "#/$defs/s_pillars"},
+        {"$ref": "#/$defs/s_table"},
+        {"$ref": "#/$defs/s_timeline"},
+        {"$ref": "#/$defs/s_quote"},
+        {"$ref": "#/$defs/s_recommendations"},
+        {"$ref": "#/$defs/s_appendix"},
+        {"$ref": "#/$defs/s_ghost"}
+      ]
+    },
+    "s_cover": {
+      "type": "object",
+      "required": ["layout"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "cover"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"type": "string", "minLength": 1, "maxLength": 100, "description": "Defaults to meta.title."},
+        "subtitle": {"type": "string", "maxLength": 160},
+        "date": {"type": "string", "maxLength": 40},
+        "author": {"type": "string", "maxLength": 80},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_executive_summary": {
+      "type": "object",
+      "required": ["layout", "title", "points"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "executive_summary"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "oneOf": [
+              {"type": "string", "minLength": 1, "maxLength": 120},
+              {
+                "type": "object",
+                "required": ["headline"],
+                "additionalProperties": false,
+                "properties": {
+                  "headline": {"type": "string", "minLength": 1, "maxLength": 120},
+                  "detail": {"type": "string", "maxLength": 240}
+                }
+              }
+            ]
+          }
+        },
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_section": {
+      "type": "object",
+      "required": ["layout", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "section"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"type": "string", "minLength": 1, "maxLength": 80},
+        "number": {"type": ["string", "integer"], "maxLength": 4},
+        "subtitle": {"type": "string", "maxLength": 160},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_exhibit": {
+      "type": "object",
+      "required": ["layout", "title", "exhibit", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "exhibit"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "exhibit": {"$ref": "#/$defs/exhibit"},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_exhibit_takeaways": {
+      "type": "object",
+      "required": ["layout", "title", "exhibit", "takeaways", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "exhibit_takeaways"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "exhibit": {"$ref": "#/$defs/exhibit"},
+        "takeaways_heading": {"type": "string", "maxLength": 30, "description": "Default 'So what' (ko: 시사점, ja: 示唆)."},
+        "takeaways": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"type": "string", "minLength": 1, "maxLength": 160}},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "column": {
+      "type": "object",
+      "required": ["heading", "bullets"],
+      "additionalProperties": false,
+      "properties": {
+        "heading": {"type": "string", "minLength": 1, "maxLength": 50},
+        "bullets": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string", "minLength": 1, "maxLength": 160}},
+        "highlight": {"type": "boolean", "description": "Accent the heading of the preferred option."}
+      }
+    },
+    "s_two_column": {
+      "type": "object",
+      "required": ["layout", "title", "left", "right"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "two_column"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "left": {"$ref": "#/$defs/column"},
+        "right": {"$ref": "#/$defs/column"},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_pillars": {
+      "type": "object",
+      "required": ["layout", "title", "pillars"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "pillars"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "numbered": {"type": "boolean", "default": true},
+        "pillars": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["heading"],
+            "additionalProperties": false,
+            "properties": {
+              "heading": {"type": "string", "minLength": 1, "maxLength": 40},
+              "body": {"type": "string", "maxLength": 220},
+              "bullets": {"type": "array", "maxItems": 4, "items": {"type": "string", "minLength": 1, "maxLength": 100}}
+            }
+          }
+        },
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_table": {
+      "type": "object",
+      "required": ["layout", "title", "table"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "table"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "table": {"$ref": "#/$defs/table"},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_timeline": {
+      "type": "object",
+      "required": ["layout", "title", "milestones"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "timeline"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "milestones": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["when", "label"],
+            "additionalProperties": false,
+            "properties": {
+              "when": {"type": "string", "minLength": 1, "maxLength": 20},
+              "label": {"type": "string", "minLength": 1, "maxLength": 40},
+              "detail": {"type": "string", "maxLength": 120},
+              "highlight": {"type": "boolean"}
+            }
+          }
+        },
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_quote": {
+      "type": "object",
+      "required": ["layout", "title", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "quote"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "quote": {"type": "string", "minLength": 1, "maxLength": 220, "description": "The quote or the one statement to emphasise."},
+        "attribution": {"type": "string", "maxLength": 80},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_recommendations": {
+      "type": "object",
+      "required": ["layout", "title", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {"const": "recommendations"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["action"],
+            "additionalProperties": false,
+            "properties": {
+              "action": {"type": "string", "minLength": 1, "maxLength": 100},
+              "detail": {"type": "string", "maxLength": 160},
+              "owner": {"type": "string", "maxLength": 30},
+              "due": {"type": "string", "maxLength": 20}
+            }
+          }
+        },
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_appendix": {
+      "type": "object",
+      "required": ["layout", "title"],
+      "additionalProperties": false,
+      "description": "Back-up slide. Give exactly one of bullets, table or exhibit.",
+      "properties": {
+        "layout": {"const": "appendix"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "bullets": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string", "minLength": 1, "maxLength": 200}},
+        "table": {"$ref": "#/$defs/table"},
+        "exhibit": {"$ref": "#/$defs/exhibit"},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "source": {"$ref": "#/$defs/slide_common/source"},
+        "footnotes": {"$ref": "#/$defs/slide_common/footnotes"},
+        "sample_data": {"$ref": "#/$defs/slide_common/sample_data"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"},
+        "ghost": {"$ref": "#/$defs/ghost"}
+      }
+    },
+    "s_ghost": {
+      "type": "object",
+      "required": ["layout", "title"],
+      "additionalProperties": false,
+      "description": "Title-only placeholder slide. Same as any slide rendered with mode=ghost.",
+      "properties": {
+        "layout": {"const": "ghost"},
+        "id": {"$ref": "#/$defs/slide_common/id"},
+        "title": {"$ref": "#/$defs/slide_common/title"},
+        "tracker": {"$ref": "#/$defs/slide_common/tracker"},
+        "ghost": {"$ref": "#/$defs/ghost"},
+        "notes": {"$ref": "#/$defs/slide_common/notes"},
+        "draft": {"$ref": "#/$defs/slide_common/draft"}
+      }
+    }
+  }
+}

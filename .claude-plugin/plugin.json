@@ -1,0 +1,9 @@
+{
+  "name": "sowhat-decks",
+  "version": "0.1.0",
+  "description": "Answer-first, editable PowerPoint decks from your coding agent: storyline, build, native exhibits and review.",
+  "author": {"name": "SoWhat Decks contributors"},
+  "license": "MIT",
+  "keywords": ["powerpoint", "pptx", "slides", "deck", "presentation", "storyline", "charts", "review"],
+  "skills": "./skills"
+}

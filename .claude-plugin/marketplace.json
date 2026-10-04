@@ -1,0 +1,19 @@
+{
+  "name": "sowhat-decks",
+  "owner": {"name": "SoWhat Decks contributors"},
+  "metadata": {
+    "description": "Answer-first, editable PowerPoint decks from your coding agent.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "sowhat-decks",
+      "source": "./",
+      "description": "Four skills: storyline (answer-first action titles), build (editable .pptx on your template), exhibits (native charts), review (render and check any deck).",
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["powerpoint", "pptx", "slides", "deck", "presentation", "storyline", "charts", "review"]
+    }
+  ]
+}

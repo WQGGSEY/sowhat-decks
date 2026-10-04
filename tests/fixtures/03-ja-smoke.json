@@ -1,0 +1,26 @@
+{
+  "spec_version": "1.0",
+  "meta": {"title": "四半期事業レビュー：来年の成長はどこから来るか", "subtitle": "取締役会 事前資料（サンプル）", "date": "2026年10月", "language": "ja", "draft": true, "sample_data": true},
+  "slides": [
+    {"layout": "cover"},
+    {"layout": "executive_summary", "title": "成長は一つの地域に集中しており、来年の計画はその地域への投資を優先すべきだ",
+     "points": [
+       {"headline": "今年の成長の大半はB地域から生まれた", "detail": "他地域の3倍の速さで伸び、利益率も維持した。"},
+       {"headline": "A地域とC地域は横ばいで、追加投資よりコスト見直しが必要だ", "detail": "同じ2製品が原因で3四半期連続で計画未達となった。"},
+       "本会議で予算の再配分の承認を求める"
+     ], "source": "サンプルデータ"},
+    {"layout": "exhibit", "title": "B地域は他の事業より3倍速く成長した",
+     "exhibit": {"type": "bar", "title": "地域別売上成長率（前年比）", "unit": "%", "categories": ["A地域", "B地域", "C地域", "D地域"], "values": [3, 12, 2, 4], "highlight": ["B地域"], "sort": "desc"},
+     "source": "サンプルデータ"},
+    {"layout": "two_column", "title": "予算総額を増やすより再配分の方が、コストとスピードの両面で優れている",
+     "left": {"heading": "案1：再配分（推奨）", "highlight": true, "bullets": ["コスト見直しで営業担当6名を採用する", "予算総額は変えない"]},
+     "right": {"heading": "案2：予算増額", "bullets": ["取締役会の再審議が必要になる", "成長が確認される前に固定費が増える"]},
+     "source": "サンプルデータ"},
+    {"layout": "table", "title": "B地域は利益率を保ちながら成長率と受注率で先行している",
+     "table": {"columns": ["地域", "売上（億円）", "成長率（%）", "受注率（%）"], "rows": [["A地域", 52, 3, 21], ["B地域", 68, 12, 29], ["C地域", 35, 2, 18]], "highlight": {"rows": [1]}},
+     "source": "サンプルデータ"},
+    {"layout": "recommendations", "title": "本日、取締役会に三つの決定を求める",
+     "items": [{"action": "B地域への再配分を承認する", "owner": "社長", "due": "本日"}, {"action": "営業担当6名の採用を開始する", "owner": "営業本部長", "due": "2026年12月"}, {"action": "A・C地域のコスト見直しを実行する", "owner": "COO", "due": "2027年1Q"}],
+     "source": "サンプルデータ"}
+  ]
+}

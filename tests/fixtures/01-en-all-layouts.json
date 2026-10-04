@@ -1,0 +1,125 @@
+{
+  "spec_version": "1.0",
+  "meta": {
+    "title": "Quarterly business review: where growth comes from next year",
+    "subtitle": "Board pre-read, sample deck for layout tests",
+    "organization": "Example Co.",
+    "date": "October 2026",
+    "language": "en",
+    "draft": true,
+    "sample_data": true,
+    "confidentiality": "Confidential"
+  },
+  "slides": [
+    {"layout": "cover", "notes": "Open with the answer: fund Region B first."},
+    {
+      "layout": "executive_summary",
+      "title": "Growth is concentrated in one region, so next year's plan should fund it first",
+      "points": [
+        {"headline": "Region B delivered most of this year's growth", "detail": "It grew three times faster than the other regions while holding margin flat."},
+        {"headline": "Regions A and C are flat and need a cost reset, not more spend", "detail": "Both missed plan for three quarters in a row on the same two products."},
+        {"headline": "The plan funds Region B sales capacity before anything else", "detail": "Six new account managers, hired in the first half, paid for by the cost reset."},
+        "We ask the board to approve the reallocation at this meeting"
+      ],
+      "source": "Sample data"
+    },
+    {"layout": "section", "number": 1, "title": "Where growth came from", "subtitle": "Regional and product view of the year"},
+    {
+      "layout": "exhibit",
+      "title": "Region B grew three times faster than the rest of the business",
+      "tracker": "Where growth came from",
+      "exhibit": {
+        "type": "bar", "title": "Revenue growth by region, this year vs last year", "unit": "%",
+        "categories": ["Region A", "Region B", "Region C", "Region D", "Region E"],
+        "values": [3, 12, 2, 4, 1], "highlight": ["Region B"], "sort": "desc"
+      },
+      "source": "Sample data",
+      "notes": "Point at the highlighted bar first."
+    },
+    {
+      "layout": "exhibit_takeaways",
+      "title": "Region B's lead has widened every quarter since the new channel launched",
+      "exhibit": {
+        "type": "line", "title": "Quarterly revenue by region", "unit": "$M",
+        "categories": ["Q1 25", "Q2 25", "Q3 25", "Q4 25", "Q1 26", "Q2 26", "Q3 26"],
+        "series": [
+          {"name": "Region B", "values": [10, 11, 13, 14, 16, 18, 21]},
+          {"name": "Region A", "values": [12, 12, 13, 12, 13, 13, 13]},
+          {"name": "Region C", "values": [9, 9, 8, 9, 9, 8, 9]}
+        ],
+        "highlight": "Region B"
+      },
+      "takeaways": [
+        "The gap opened after the channel launch in Q3 25",
+        "Regions A and C are flat in absolute terms",
+        "At this pace Region B is the largest region by Q1 27"
+      ],
+      "source": "Sample data"
+    },
+    {
+      "layout": "two_column",
+      "title": "Reallocating spend beats raising the total budget on both cost and speed",
+      "left": {"heading": "Option 1: reallocate (recommended)", "highlight": true, "bullets": ["Funds six account managers from the cost reset", "No change to the total budget", "Hiring starts next month"]},
+      "right": {"heading": "Option 2: raise the budget", "bullets": ["Needs a new budget round with the board", "Adds fixed cost before the growth is proven", "Earliest start is next quarter"]},
+      "source": "Sample data"
+    },
+    {
+      "layout": "pillars",
+      "title": "Three moves turn Region B's lead into next year's plan",
+      "pillars": [
+        {"heading": "Add sales capacity", "body": "Hire six account managers for Region B in the first half."},
+        {"heading": "Reset cost in A and C", "bullets": ["Merge two support teams", "Stop two low-margin products"]},
+        {"heading": "Track it monthly", "body": "One page: pipeline, win rate and margin by region, reviewed by the leadership team."}
+      ],
+      "source": "Sample data"
+    },
+    {
+      "layout": "table",
+      "title": "Region B leads on growth and win rate while keeping margin in line",
+      "table": {
+        "columns": ["Region", "Revenue ($M)", "Growth (%)", "Win rate (%)", "Margin (%)"],
+        "rows": [["Region A", 52, 3, 21, 18], ["Region B", 68, 12, 29, 19], ["Region C", 35, 2, 18, 15], ["Region D", 41, 4, 22, 17]],
+        "highlight": {"rows": [1]}
+      },
+      "source": "Sample data"
+    },
+    {
+      "layout": "timeline",
+      "title": "The plan pays back within the year if hiring starts next month",
+      "milestones": [
+        {"when": "Nov 2026", "label": "Approve plan", "detail": "Board approves the reallocation"},
+        {"when": "Dec 2026", "label": "Start hiring", "detail": "Six roles open in Region B", "highlight": true},
+        {"when": "Q2 2027", "label": "Fully ramped", "detail": "New hires carry a full quota"},
+        {"when": "Q4 2027", "label": "Payback", "detail": "Extra margin covers the cost of the roles"}
+      ],
+      "source": "Sample data"
+    },
+    {
+      "layout": "quote",
+      "title": "Customers in Region B buy for speed of setup, which the other regions do not sell",
+      "quote": "We picked them because we were live in a week. Nobody else could promise that.",
+      "attribution": "Operations lead at a Region B customer (sample interview)",
+      "source": "Sample data"
+    },
+    {
+      "layout": "recommendations",
+      "title": "We ask the board to approve three decisions today",
+      "items": [
+        {"action": "Approve the reallocation to Region B", "detail": "No change to the total budget", "owner": "CEO", "due": "Today"},
+        {"action": "Open six account manager roles", "detail": "Hiring plan and job specs are ready", "owner": "Head of sales", "due": "Dec 2026"},
+        {"action": "Run the cost reset in Regions A and C", "owner": "COO", "due": "Q1 2027"}
+      ],
+      "source": "Sample data"
+    },
+    {
+      "layout": "appendix",
+      "title": "Method: growth is measured on constant currency and like-for-like accounts",
+      "bullets": [
+        "Growth compares this year to last year on the same set of accounts",
+        "Currency effects are removed using last year's average rates",
+        "Win rate counts closed deals over qualified opportunities in the period"
+      ],
+      "source": "Sample data"
+    }
+  ]
+}

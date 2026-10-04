@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python-version: "3.12"
+            tests: ""  # whole suite
+          # 3.9 is the python3 that ships with macOS. deck-build and deck-exhibits must run there.
+          # deck-review's suite joins this job once its test helper stops passing a bare int to
+          # python-pptx's auto_size (tests/review/test_review_checks.py, owner: deck-review).
+          - python-version: "3.9"
+            tests: "tests/test_*.py"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install test dependencies
+        run: python -m pip install "python-pptx==1.0.2" pypdfium2 pytest
+      - name: Shared library copies are in sync
+        run: python tools/sync_lib.py --check
+      - name: Tests (render tests skip without LibreOffice)
+        run: python -m pytest -q ${{ matrix.tests }}
