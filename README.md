@@ -80,7 +80,7 @@ Each folder has the brief, the inputs, the storyline, the deck spec, the deck (.
 
 ## Free vs Pro
 
-| | Free (MIT) | Pro ($19 until October 27, 11:59 pm PT, then $29) |
+| | Free (MIT) | Pro ($29 one-time) |
 |---|---|---|
 | Skills | deck-storyline, deck-build, deck-exhibits, deck-review | All four, plus exhibits-pro, deck-recipes, brand-fit |
 | Storyline (governing message, SCQA, action titles, title-only test) | ✓ | ✓ |
@@ -102,7 +102,7 @@ The free pack builds a complete deck. Pro is for the harder ones.
 - **brand-fit**: map a complex company template and move old decks onto it
 - A one-page storyline worksheet, and every v1.x update for 12 months
 
-$19 until October 27, 11:59 pm PT, then $29 one-time · 14-day refund · one person, unlimited decks
+$29 one-time · 14-day refund · one person, unlimited decks
 
 **[See what's in SoWhat Decks Pro](GUMROAD_URL)**
 
