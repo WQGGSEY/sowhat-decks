@@ -64,7 +64,7 @@ The skills tell your agent to use only numbers from your material or a cited sou
 
 ## Examples
 
-Each folder has the brief, the inputs, the storyline, the deck spec, the deck (.pptx and PDF), slide PNGs, the review and the sources, plus a README with the prompts and commands that rebuild it. The final decks have no high or medium deck-review findings; `tests/test_examples.py` checks that on every change.
+Each folder has the brief, the inputs, the storyline, the deck spec, the deck (.pptx and PDF), slide PNGs, the review and the sources, plus a README with the prompts and commands that rebuild it. The final decks have no high or medium automatic deck-review findings; `tests/test_examples.py` checks that on every change.
 
 | | Example | Built from | Open |
 |---|---|---|---|
@@ -80,7 +80,7 @@ Each folder has the brief, the inputs, the storyline, the deck spec, the deck (.
 
 ## Free vs Pro
 
-| | Free (MIT) | Pro ($29 one-time) |
+| | Free (MIT) | Pro ($19 until October 27, 11:59 pm PT, then $29) |
 |---|---|---|
 | Skills | deck-storyline, deck-build, deck-exhibits, deck-review | All four, plus exhibits-pro, deck-recipes, brand-fit |
 | Storyline (governing message, SCQA, action titles, title-only test) | ✓ | ✓ |
@@ -95,8 +95,6 @@ Each folder has the brief, the inputs, the storyline, the deck spec, the deck (.
 
 ## Pro
 
-<!-- Launch gate: confirm C13, C14, C15 and brand-fit in marketing/launch-kit.md against the final Pro ZIP, then replace GUMROAD_URL. -->
-
 The free pack builds a complete deck. Pro is for the harder ones.
 
 - **15 more exhibits**, all native and editable: waterfall, Mekko chart, Gantt roadmap, Harvey-ball table, value driver tree, issue tree, tornado, funnel, change-arrow bars, quadrant scatter, heatmap table, RAG scorecard, org chart, RACI, benchmark dot plot
@@ -104,7 +102,7 @@ The free pack builds a complete deck. Pro is for the harder ones.
 - **brand-fit**: map a complex company template and move old decks onto it
 - A one-page storyline worksheet, and every v1.x update for 12 months
 
-$29 one-time · 14-day refund · one person, unlimited decks
+$19 until October 27, 11:59 pm PT, then $29 one-time · 14-day refund · one person, unlimited decks
 
 **[See what's in SoWhat Decks Pro](GUMROAD_URL)**
 
