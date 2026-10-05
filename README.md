@@ -104,7 +104,7 @@ The free pack builds a complete deck. Pro is for the harder ones.
 
 $29 one-time · 14-day refund · one person, unlimited decks
 
-**[See what's in SoWhat Decks Pro](GUMROAD_URL)**
+**[See what's in SoWhat Decks Pro](https://sowhatlabs.gumroad.com/l/sowhat-decks-pro)**
 
 ## Limits
 
