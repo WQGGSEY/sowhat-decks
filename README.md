@@ -1,3 +1,5 @@
+**English** · [한국어](README.ko.md) · [简体中文](README.zh-CN.md)
+
 # SoWhat Decks
 
 Answer-first, editable PowerPoint decks from your coding agent.
